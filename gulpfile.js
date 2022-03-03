@@ -19,7 +19,7 @@ const cleancss = require('gulp-clean-css');
 
 function browsersync() {
 	browserSync.init({ // Инициализация Browsersync
-		server: { baseDir: 'app/' }, // Указываем папку сервера
+		proxy: 'bakery',// Указываем папку сервера
 		notify: false, // Отключаем уведомления
 		online: true // Режим работы: true или false
 	})
