@@ -1,0 +1,36 @@
+{
+  "name": "bakery22",
+  "version": "1.0.0",
+  "description": "site 2022",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marselina-you/bakery22.git"
+  },
+  "author": "Alferova Marina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marselina-you/bakery22/issues"
+  },
+  "homepage": "https://github.com/Marselina-you/bakery22#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-less": "^5.0.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify-es": "^3.0.0",
+    "imagemin": "^8.0.1",
+    "jquery": "^3.6.0",
+    "sass": "^1.49.9",
+    "uuid": "^8.3.2"
+  }
+}
