@@ -1,16 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Главная страница</title>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/app.min.css">
-	
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-	<p>kukukuku</p>
-	<script src="js/app.min.js"></script>
-	</body>
-</html>
+<?php
+
+
+// FRONT COTROLLER
+
+// 1. Общие настройки
+
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+// 2. Подключение файлов системы
+
+define('ROOT', dirname(__FILE__));
+require_once(ROOT.'/components/Router.php');
+require_once(ROOT.'/components/Db.php');
+// 3. Установка соединения с БД
+
+
+// 4. Вызор Router
+
+$router = new Router();
+$router->run();
+
+
+

@@ -63,6 +63,7 @@ function startwatch() {
 	
 	// Мониторим файлы HTML на изменения
 	watch('app/**/*.html').on('change', browserSync.reload);
+	watch('app/**/*.php').on('change', browserSync.reload);
  
 }
 // Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.
