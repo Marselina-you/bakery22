@@ -1,5 +1,4 @@
-<?php include ROOT.'/views/layouts/header.php';
-include ROOT.'/views/layouts/header_catalog.php';?>
+<?php include ROOT.'/views/layouts/header.php';?>
 <div class="block-undertitle d-flex flex-column col-lg-10 offset-lg-1">
                 <div class="block-undertitle-href d-flex col-lg-12 justify-content-between">
                 <?php foreach ($categories as $categoryItem): ?>
@@ -42,3 +41,4 @@ include ROOT.'/views/layouts/header_catalog.php';?>
 				<?php endforeach;?>
 					<div style="clear: both;">&nbsp;</div>
 				</div>
+<?php include ROOT.'/views/layouts/footer.php';?>
