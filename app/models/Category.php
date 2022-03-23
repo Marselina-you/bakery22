@@ -1,19 +1,14 @@
 <?php
-
 class Category
 {
-
-    /**
-     * Returns an array of categories
-     */
-    public static function getCategoriesList()
-    {
-
-        $db = Db::getConnection();
+	public static function getCategoriesList()
+	{
+		$db = Db::getConnection();
 
         $categoryList = array();
 
-        $result = $db->query('SELECT id, name FROM category');
+        $result = $db->query('SELECT id, name FROM category '
+                . 'ORDER BY sort_order ASC');
 
         $i = 0;
         while ($row = $result->fetch()) {
@@ -23,6 +18,5 @@ class Category
         }
 
         return $categoryList;
-    }
-
+	}
 }

@@ -1,5 +1,4 @@
-
-	/* Открытие меню */
+/* Открытие меню */
 var main = function() { //главная функция
 
     $('.page-title-header__menu').click(function() { /* выбираем класс icon-menu и

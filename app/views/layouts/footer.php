@@ -22,15 +22,15 @@
                 <li class="size35px fontSans whitecolor text-center"> <a href="">события</a></li>
                 <li class="size35px fontSans whitecolor text-center"> <a href="/catalog">продукты</a></li>
             <ul class="submenu">
-                <li class="fontSans whitecolor text-center"><a class="" href="">черный хлеб</a></li>
-                <li class="fontSans whitecolor text-center"><a href="">пирожные</a></li>
-                <li class="fontSans whitecolor text-center"><a href="">белая выпечка</a></li>
+                <li class="fontSans whitecolor text-center"><a class="" href="jg_bread.php">черный хлеб</a></li>
+                <li class="fontSans whitecolor text-center"><a href="jh_cake.php">пирожные</a></li>
+                <li class="fontSans whitecolor text-center"><a href="ji_loaf.php">белая выпечка</a></li>
             </ul>
                </li>
                <li class="size35px fontSans whitecolor text-center"> <a href="">о нас</a></li>
                <li class="size35px fontSans whitecolor text-center"> <a href="/user/register">
                регистрация</a></li>
-               
+             
                 <li class="size35px fontSans whitecolor text-center"><a href="/user/login/"
                     class="baton">
                вход</a></li>
@@ -47,6 +47,7 @@
         </div></div>
         <script src="/js/jquery-3.0.0.min.js"></script>
         <script src="/js/app.min.js"></script>
-        
-        </body>
+        <script src="/js/bootstrap.min.js"></script>
+
+</body>
 </html>

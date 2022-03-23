@@ -1,72 +1,87 @@
 <?php
-include_once ROOT . '/models/Category.php';
-include_once ROOT . '/models/Product.php';
+
+
 class Product
 {
+const SHOW_BY_DEFAULT = 10;
+	/** Returns single news items with specified id
+	* @rapam integer &id
+	*/
 
-    const SHOW_BY_DEFAULT = 6;
+	public static function getProductById($id)
+	{
+		$id = intval($id);
 
-    /**
-     * Returns an array of products
-     */
-    public static function getLatestProducts($count = self::SHOW_BY_DEFAULT, $page = 1)
-    {
-        $count = intval($count);
-        
-        
-        $db = Db::getConnection();
-        $productsList = array();
+		if ($id) {
+/*			$host = 'localhost';
+			$dbname = 'php_base';
+			$user = 'root';
+			$password = '';
+			$db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);*/
+			$db = Db::getConnection();
+			$result = $db->query('SELECT * FROM assortiment WHERE id=' . $id);
 
-        $result = $db->query('SELECT id, name, price, weight, description, ing1, ing2, ing3, slogan, top1, top2, top3, image FROM assortiment ORDER BY id');
+			/*$result->setFetchMode(PDO::FETCH_NUM);*/
+			$result->setFetchMode(PDO::FETCH_ASSOC);
 
-        $i = 0;
-        while ($row = $result->fetch()) {
-            $productsList[$i]['id'] = $row['id'];
-            $productsList[$i]['name'] = $row['name'];
-            $productsList[$i]['price'] = $row['price'];
-            $productsList[$i]['image'] = $row['image'];
-            $productsList[$i]['weight'] = $row['weight'];
-            $productsList[$i]['description'] = $row['description'];
-            $productsList[$i]['slogan'] = $row['slogan'];
-            $productsList[$i]['top1'] = $row['top1'];
-            $productsList[$i]['top2'] = $row['top2'];
-            $productsList[$i]['top3'] = $row['top3'];
-            $productsList[$i]['ing1'] = $row['ing1'];
-            $productsList[$i]['ing2'] = $row['ing2'];
-            $productsList[$i]['ing3'] = $row['ing3'];
-            
-            $i++;
-        }
+			$product = $result->fetch();
 
-        return $productsList;
-    }
-    public static function getProductById($id)
-    {
-        $id = intval($id);
+			return $product;
+		}
 
-        if ($id) {                        
-            $db = Db::getConnection();
-            
-            $result = $db->query('SELECT * FROM assortiment WHERE id=' . $id);
-            $result->setFetchMode(PDO::FETCH_ASSOC);
-            
-            return $result->fetch();
-        }
-    }
-    public static function getProductsListByCategory($categoryId = false)
+	}
+
+	/**
+	* Returns an array of news items
+	*/
+	
+public static function getLatestProducts() {
+		
+
+		$db = Db::getConnection();
+		$latestProducts = array();
+
+		$result = $db->query('SELECT id, name, image, description, price, weight, top1, top2, top3, slogan, ing1, ing2, ing3 FROM assortiment ORDER BY id ASC LIMIT 10');
+
+		$i = 0;
+		while($row = $result->fetch()) {
+			$latestProducts[$i]['id'] = $row['id'];
+			$latestProducts[$i]['name'] = $row['name'];
+			$latestProducts[$i]['image'] = $row['image'];
+			$latestProducts[$i]['description'] = $row['description'];
+			$latestProducts[$i]['price'] = $row['price'];
+			$latestProducts[$i]['weight'] = $row['weight'];
+			$latestProducts[$i]['top1'] = $row['top1'];
+			$latestProducts[$i]['top2'] = $row['top2'];
+			$latestProducts[$i]['top3'] = $row['top3'];
+			$latestProducts[$i]['slogan'] = $row['slogan'];
+			$latestProducts[$i]['ing1'] = $row['ing1'];
+			$latestProducts[$i]['ing2'] = $row['ing2'];
+			$latestProducts[$i]['ing3'] = $row['ing3'];
+			$i++;
+		}
+
+		return $latestProducts;
+	
+}
+public static function getProductsListByCategory($categoryId = false)
     {
         if ($categoryId) {
 
             $db = Db::getConnection();            
             $products = array();
-            $result = $db->query("SELECT id, name, price, weight,  description, ing1, ing2, ing3, slogan, top1, top2, top3  FROM assortiment WHERE category_id = '$categoryId'");
+            $result = $db->query("SELECT  id, name, price, description, ing1, ing2, ing3, slogan, top1, top2, top3  FROM assortiment WHERE category_id = '$categoryId' "
+                    . "ORDER BY id DESC "                
+                    . "LIMIT ".self::SHOW_BY_DEFAULT);
 
             $i = 0;
             while ($row = $result->fetch()) {
-                $products[$i]['id'] = $row['id'];
+                
                 $products[$i]['name'] = $row['name'];
+                $products[$i]['id'] = $row['id'];
                 $products[$i]['price'] = $row['price'];
-                $products[$i]['weight'] = $row['weight'];
+                
+               
                 $products[$i]['description'] = $row['description'];
                 $products[$i]['ing1'] = $row['ing1'];
                 $products[$i]['ing2'] = $row['ing2'];
