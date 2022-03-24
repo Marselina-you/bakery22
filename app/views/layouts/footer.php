@@ -4,10 +4,10 @@
                 <div class="footer-block1_content">Alferova.studio.com</div>
             </div>
             <div class="footer-block2 d-flex align-items-center">
-                <div class="icon"><img src="/images/face.png"></div>
-                <div class="icon"><img src="/images/vk.png"></div>
-                <div class="icon"><img src="/images/twit.png"></div>
-                <div class="icon"><img src="/images/what.png"></div>
+                <div class="icon"><img src="/template/images/face.png"></div>
+                <div class="icon"><img src="/template/images/vk.png"></div>
+                <div class="icon"><img src="/template/images/twit.png"></div>
+                <div class="icon"><img src="/template/images/what.png"></div>
             </div>
         </div>
         </div>

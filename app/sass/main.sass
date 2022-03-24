@@ -153,7 +153,7 @@ h3
 .clear
     margin-top: -1px
     height: 1px
-    clear:both
+    clear: both
     zoom: 1
 .navy 
     position: relative
@@ -236,6 +236,8 @@ textarea
     border-radius: 15px 15px 0 0
 .block-undertitle-img, .wrap-block-undertitle-href
     padding: 0
+.wrap-block-undertitle-href2
+    padding: 0 15px
 .block-undertitle-imgs
     img
         width: 140px
@@ -273,7 +275,7 @@ textarea
     padding: 30px
 .icon
     padding: 5px
-.wrap-assortiment-container
+//.wrap-assortiment-container
     
 //Pull-out-menu
 .icon-close
@@ -300,7 +302,7 @@ ul.menu li a
     color: white
     display: block
     text-decoration: none
-ul.menu li:hover 
+//ul.menu li:hover 
 ul.menu a:hover
     color: #555 
 ul.submenu 
@@ -319,7 +321,7 @@ ul.submenu > li > a
     font-size: 20px
 ul.submenu > li > a:hover 
     text-decoration: underline
-ul.menu > li:hover > ul.submenu
+//ul.menu > li:hover > ul.submenu
 //view each product
 .toppig_view
     background-position: center
@@ -353,4 +355,49 @@ img
     height: auto
 .active
     color: yellow 
+//pagination
+
+.pagination 
+  display: flex
+  margin-bottom: 25px
+  margin-top: 0
+  padding-left: 15px
+
+
+.pagination  li:first-child  a, .pagination  li:first-child  span 
+  border-bottom-left-radius: 0
+  border-top-left-radius: 0
+  margin-left: 0
+
+
+.pagination  li:last-child  a, .pagination  li:last-child  span 
+  border-bottom-right-radius: 0
+  border-top-right-radius: 0
+
+
+.pagination  .active  a, .pagination  .active  span, .pagination  .active  a:hover, .pagination  .active  span:hover, .pagination  .active  a:focus, .pagination  .active  span:focus 
+  background-color: #FE980F
+  border-color: #FE980F
+  color: #FFFFFF
+  cursor: default
+  z-index: 2
+
+
+.pagination  li  a, .pagination  li  span 
+  background-color: #f0f0e9
+  border: 0
+  float: left
+  line-height: 1.42857
+  margin-left: -1px
+  padding: 6px 12px
+  position: relative
+  text-decoration: none
+  margin-right: 5p
+  color:#000
+
+.pagination  li  a:hover
+    background: #FE980F
+    color: #fff
+
+
         

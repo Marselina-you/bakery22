@@ -1,10 +1,10 @@
 <?php include ROOT . '/views/layouts/header.php'; 
-include ROOT . '/views/layouts/header_catalog.php';
+include ROOT.'/views/layouts/header_category.php';
   foreach ($latestProducts as $product): ?>
-  	<div class="nows1"><div class="lightbrowncolor size45px fontTahoma text-center font-weight-bold padding25"></div>
+  	<div class="content"><div class="lightbrowncolor size45px fontTahoma text-center font-weight-bold padding25"></div>
 				
 		<div class="block-content d-flex flex-column"><div class="block-left-right d-flex justify-content-center"><div class="block-left col-xl-4 flex-column">
-				<div class="d-flex justify-content-center block-left__img"><img src="../images/dest/pletenka.png"  alt="" /></div>
+				<div class="d-flex justify-content-center block-left__img"><img src="/template/images/pletenka.png"  alt="" /></div>
                <div class="d-flex justify-content-center"><div class="darkbrowncolor size20px fontTahoma padding-15"></div></div>
 				<div class="d-flex justify-content-center"><div class="darkbrowncolor size20px fontTahoma padding-15"></div></div>
 				</div>

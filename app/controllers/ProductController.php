@@ -1,13 +1,12 @@
 <?php
-
-include_once ROOT. '/models/Product.php';
-
 class ProductController {
 
 	
 
 	public function actionView($id)
 	{
+		$categories = array();
+        $categories = Category::getCategoriesList();
 		if ($id) {
 			//$newsItem = News::getNewsItemByID($id);
 			$product = Product::getProductById($id);

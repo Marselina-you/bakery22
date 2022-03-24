@@ -1,7 +1,4 @@
 <?php 
-include_once ROOT. '/models/Product.php';
-include_once ROOT. '/models/Category.php';
-
 class CatalogController
 {
     public function actionIndex()
@@ -11,26 +8,33 @@ class CatalogController
         $categories = Category::getCategoriesList();
 
         $latestProducts = array();
-        $latestProducts = Product::getLatestProducts(6);
+        $latestProducts = Product::getLatestProducts(3);
 
         
         require_once(ROOT . '/views/catalog/index.php');
         return true;
     }
 
-    public function actionCategory($categoryId)
+    public function actionCategory($categoryId, $page = 1)
     {
         $categories = array();
         $categories = Category::getCategoriesList();
+        echo "category" .$categoryId;
+        echo '<br>Page:' .$page;
+        
 
         $categoryProducts = array();
-        $categoryProducts = Product::getProductsListByCategory($categoryId);
+        $categoryProducts = Product::getProductsListByCategory($categoryId, $page);
 
+        $total = Product::getTotalProductsInCategory($categoryId);
+        // Создаем объект Pagination - постраничная навигация
+        $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page-');
       
 
         require_once(ROOT . '/views/catalog/category.php');
 
         return true;
     }
+   
     
 }

@@ -1,24 +1,13 @@
-<?php include ROOT.'/views/layouts/header.php';?>
-<div class="block-undertitle d-flex flex-column col-lg-10 offset-lg-1">
-                <div class="block-undertitle-href d-flex col-lg-12 justify-content-between">
-                <?php foreach ($categories as $categoryItem): ?>
-                    <div class="wrap-block-undertitle-href col-lg-4"><div class="href-product block-undertitle-hrefAll block-undertitle-href1  fontSans size26px text-center">
-                        <a href="/category/<?php echo $categoryItem['id'];?>" class="bardcolor"><?php echo $categoryItem['name'];?></a></div></div>
-                    <?php endforeach; ?>
-                </div>
-                <div class="block-undertitle-img d-flex col-lg-12 justify-content-center">
-                    <div class="href-product block-undertitle-imgs"><a href=""><img src="../images/src/bread.gif"></a></div>
-                    <div class="href-product block-undertitle-imgs"><a href="/category/2"><img src="../images/src/kexon.gif"></a></div>
-                    <div class="href-product block-undertitle-imgs"><a href="/category/1"><img src="../images/src/bag.gif"></a></div>
-                </div>
-            </div>   
+<?php include ROOT.'/views/layouts/header.php';
+include ROOT.'/views/layouts/header_category.php';?>
+
 	
-				<div id="content">
+				
 					<?php foreach ($latestProducts as $product):?>
-					<div class="nows1"><div class="lightbrowncolor size45px fontTahoma text-center font-weight-bold padding25"></div>
+					<div class="content">
 				
 		<div class="block-content d-flex flex-column"><div class="block-left-right d-flex justify-content-center"><div class="block-left col-xl-4 flex-column">
-				<div class="d-flex justify-content-center block-left__img"><img src="../images/dest/<?php echo $product['image'];?>"  alt="" /></div>
+				<div class="d-flex justify-content-center block-left__img"><img src="/template/images/<?php echo $product['image'];?>"  alt="" /></div>
                <div class="d-flex justify-content-center"><div class="darkbrowncolor size20px fontTahoma padding-15"></div></div>
 				<div class="d-flex justify-content-center"><div class="darkbrowncolor size20px fontTahoma padding-15"></div></div>
 				</div>
@@ -40,5 +29,5 @@
 		</div>
 				<?php endforeach;?>
 					<div style="clear: both;">&nbsp;</div>
-				</div>
+				
 <?php include ROOT.'/views/layouts/footer.php';?>
