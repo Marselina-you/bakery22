@@ -26,7 +26,7 @@ class User
      * Проверяет имя: не меньше, чем 6 символов
      */
     public static function checkPassword($password) {
-        if (strlen($password) >= 6) {
+        if (strlen($password) >= 3) {
             return true;
         }
         return false;
