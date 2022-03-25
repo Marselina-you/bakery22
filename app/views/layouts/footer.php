@@ -18,7 +18,7 @@
                        <img src="/images/close.png">
                     </div>
             <ul class="menu col-lg-12 d-flex flex-column align-items-center">
-                <li class="size35px fontSans whitecolor text-center"> <a  href="/">главная</a></li>
+                <li class="size35px fontSans whitecolor text-center"> <a  href="/">глаSная</a></li>
                 <li class="size35px fontSans whitecolor text-center"> <a href="">события</a></li>
                 <li class="size35px fontSans whitecolor text-center"> <a href="/catalog">продукты</a></li>
             <ul class="submenu">
@@ -30,18 +30,20 @@
                <li class="size35px fontSans whitecolor text-center"> <a href="">о нас</a></li>
                <li class="size35px fontSans whitecolor text-center"> <a href="/user/register">
                регистрация</a></li>
+                <li class="size35px fontSans whitecolor text-center batono"><a href="/cart">
+               корзина(<span id="cart-count"></span>)</a></li>
+                <?php if (User::isGuest()): ?>
              
                 <li class="size35px fontSans whitecolor text-center"><a href="/user/login/"
                     class="baton">
-               вход</a></li>
+               вход</a></li><?php else: ?>
                
                <li class="size35px fontSans whitecolor text-center"> <a href="/cabinet/">
               account</a></li>
               <li class="size35px fontSans whitecolor text-center"> <a href="/user/logout/">
-              out</a></li> 
+              out</a></li>  <?php endif; ?> 
           </li>
-          <li class="size35px fontSans whitecolor text-center batono"><a href="/cart">
-               корзина(<span id="cart-count"></span>)</a></li>
+
           
             </ul>
         </div></div>
