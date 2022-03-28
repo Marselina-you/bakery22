@@ -31,7 +31,8 @@
                <li class="size35px fontSans whitecolor text-center"> <a href="/user/register">
                регистрация</a></li>
                 <li class="size35px fontSans whitecolor text-center batono"><a href="/cart">
-               корзина(<span id="cart-count"></span>)</a></li>
+               корзина(<span id="cart-count"></span><?php echo Cart::countItems();?>)</a></li>
+               
                 <?php if (User::isGuest()): ?>
              
                 <li class="size35px fontSans whitecolor text-center"><a href="/user/login/"
