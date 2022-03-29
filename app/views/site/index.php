@@ -23,6 +23,7 @@ include ROOT.'/views/layouts/header_category.php';?>
 				<div class="d-flex justify-content-center align-items-center toppig_view toppig_view1 whitecolor size24px fontTahoma"><?php echo $product['top1'];?></div><div class="d-flex toppig_view toppig_view2 whitecolor size24px fontTahoma justify-content-center align-items-center">
 					<?php echo $product['top2'];?>
 				</div><div class="d-flex justify-content-center align-items-center toppig_view toppig_view3 whitecolor size24px fontTahoma"><?php echo $product['top3'];?></div>
+				<a href="#" class="btn  add-to-cart" data-id="<?php echo $product['id'];?>"><i class="fa fa-shopping-cart"></i>В корзину</a>
 				</div>
 		</div><div class="d-flex justify-content-center"><img src="../images/dest/razdel1.png"></div></div>
 
