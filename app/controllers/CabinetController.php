@@ -3,7 +3,7 @@ class CabinetController
 {
 	public function actionIndex()
 	{
-		$userId = User::checkLogged();
+		$userId = User::checkLogged();//проверяем, авторизирован ли пользователь
 		
 		// Получаем информацию о пользователе из БД
         $user = User::getUserById($userId);

@@ -52,7 +52,7 @@ class User
         
         $_SESSION['user'] = $userId;
     }
- public static function checkLogged()
+ public static function checkLogged() //отвечает за проверку того, авторизирован ли пользователь
     {
         
         // Если сессия есть, вернем идентификатор пользователя

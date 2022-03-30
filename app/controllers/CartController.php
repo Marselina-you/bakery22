@@ -8,6 +8,14 @@ class CartController
 		$referrer = $_SERVER['HTTP_REFERER'];
         header("Location: $referrer");
 	}
+     public function actionDelete($id)
+    {
+        // Удалить товар из корзины
+         Cart::deleteProduct($id);
+        // Возвращаем пользователя на страницу
+        header("Location: /cart/");
+    }
+	
 	  public function actionAddAjax($id)
     {
         // Добавляем товар в корзину
@@ -72,7 +80,9 @@ class CartController
                 // Собираем информацию о заказе
                 $productsInCart = Cart::getProducts();
                 if (User::isGuest()) {
-                    $userId = false;
+                    $userId = 0;
+                     echo 'nowAvtor';
+
                 } else {
                     $userId = User::checkLogged();
                 }
@@ -125,6 +135,7 @@ class CartController
                 // Пользователь авторизирован?
                 if (User::isGuest()) {
                     // Нет
+                    echo 'now';
                     // Значения для формы пустые
                 } else {
                     // Да, авторизирован                    
