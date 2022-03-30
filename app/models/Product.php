@@ -133,4 +133,29 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
 
         return $products;
     }
+    public static function getProductsList()
+    {
+    	$db = Db::getConnection();
+		$productsList = array();
+
+		$result = $db->query('SELECT id, name,  price FROM assortiment ORDER BY id');
+		$i = 0;
+		while($row = $result->fetch()) {
+			$productsList[$i]['id'] = $row['id'];
+			$productsList[$i]['name'] = $row['name'];
+			$productsList[$i]['price'] = $row['price'];
+			
+			$i++;
+		}
+
+		return $productsList;
+    }
+    public static function deleteProductById($id)
+    {
+    	$db = Db::getConnection();
+    	$sql = 'DELETE FROM assortiment WHERE id = :id';
+    	$result = $db->prepare($sql);
+    	$result->bindParam(':id', $id, PDO::PARAM_INT);
+    	return $result->execute();
+    }
 }

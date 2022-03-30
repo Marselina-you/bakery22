@@ -80,8 +80,8 @@ class CartController
                 // Собираем информацию о заказе
                 $productsInCart = Cart::getProducts();
                 if (User::isGuest()) {
-                    $userId = 0;
-                     echo 'nowAvtor';
+                    $userId = 0; //в оригинале = false, но так не оформляется заказ
+                     //echo 'nowAvtor';
 
                 } else {
                     $userId = User::checkLogged();
