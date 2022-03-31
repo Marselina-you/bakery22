@@ -10,5 +10,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<div><a href="">АдминПанель</a></div>
+	<div><a href="/admin">АдминПанель</a></div>
+	<li><a href="/admin/product">Управление товарами</a></li>
 <div><a href="">На сайт</a></div>
