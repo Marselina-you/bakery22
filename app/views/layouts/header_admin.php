@@ -12,6 +12,6 @@
 <body>
 	<div><a href="/admin">АдминПанель</a></div>
 	<li><a href="/admin/product">Управление товарами</a></li>
-<li><a href="/admin/product">Управление категориями</a></li>
+<li><a href="admin/category">Управление категориями</a></li>
 <li><a href="/admin/product">Управление заказами</a></li>
 <div><a href="">На сайт</a></div>
