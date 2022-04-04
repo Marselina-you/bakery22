@@ -41,13 +41,13 @@ public static function getLatestProducts($count = self::SHOW_BY_DEFAULT) {
 		$db = Db::getConnection();
 		$latestProducts = array();
 
-		$result = $db->query('SELECT id, name, image, description, price, weight, top1, top2, top3, slogan, ing1, ing2, ing3 FROM assortiment ORDER BY id ASC LIMIT '. $count);
+		$result = $db->query('SELECT id, name,  description, price, weight, top1, top2, top3, slogan, ing1, ing2, ing3 FROM assortiment ORDER BY id ASC LIMIT '. $count);
 
 		$i = 0;
 		while($row = $result->fetch()) {
 			$latestProducts[$i]['id'] = $row['id'];
 			$latestProducts[$i]['name'] = $row['name'];
-			$latestProducts[$i]['image'] = $row['image'];
+			
 			$latestProducts[$i]['description'] = $row['description'];
 			$latestProducts[$i]['price'] = $row['price'];
 			$latestProducts[$i]['weight'] = $row['weight'];
@@ -188,4 +188,65 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
     	}
     	return 0;
     }
+    public static function getImage($id)
+    {
+        // Название изображения-пустышки
+        $noImage = 'no-image.jpg';
+
+        // Путь к папке с товарами
+        $path = '/upload/images/products/';
+
+        // Путь к изображению товара
+        $pathToProductImage = $path . $id . '.jpg';
+
+        if (file_exists($_SERVER['DOCUMENT_ROOT'].$pathToProductImage)) {
+            // Если изображение для товара существует
+            // Возвращаем путь изображения товара
+            return $pathToProductImage;
+        }
+
+        // Возвращаем путь изображения-пустышки
+        return $path . $noImage;
+    }
+     public static function updateProductById($id, $options)
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $sql = "UPDATE assortiment
+            SET 
+
+                category_id = :category_id, 
+                name = :name, 
+                weight = :weight, 
+                price = :price, 
+                description = :description, 
+                ing1 = :ing1, 
+                ing2 = :ing2,
+                ing3 = :ing3,
+                slogan = :slogan, 
+                top1 = :top1, 
+                top2 = :top2,
+                top3 = :top3
+            WHERE id = :id";
+
+        // Получение и возврат результатов. Используется подготовленный запрос
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, PDO::PARAM_INT);
+        $result->bindParam(':category_id', $options['category_id'], PDO::PARAM_INT);
+        $result->bindParam(':name', $options['name'], PDO::PARAM_STR);
+        $result->bindParam(':weight', $options['weight'], PDO::PARAM_STR);
+        $result->bindParam(':price', $options['price'], PDO::PARAM_STR);
+        $result->bindParam(':description', $options['description'], PDO::PARAM_STR);
+        $result->bindParam(':ing1', $options['ing1'], PDO::PARAM_STR);
+        $result->bindParam(':ing2', $options['ing2'], PDO::PARAM_STR);
+        $result->bindParam(':ing3', $options['ing3'], PDO::PARAM_STR);
+        $result->bindParam(':slogan', $options['slogan'], PDO::PARAM_STR);
+        $result->bindParam(':top1', $options['top1'], PDO::PARAM_STR);
+        $result->bindParam(':top2', $options['top2'], PDO::PARAM_STR);
+        $result->bindParam(':top3', $options['top3'], PDO::PARAM_STR);
+        return $result->execute();
+    }
+
 }

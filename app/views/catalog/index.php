@@ -1,6 +1,7 @@
 <?php include ROOT . '/views/layouts/header.php'; 
-include ROOT.'/views/layouts/header_category.php';
-  foreach ($latestProducts as $product): ?>
+include ROOT.'/views/layouts/header_category.php';?>
+<h1>Catalog</h1>
+  <?php foreach ($latestProducts as $product): ?>
   	<div class="content"><div class="lightbrowncolor size45px fontTahoma text-center font-weight-bold padding25"></div>
 				
 		<div class="block-content d-flex flex-column"><div class="block-left-right d-flex justify-content-center"><div class="block-left col-xl-4 flex-column">

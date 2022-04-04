@@ -1,6 +1,7 @@
 <?php include ROOT . '/views/layouts/header_admin.php'; ?>
 
 <h1>АДМИНКА.Управление товарами</h1>
+
 <a href="/admin/product/create" class="btn btn-default">Добавить товар</a>
 <h3>Список товаров</h3>
 <table>
