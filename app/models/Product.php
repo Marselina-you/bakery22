@@ -73,7 +73,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
 
             $db = Db::getConnection();            
             $products = array();
-            $result = $db->query("SELECT  id, name, price, image, description, ing1, ing2, ing3, slogan, top1, top2, top3  FROM assortiment WHERE category_id = '$categoryId' "
+            $result = $db->query("SELECT  id, name, price,  description, ing1, ing2, ing3, slogan, top1, top2, top3  FROM assortiment WHERE category_id = '$categoryId' "
                     . "ORDER BY id ASC LIMIT ".self::SHOW_BY_DEFAULT
                      . ' OFFSET '. $offset);
 
@@ -83,7 +83,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
                 $products[$i]['name'] = $row['name'];
                 $products[$i]['id'] = $row['id'];
                 $products[$i]['price'] = $row['price'];
-                $products[$i]['image'] = $row['image'];
+               
                 $products[$i]['description'] = $row['description'];
                 $products[$i]['ing1'] = $row['ing1'];
                 $products[$i]['ing2'] = $row['ing2'];
