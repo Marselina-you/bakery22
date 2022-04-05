@@ -11,8 +11,7 @@
             </div>
         </div>
         </div>
-        <div class="wrap-footer-block2 col-lg-12">
-        </div>
+       
         <div class="wrap-menu d-flex flex-column">
             <div class="icon-close col-lg-2 offset-lg-8 col-md-1 col-sm-2 col-xs-1 offset-xs-1">
                        <img src="/images/close.png">
@@ -47,7 +46,7 @@
 
           
             </ul>
-        </div></div>
+        </div>
         <script src="/js/jquery-3.0.0.min.js"></script>
         <script src="/js/app.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>

@@ -1,6 +1,6 @@
 <?php include ROOT . '/views/layouts/header.php'; ?>
 
-<section>
+
     <div class="container">
         <div class="row">
             <div class="col-sm-3">
@@ -76,6 +76,7 @@
             </div>
         </div>
     </div>
-</section>
+</div>
+
 
 <?php include ROOT . '/views/layouts/footer.php'; ?>
