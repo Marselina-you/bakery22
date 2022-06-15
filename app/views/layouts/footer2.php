@@ -1,52 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/app.min.css">
-    <link rel="stylesheet" href="/sass/main2.sass">
-    <title>title</title>
-</head>
-<body>
-   <div class="wrap-content">
-    <div class="main">
-   <div class="header-main">  
-<div class="header d-flex justify-content-end">
-     <div class ="header-up">
+<div class="wrap-footer-block col-lg-12">
+            <div class="footer-block  d-flex justify-content-between align-items-center">
+            <div class="footer-block1">
+                <div class="footer-block1_content">Alferova.studio.com</div>
+            </div>
+            <div class="header d-flex justify-content-end">
+     <div class ="header-up-footer">
         <div class ="header-row1 col-xl-4 col-lg-5 col-md-6 col-sm-12 d-flex flex-column">
             <div class="icons d-flex align-items-center justify-content-between">
                  <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
-                    <img src="../template/images/houm2.png" alt="">
+                    <img src="../images/houm2.png" alt="">
                      <div class="text__item brownDark fontSans size16px">Главная</div>
                 </div>
                  <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
-                    <img src="/template/images/basket.png" alt="">
+                    <img src="../images/basket.png" alt="">
                      <div class="text__item brownDark fontSans size16px">Корзинa</div>
                 </div>
-               
-                
-                 <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
-                    <img src="/template/images/order.png" alt="">
+               <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
+                    <img src="../images/order.png" alt="">
                      <div class="text__item brownDark fontSans size16px">Заказы</div>
                 </div>
                  <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
-                    <img src="/template/images/mail.png" alt="">
+                    <img src="../images/mail.png" alt="">
                      <div class="text__item brownDark fontSans size16px">Написать</div>
                 </div>
                  <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
-                    <img src="/template/images/account.png" alt="">
+                    <img src="../images/account.png" alt="">
                     <div class="text__item brownDark fontSans size16px">Войти</div>
                 </div>
             </div>
                  <div class="text d-flex justify-content-between">
-                      
-                     
-                     
-                     
-                 </div>
+                  </div>
         </div></div>
             
  </div>
- 
-</div>
+            <div class="footer-block2 d-flex align-items-center">
+                <div class="icon"><img src="../images/face.png"></div>
+                <div class="icon"><img src="../images/vk.png"></div>
+                <div class="icon"><img src="../images/twit.png"></div>
+                <div class="icon"><img src="../images/what.png"></div>
+            </div>
+        </div>
+        </div>
+        </body>
+ </html>
