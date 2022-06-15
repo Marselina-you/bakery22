@@ -12,7 +12,9 @@ include ROOT.'/views/layouts/header2.php';?>
 </div>
  <div class="main-action-slider">
         <?php include ROOT.'/views/layouts/action-slider.php';?>
- 
+ </div>
+ <div class="main-about wrap-main-orderEnd-content-amount">
+    <?php include ROOT.'/views/layouts/about.php';?>
 
 </div>
 </div></div>
