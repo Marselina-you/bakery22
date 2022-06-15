@@ -1,13 +1,39 @@
-<div class="main-start"><div class="main-header-logo header-logo-menu col-xl-10 col-lg-10 offset-xl-1 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1 d-flex justify-content-between align-items-center">
-      <div class="header-logo-menu__logo"><img src="/template/images/logo.png" alt=""></div>
-
-      <div class="header-logo-menu__menu"><img src="/template/images/menu.png" alt=""></div>
-     
+<div class="header-main">  
+<div class="header d-flex justify-content-end">
+     <div class ="header-up header-up_padding">
+        <div class ="header-row1 col-xl-4 col-lg-5 col-md-6 col-sm-12 d-flex flex-column">
+            <div class="icons d-flex align-items-center justify-content-between">
+                 <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
+                    <img src="../template/images/houm2.png" alt="">
+                     <div class="text__item brownDark fontSans size16px">Главная</div>
+                </div>
+                 <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
+                    <img src="/template/images/basket.png" alt="">
+                     <div class="text__item brownDark fontSans size16px">Корзинa</div>
+                </div>
+               
+                
+                 <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
+                    <img src="/template/images/order.png" alt="">
+                     <div class="text__item brownDark fontSans size16px">Заказы</div>
+                </div>
+                 <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
+                    <img src="/template/images/mail.png" alt="">
+                     <div class="text__item brownDark fontSans size16px">Написать</div>
+                </div>
+                 <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
+                    <img src="/template/images/account.png" alt="">
+                    <div class="text__item brownDark fontSans size16px">Войти</div>
+                </div>
+            </div>
+                 <div class="text d-flex justify-content-between">
+                      
+                     
+                     
+                     
+                 </div>
+        </div></div>
+            
  </div>
- <div class="main-start-title col-xl-6 offset-xl-1 col-lg-6 offset-lg-1  col-md-6 offset-md-1 col-sm-6 offset-sm-1 col-6 offset-3">
-    <div class="main-start-name wrap-main-orderEnd-content-amount">
-    <div class="main-start-name__item1 bottom_padding10 fontTahoma size45px brownDark">ЗА БАТОНОМ </div>
- <div class="main-start-name__item2 bottom_padding10 fontTahoma size45px brownDark">С ПЫЛУ С ЖАРУ</div>
- <div class="main-start-name__item3 size45px fontTahoma brownDark">ИЗ РУССКОЙ ПЕЧИ</div></div>
- <div class="main-start-name__item4 fontTahoma size26px brownDark">мини-пекарня</div>
- </div></div>
+ 
+</div>

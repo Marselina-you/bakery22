@@ -8,7 +8,7 @@ html, body
 .wrap-content
 	display: flex
 	flex-direction: column
-	min-height: 94%
+	min-height: 90%
 
 	
 	
@@ -26,9 +26,9 @@ html, body
 .main-start
 	height: 900px
 	@media screen and (max-width: 1200px)
-		height: 672px
+		height: 772px
 	@media screen and (max-width: 992px)
-		height: 672px
+		height: 772px
 	@media screen and (max-width: 768px)
 		height: 245px
 	@media screen and (max-width: 576px)
@@ -36,12 +36,13 @@ html, body
 .main-start	
 	margin-top: -108px
 	background: url(/template/images/xl-fon.png) no-repeat
-	//@media screen and (max-width: 1200px)
-		//background: url(../images/lg-fon.png) no-repeat
-	//@media screen and (max-width: 992px)
-		//background: url(../images/mdfon.png) no-repeat
-	//@media screen and (max-width: 768px)
-		//background: $whiteElephant
+	@media screen and (max-width: 1200px)
+		background: url(/template/images/lg-fon.png) no-repeat
+	@media screen and (max-width: 992px)
+		background: url(/template/images/mdfon.png) no-repeat
+	@media screen and (max-width: 768px)
+		background: $whiteElephant
+		margin-top: -56px
 .main
 	flex: 1 0 auto
 .wrap-footer-block
@@ -60,6 +61,9 @@ body
 		background-color: $sm-phon
 
 //header
+.header-logo
+	@media screen and (max-width: 768px)
+		padding-top: 20px
 .header-logo-menu
 	padding: -20px 0 0 0
 	@media screen and (max-width: 768px)
