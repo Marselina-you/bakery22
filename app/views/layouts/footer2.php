@@ -46,7 +46,7 @@
                        <img src="/template/images/close.gif">
                     </div>
             <ul class="menu_style col-lg-12 d-flex flex-column align-items-center">
-                <li class="size35px fontSans whitecolor text-center"> <a  href="/">глаSная</a></li>
+                <li class="size35px fontSans whitecolor text-center"> <a  href="/">главная</a></li>
                 <li class="size35px fontSans whitecolor text-center"> <a href="">события</a></li>
                 <li class="size35px fontSans whitecolor text-center"> <a href="/catalog">продукты</a></li>
             <ul class="submenu">
