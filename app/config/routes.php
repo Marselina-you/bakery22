@@ -38,7 +38,7 @@ return array(
 	'admin/order' => 'adminOrder/index',
 
 	'admin' => 'admin/index',
-
+	'about' => 'about/index',// actionIndex в aboutController
 	'' => 'site/index',// actionIndex в SiteController 
 
 

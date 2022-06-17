@@ -12,7 +12,7 @@
 новую пекарню!!!У нас работают только лучшие специалисты и тэ дэ и</div></div>
     
         <div class="d-flex cart-order_padding justify-content-center"><div class="  main-btn_hover d-flex justify-content-center main-grandmenu-block__btn  main-grandmenu-block__btn_padding col-xl-4 col-lg-4 col-md-4">
-            <a href="" class="size29px white">перейти</a>
+            <a href="/about" class="size29px white">перейти</a>
         </div></div></div></div></div>
     <div class="main-about-row col-xl-2 col-lg-2 col-md-2 d-flex flex-column align-items-center">
         <div class="main-about-row__img"><img src="/template/images/bulka4.gif"></div>
