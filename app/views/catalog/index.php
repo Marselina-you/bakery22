@@ -1,5 +1,6 @@
 <?php include ROOT . '/views/layouts/header.php';
 include ROOT . '/views/layouts/header2.php'; 
+include ROOT.'/views/layouts/header3.php';
 include ROOT.'/views/layouts/header_category.php';?>
 
 
@@ -56,5 +57,6 @@ include ROOT.'/views/layouts/header_category.php';?>
         <div class="separator col-xl-12 col-lg-12 justify-content-center"><img src="/template/images/razdel1.png"></div>
         </div>
 <?php endforeach;?> 
-</div>		  
-<?php include ROOT.'/views/layouts/footer.php';?>
+</div>
+	  
+<?php include ROOT.'/views/layouts/footer2.php';?>

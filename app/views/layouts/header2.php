@@ -5,7 +5,7 @@
             <div class="icons d-flex align-items-center justify-content-between">
                  <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
                     <img src="../template/images/houm2.png" alt="">
-                     <div class="text__item brownDark fontSans size16px">Главная</div>
+                     <div class="text__item brownDark fontSans size16px"><a href="/">Главная</a></div>
                 </div>
                  <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
                     <img src="/template/images/basket.png" alt="">
