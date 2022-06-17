@@ -6,12 +6,14 @@ class UserController
         $name = '';
         $email = '';
         $password = '';
+        $phone = '';
         $result = false;
 
         if (isset($_POST['submit'])) {
             $name = $_POST['name'];
             $email = $_POST['email'];
             $password = $_POST['password'];
+            $phone = $_POST['phone'];
 
             $errors = false;
             

@@ -3,7 +3,7 @@ include ROOT . '/views/layouts/header2.php';
 include ROOT . '/views/layouts/header3.php';?>
 
       <div class="user-index">
-         <div class="content-empty-text col-xl-6 offset-xl-1">
+         <div class="content-empty-text content-empty-text_padding col-xl-6 offset-xl-1">
             <div class="bottom_padding size35px  brownDark fontTahoma letter-space">Личный кабинет</div>
             <div class="edit-cart__content_padding size35px brownDark fontTahoma letter-space"><?php echo $user['name'];?>!</div>
             
@@ -57,22 +57,22 @@ include ROOT . '/views/layouts/header3.php';?>
       <div class="content-form__data d-flex align-items-center justify-content-between flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
           <label for="email" class="content-form__data-title size35px col-xl-4">E-mail:</label>
           <div class="wrap-content-form__data-input col-xl-8">
-            <input type="text" name="email" class="content-form__data-input col-xl-12" value="masrghj@fgn"></div>
+            <input type="text" name="email" class="content-form__data-input col-xl-12" value="<?php echo $user['email'];?>"></div>
       </div>
       <div class="content-form__data d-flex align-items-center justify-content-between flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
           <label for="name" class="content-form__data-title size35px col-xl-4">Имя:</label>
           <div class="wrap-content-form__data-input col-xl-8">
-            <input type="text" name="name" class="content-form__data-input col-xl-12" value="собака"></div>
+            <input type="text" name="name" class="content-form__data-input col-xl-12" value="<?php echo $user['name'];?>"/></div>
       </div>
       
       <div class="content-form__data d-flex align-items-center justify-content-between flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
           <label for="parol2" class="content-form__data-title size35px col-xl-4">Телефон:</label>
           <div class="wrap-content-form__data-input col-xl-8">
-            <input type="text" name="parol2" class="content-form__data-input col-xl-12" value="8-0960-98-98"></div>
+            <input type="text" name="parol2" class="content-form__data-input col-xl-12"  value="<?php echo $user['phone'];?>"/></div>
       </div>
 <div class="content-form__data d-flex align-items-center justify-content-end">
    <div class="col-xl-7 col-lg-4 col-md-4 col-sm-4 col-6  d-flex justify-content-end">
-<button class="content-order-end__click__btn btn btn-success size29px col-xl-6" type="button">Сохранить</button></div></div>
+<button  class="content-order-end__click__btn btn btn-success size29px col-xl-6" type="button"><a href="/cabinet/edit">Редактировать</a></button></div></div>
    </form>
    
             

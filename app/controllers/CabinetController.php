@@ -20,12 +20,16 @@ class CabinetController
         
         $name = $user['name'];
         $password = $user['password'];
+        $email = $user['email'];
+        $phone = $user['phone'];
                 
         $result = false;     
 
         if (isset($_POST['submit'])) {
             $name = $_POST['name'];
             $password = $_POST['password'];
+            $email = $_POST['email'];
+            $phone = $_POST['phone'];
             
             $errors = false;
             
