@@ -2,14 +2,17 @@
 include ROOT . '/views/layouts/header2.php'; 
 include ROOT . '/views/layouts/header3.php';?>
 
-
+<div class="wrap-content">
+    <div class="main">
    <div class="wrap-main-enter wrap-main_padding">
    <div class="main-enter">
 
             <div class="wrap-main-enter-content col-xl-6 offset-xl-1">
                 
                 <?php if ($result): ?>
-                    <p>Данные отредактированы!</p>
+                   <div class="title_padding col-xl-12  size29px fontTahoma letter-space undertitle__edit">Данные отредактированы!</div>
+                    <div class="title_padding col-xl-12  size29px fontTahoma letter-space undertitle__edit"><a href="index">В кабинет</a></div>
+                    <div class="title_padding col-xl-12  size29px fontTahoma letter-space undertitle__edit"><a href="/">На главную</a></div>
                 <?php else: ?>
                     <?php if (isset($errors) && is_array($errors)): ?>
                         <ul>
@@ -34,16 +37,16 @@ include ROOT . '/views/layouts/header3.php';?>
                             <input class="content-form__data-input col-xl-12" type="text" name="email" placeholder="Email" value="<?php echo $email; ?>"/></div></div>
 
                             <div class="content-form__data d-flex align-items-center justify-content-between flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
-                             <label for="email" class="required content-form__data-title size35px col-xl-4" >Телефон:</label>
+                             <label for="phone" class="required content-form__data-title size35px col-xl-4" >Телефон:</label>
                               <div class="wrap-content-form__data-input col-xl-8">
                             <input class="content-form__data-input col-xl-12" type="text" name="phone" placeholder="Телефон" value="<?php echo $phone; ?>"/></div></div>
 
                             <div class="content-form__data d-flex align-items-center justify-content-between flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
-                             <label for="email" class="required content-form__data-title size35px col-xl-4" >Пароль:</label>
+                             <label for="password" class="required content-form__data-title size35px col-xl-4" >Пароль:</label>
                               <div class="wrap-content-form__data-input col-xl-8">
                             <input class="content-form__data-input col-xl-12" type="password" name="password" placeholder="Пароль" value="<?php echo $password; ?>"/></div></div>
 
-                            <br/>
+                           
                            <div class="content-form__data d-flex align-items-center justify-content-end">
    <div class="col-xl-7 col-lg-4 col-md-4 col-sm-4 col-6  d-flex justify-content-end">
 
@@ -52,11 +55,12 @@ include ROOT . '/views/layouts/header3.php';?>
                     </div><!--/sign up form-->
                 
                 <?php endif; ?>
-                <br/>
-                <br/>
+                
             </div>
         </div>
     </div>
-</section>
+
+</div>
+</div>
 
 <?php include ROOT . '/views/layouts/footer2.php'; ?>

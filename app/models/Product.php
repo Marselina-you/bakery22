@@ -34,7 +34,7 @@ const SHOW_BY_DEFAULT = 3;
 	/**
 	* Returns an array of news items
 	*/
-	
+
 public static function getLatestProducts($count = self::SHOW_BY_DEFAULT) {
 		
 

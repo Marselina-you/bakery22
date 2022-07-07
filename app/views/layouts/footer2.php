@@ -55,22 +55,22 @@
                 <li class="fontSans whitecolor text-center"><a href="ji_loaf.php">белая выпечка</a></li>
             </ul>
                </li>
-               <li class="size35px fontSans whitecolor text-center"> <a href="">о нас</a></li>
-               <li class="size35px fontSans whitecolor text-center"> <a href="/user/register">
-               регистрация</a></li>
+               <li class="size35px fontSans whitecolor text-center"> <a href="/about">о нас</a></li>
+              
                 <li class="size35px fontSans whitecolor text-center batono"><a href="/cart">
                корзина(<span id="cart-count"></span>)</a></li>
                
                 
-             
+              <?php if (User::isGuest()): ?>
                 <li class="size35px fontSans whitecolor text-center"><a href="/user/login/"
                     class="baton">
                вход</a></li>
-               
+                <?php else: ?>
                <li class="size35px fontSans whitecolor text-center"> <a href="/cabinet/">
-              account</a></li>
+              Аккаунт(<?php echo $user['name'];?>)</a></li>
               <li class="size35px fontSans whitecolor text-center"> <a href="/user/logout/">
-              out</a></li>   
+             Выход</a></li>
+               <?php endif; ?>    
           </li>
 
           

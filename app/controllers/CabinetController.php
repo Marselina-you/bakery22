@@ -19,9 +19,10 @@ class CabinetController
         $user = User::getUserById($userId);
         
         $name = $user['name'];
-        $password = $user['password'];
+        
         $email = $user['email'];
         $phone = $user['phone'];
+        $password = $user['password'];
                 
         $result = false;     
 
@@ -42,7 +43,7 @@ class CabinetController
             }
             
             if ($errors == false) {
-                $result = User::edit($userId, $name, $password);
+                $result = User::edit($userId, $name, $email, $phone,  $password);
             }
 
         }

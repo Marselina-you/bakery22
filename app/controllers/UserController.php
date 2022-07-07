@@ -6,6 +6,7 @@ class UserController
         $name = '';
         $email = '';
         $password = '';
+        $role = '';
         $phone = '';
         $result = false;
 
@@ -13,7 +14,9 @@ class UserController
             $name = $_POST['name'];
             $email = $_POST['email'];
             $password = $_POST['password'];
+            $role = $_POST['role'];
             $phone = $_POST['phone'];
+          
 
             $errors = false;
             
@@ -28,11 +31,12 @@ class UserController
             if (!User::checkPassword($password)) {
                 $errors[] = 'Пароль не должен быть короче 6-ти символов';
             }
+           
             if (User::checkEmailExists($email)) {
                 $errors[] = 'Такой email уже используется';
             }
             if ($errors == false) {
-                $result = User::register($name, $email, $password);
+                $result = User::register($name, $email, $password, $role, $phone);
             }
             
         }   
@@ -41,8 +45,10 @@ class UserController
     }
     public function actionLogin()
     {
+        $name = '';
         $email = '';
         $password = '';
+        $phone = '';
         
         if (isset($_POST['submit'])) {
             $email = $_POST['email'];

@@ -23,7 +23,7 @@ include ROOT . '/views/layouts/header3.php';?>
             <div class="user-index-actual__num size24px fontArial text-center darkBlue cart-order__name_padding">235098766</div>
             <div class="wrap-user-index-actual-cart d-flex justify-content-center  col-xl-4">
                 <div class="user-index-actual-cart d-flex flex-column align-items-center ">
-                    <div class="user-index-actual-cart__img cart-order__name_padding d-flex justify-content-center"><img src="../images/page.png"></div>
+                    <div class="user-index-actual-cart__img cart-order__name_padding d-flex justify-content-center"><img src="/template/images/page.png"></div>
                     <div class="user-index-actual-cart__name cart-order__name_padding size29px fontSans brownDark">Пирожные. Ассорти</div>
                 </div>
             </div>
@@ -41,7 +41,7 @@ include ROOT . '/views/layouts/header3.php';?>
             <div class="user-index-actual__num size24px fontArial text-center darkBlue cart-order__name_padding">235098766</div>
             <div class="wrap-user-index-actual-cart d-flex justify-content-center  col-xl-4">
                 <div class="user-index-actual-cart d-flex flex-column align-items-center ">
-                    <div class="user-index-actual-cart__img cart-order__name_padding d-flex justify-content-center"><img src="../images/page2.png"></div>
+                    <div class="user-index-actual-cart__img cart-order__name_padding d-flex justify-content-center"><img src="/template/images/page2.png"></div>
                     <div class="user-index-actual-cart__name cart-order__name_padding size29px fontSans brownDark">Пирожные. Ассорти</div>
                 </div>
             </div>
@@ -72,7 +72,7 @@ include ROOT . '/views/layouts/header3.php';?>
       </div>
 <div class="content-form__data d-flex align-items-center justify-content-end">
    <div class="col-xl-7 col-lg-4 col-md-4 col-sm-4 col-6  d-flex justify-content-end">
-<button  class="content-order-end__click__btn btn btn-success size29px col-xl-6" type="button"><a href="/cabinet/edit">Редактировать</a></button></div></div>
+<button  class="content-order-end__click__btn btn btn-success size29px col-xl-6" type="button"><a href="/cabinet/edit" class="white">Редактировать</a></button></div></div>
    </form>
    
             

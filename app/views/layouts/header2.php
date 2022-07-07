@@ -22,8 +22,18 @@
                      <div class="text__item brownDark fontSans size16px">Написать</div>
                 </div>
                  <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
-                    <img src="/template/images/account.png" alt="">
-                    <div class="text__item brownDark fontSans size16px">Войти</div>
+                   <?php if (User::isGuest()): ?>
+                    <a href="/user/login/"
+                    ><img src="/template/images/account.png" alt=""></a>
+                     <div class="text__item brownDark fontSans size16px"><a href="/user/login/"
+                    >Войти</a></div>
+                      <?php else: ?>
+               <a href="/user/login/"
+                    ><img src="/template/images/account.png" alt=""></a>
+                     <div class="text__item brownDark fontSans size16px"><a href="/cabinet/">
+             <?php echo $user['name'];?></a></div>
+             
+               <?php endif; ?>    
                 </div>
             </div>
                  <div class="text d-flex justify-content-between">

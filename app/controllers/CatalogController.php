@@ -9,6 +9,8 @@ class CatalogController
 
         $latestProducts = array();
         $latestProducts = Product::getLatestProducts(3);
+        $userId = User::checkLoggedSite();
+        $user = User::getUserById($userId);
 
         
         require_once(ROOT . '/views/catalog/index.php');
@@ -25,6 +27,8 @@ class CatalogController
 
         $categoryProducts = array();
         $categoryProducts = Product::getProductsListByCategory($categoryId, $page);
+         $userId = User::checkLoggedSite();
+        $user = User::getUserById($userId);
 
         $total = Product::getTotalProductsInCategory($categoryId);
         // Создаем объект Pagination - постраничная навигация
