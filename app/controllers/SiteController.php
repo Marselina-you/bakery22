@@ -16,6 +16,7 @@ class SiteController {
         
         $userId = User::checkLoggedSite();
         $user = User::getUserById($userId);
+        //$result = User::register();
 
 		require_once(ROOT . '/views/site/index.php');
 

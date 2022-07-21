@@ -13,7 +13,8 @@ return array(
     'cart/addAjax/([0-9]+)' => 'cart/addAjax/$1', // actionAdd в CartController
     'cart' => 'cart/index', // actionIndex в CartController
     
-	'user/register' => 'user/register',
+	'user/register' => 'user/register',//actionRegister b UserController
+	//'user/result' => 'user/result',//actionRersult b UserController
 	'user/login' => 'user/login',
 	'user/logout' => 'user/logout',
 	'cabinet/edit' => 'cabinet/edit',//actionEdit in CabinetController

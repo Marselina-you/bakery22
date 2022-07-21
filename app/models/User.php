@@ -9,6 +9,7 @@ class User
                 . 'VALUES (:name, :email, :password, :role, :phone)';
         
         $result = $db->prepare($sql);
+
         $result->bindParam(':name', $name, PDO::PARAM_STR);
         $result->bindParam(':email', $email, PDO::PARAM_STR);
         $result->bindParam(':password', $password, PDO::PARAM_STR);

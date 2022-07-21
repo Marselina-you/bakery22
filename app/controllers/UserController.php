@@ -43,6 +43,10 @@ class UserController
         require_once(ROOT . '/views/user/register.php');
         return true;
     }
+   // public function actionResult()
+   // {
+        //require_once(ROOT . '/views/user/result.php');
+    //}
     public function actionLogin()
     {
         $name = '';

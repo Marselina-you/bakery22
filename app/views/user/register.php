@@ -1,6 +1,6 @@
 <?php include ROOT . '/views/layouts/header.php'; 
-include ROOT . '/views/layouts/header2.php';
-include ROOT . '/views/layouts/header3.php';?>
+//include ROOT . '/views/layouts/header2.php';
+//include ROOT . '/views/layouts/header3.php';?>
 
 <div class="wrap-content">
     <div class="main">
@@ -8,7 +8,7 @@ include ROOT . '/views/layouts/header3.php';?>
         <div class="main-enter">
             <div class="wrap-main-enter-content col-xl-6 offset-xl-1">    
                
-                    <?php if ($result): ?>
+                    <?php if ($result):?>
                     <div class ="required content-form__data-title size35px col-xl-4">Вы зарегистрированы!</div>
                     <div class ="content-order-end__click__btn btn btn-success size29px col-xl-4"><a href="">Войти</a>
                 <?php else: ?>
@@ -25,7 +25,7 @@ include ROOT . '/views/layouts/header3.php';?>
             </div>
                     
                        
-                        <form action="result" method="post" class="main-enter-content__form form_padding  d-flex flex-column">
+                        <form action="" method="post" class="main-enter-content__form form_padding  d-flex flex-column">
                              <div class="content-form__data d-flex align-items-center justify-content-between flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
                         <label for="name" class="required content-form__data-title size35px col-xl-4" >Имя:</label>
                          <div class="wrap-content-form__data-input col-xl-8">
@@ -61,4 +61,4 @@ include ROOT . '/views/layouts/header3.php';?>
     </div>
 </div></div>
 
-<?php include ROOT . '/views/layouts/footer2.php'; ?>
+<?php //include ROOT . '/views/layouts/footer2.php'; ?>
