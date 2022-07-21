@@ -66,11 +66,11 @@
 		playLink.click(function(){
 			if(playLink.hasClass('play')){
 				playLink.removeClass('play').addClass('pause');
-				jQuery('.navy').addClass('disable');
+				jQuery('.arrow').addClass('disable');
 				timer = setInterval(autoplay, 1000);
 			} else {
 				playLink.removeClass('pause').addClass('play');
-				jQuery('.navy').removeClass('disable');
+				jQuery('.arrow').removeClass('disable');
 				clearInterval(timer);
 			}
 		});
