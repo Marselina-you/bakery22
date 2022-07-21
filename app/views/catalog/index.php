@@ -24,7 +24,7 @@ include ROOT.'/views/layouts/header_category.php';?>
                         <div class="view-product-right__status  brownGrey size16px"><?php echo $product['nal'];?></div></div>
               </div></div>
                    <div class="d-flex view-product-left__button  justify-content-center">
-                  <button class="d-flex content-order-end__click__btn btn btn-success justify-content-center size29px size20px" type="button">В корзину</button></div>
+                  <div class="d-flex content-order-end__click__btn btn btn-success justify-content-center size29px size20px "><a href="/cart/add/<?php echo $product['id']; ?>" class="add-to-cart" data-id="<?php echo $product['id'];?>">В корзину</a></div></div>
                 </div>
 
 

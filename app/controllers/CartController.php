@@ -26,6 +26,8 @@ class CartController
     {
         $categories = array();
         $categories = Category::getCategoriesList();
+        $userId = User::checkLoggedSite();
+        $user = User::getUserById($userId);
 
         $productsInCart = false;
 

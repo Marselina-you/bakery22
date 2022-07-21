@@ -11,6 +11,7 @@ include ROOT . '/views/layouts/header3.php';?>
          <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column">
     <div class="edit__title  user-index_padding darkBlue fontSans size32px"><a href="" class="">Доставки</a></div>
      <div class="edit__title user-index_padding darkBlue fontSans size32px"><a href="" class="">Покупки</a></div>
+      <div class="edit__title user-index_padding darkBlue fontSans size32px"><a href="/cart" class="">Корзина<span id="cart-count"><?php echo '('; echo Cart::countItems();  echo ')';?></span></a></div>
       <div class="edit__title user-index_padding darkBlue fontSans size32px"><a href="" class="">Мои данные</a></div>
 
 </div> </div>

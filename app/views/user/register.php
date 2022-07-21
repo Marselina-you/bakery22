@@ -10,7 +10,7 @@
                
                     <?php if ($result):?>
                     <div class ="required content-form__data-title size35px col-xl-4">Вы зарегистрированы!</div>
-                    <div class ="content-order-end__click__btn btn btn-success size29px col-xl-4"><a href="">Войти</a>
+                    <div class ="content-order-end__click__btn btn btn-success size29px col-xl-4"><a href="/user/login/">Войти</a>
                 <?php else: ?>
                
                     <?php if (isset($errors) && is_array($errors)): ?>

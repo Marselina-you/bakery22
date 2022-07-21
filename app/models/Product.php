@@ -41,7 +41,7 @@ public static function getLatestProducts($count = self::SHOW_BY_DEFAULT) {
 		$db = Db::getConnection();
 		$latestProducts = array();
 
-		$result = $db->query('SELECT id, name,  description, price, weight, top1, top2, top3, slogan, ing1, ing2, ing3, best, nal FROM assortiment ORDER BY id ASC LIMIT '. $count);
+		$result = $db->query('SELECT id, name, description, price, weight, top1, top2, top3, slogan, ing1, ing2, ing3, best, nal FROM assortiment ORDER BY id ASC LIMIT '. $count);
 
 		$i = 0;
 		while($row = $result->fetch()) {
@@ -129,9 +129,9 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
         $i = 0;
         while ($row = $result->fetch()) {
             $products[$i]['id'] = $row['id'];
-            
             $products[$i]['name'] = $row['name'];
             $products[$i]['price'] = $row['price'];
+            $products[$i]['weight'] = $row['weight'];
             $i++;
         }
 

@@ -58,7 +58,7 @@
                <li class="size35px fontSans whitecolor text-center"> <a href="/about">о нас</a></li>
               
                 <li class="size35px fontSans whitecolor text-center batono"><a href="/cart">
-               корзина(<span id="cart-count"></span>)</a></li>
+               корзина<span id="cart-count"><?php echo '('; echo Cart::countItems();  echo ')';?></span></a></li>
                
                 
               <?php if (User::isGuest()): ?>
@@ -67,7 +67,7 @@
                вход</a></li>
                 <?php else: ?>
                <li class="size35px fontSans whitecolor text-center"> <a href="/cabinet/">
-              Аккаунт(<?php echo $user['name'];?>)</a></li>
+              Аккаунт<?php  echo '(';  echo $user['name'];  echo ')'; ?></a></li>
               <li class="size35px fontSans whitecolor text-center"> <a href="/user/logout/">
              Выход</a></li>
                <?php endif; ?>    
@@ -81,5 +81,18 @@
       <script src="/js/app.min.js"></script>
      <script src="/js/action_slider.js"></script>
       <script src="/js/menu.js"></script>
+      <script type="text/javascript">
+  
+    $(document).ready(function(){
+        $(".add-to-cart").click(function () {
+            var id = $(this).attr("data-id");
+            $.post("/cart/addAjax/"+id, {}, function (data) {
+                $("#cart-count").html(data);
+            });
+            return false;
+        });
+    });
+
+</script>
         </body>
  </html>
