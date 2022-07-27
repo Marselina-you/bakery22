@@ -23,6 +23,7 @@ return array(
 	'admin/product/create' => 'adminProduct/create',
 	'admin/product/update/([0-9]+)' => 'adminProduct/update/$1',
 	'admin/product/delete/([0-9]+)' => 'adminProduct/delete/$1',
+	'category/([0-9]+)/page-([0-9]+)' => 'adminCategory/category/$1/$2', // actionCategory в adminProductController   
 	'admin/product' => 'adminProduct/index',
 
 	//управление категориями

@@ -5,7 +5,10 @@ class AdminProductController extends AdminBase
 	{
 		self::checkAdmin();
 		$productsList = Product::getProductsList();
-
+ $userId = User::checkLoggedSite();
+        $user = User::getUserById($userId);
+        $categories = array();
+        $categories = Category::getCategoriesList();
 		require_once(ROOT . '/views/admin_product/index.php');
 		return true;
 	}
@@ -113,5 +116,8 @@ class AdminProductController extends AdminBase
         require_once(ROOT . '/views/admin_product/update.php');
         return true;
     }
-	
+    
+   
+    
 }
+	
