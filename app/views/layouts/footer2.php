@@ -13,7 +13,7 @@
                 </div>
                  <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
                     <img src="/template/images/basket.png" alt="">
-                     <div class="text__item brownDark fontSans size16px">Корзинa</div>
+                     <div class="text__item brownDark fontSans size16px">Корзинa<span id="cart-count"><?php if(Cart::countItems() > 0): echo'('; echo Cart::countItems();  echo ')';?><?php endif; ?></span></div>
                 </div>
                <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
                     <img src="/template/images/order.png" alt="">
@@ -58,7 +58,7 @@
                <li class="size35px fontSans whitecolor text-center"> <a href="/about">о нас</a></li>
               
                 <li class="size35px fontSans whitecolor text-center batono"><a href="/cart">
-               корзина<span id="cart-count"><?php echo '('; echo Cart::countItems();  echo ')';?></span></a></li>
+               корзина<span id="cart-count"><?php if(Cart::countItems() > 0): echo'('; echo Cart::countItems();  echo ')';?><?php endif; ?></span></a></li>
                
                 
               <?php if (User::isGuest()): ?>
