@@ -9,11 +9,22 @@ class AdminController extends AdminBase
 		require_once(ROOT . '/views/admin/index.php');
 		return true;
 	}
-	public function actionCatalog($categoryId, $page = 1)
+    public function actionCatalog()
+    {
+        self::checkAdmin();
+        $productsList = Product::getProductsList();
+        $userId = User::checkLoggedSite();
+        $user = User::getUserById($userId);
+        $categories = array();
+        $categories = Category::getCategoriesList();
+        require_once(ROOT . '/views/admin/product.php');
+        return true;
+    }
+	public function actionCategory($categoryId, $page = 1)
     {
         $categories = array();
         $categories = Category::getCategoriesList();
-        echo "category" .$categoryId;
+        echo "categoryyy" .$categoryId;
         echo '<br>Page:' .$page;
         
 

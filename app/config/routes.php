@@ -23,9 +23,9 @@ return array(
 	'admin/product/create' => 'adminProduct/create',
 	'admin/product/update/([0-9]+)' => 'adminProduct/update/$1',
 	'admin/product/delete/([0-9]+)' => 'adminProduct/delete/$1',
-	'category/([0-9]+)/page-([0-9]+)' => 'adminCategory/category/$1/$2', // actionCategory в adminProductController   
-	'admin/product' => 'adminProduct/index',
-
+	 
+	'admin/catalog' => 'admin/catalog', //actionCatalog in adminController
+    'category/([0-9]+)/page-([0-9]+)' => 'admin/category/$1/$2', // actionCategory в adminController  
 	//управление категориями
 	'admin/category/create' => 'adminCategory/create',
 	'admin/category/update/([0-9]+)' => 'adminCategory/update/$1',
