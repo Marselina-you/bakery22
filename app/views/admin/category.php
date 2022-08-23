@@ -13,7 +13,7 @@ include ROOT . '/views/layouts/header.php';
 <div class="edit__title title_padding fontSans size29px"><a href="" class="orange">Добавить новый товар</a></div>
 <div class="d-flex col-xl-12">
                     <?php foreach ($categories as $categoryItem): ?>
-                <div class="edit__title title_padding darkBlue fontSans size29px"><a href="category/<?php echo $categoryItem['id'];?>" class="col-xl-6 <?php if ($categoryId == $categoryItem['id']) echo 'active'; else echo'white'; ?>"><?php echo $categoryItem['name'];?></a>
+                <div class="edit__title title_padding darkBlue fontSans size29px"><a href="/categorys/<?php echo $categoryItem['id'];?>" class="col-xl-6 <?php if ($categoryId == $categoryItem['id']) echo 'active'; else echo'white'; ?>"><?php echo $categoryItem['name'];?></a>
         </div>
        
                    

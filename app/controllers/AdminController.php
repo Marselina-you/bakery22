@@ -17,6 +17,7 @@ class AdminController extends AdminBase
         $user = User::getUserById($userId);
         $categories = array();
         $categories = Category::getCategoriesList();
+        echo "action Catalog in AdminController";
         require_once(ROOT . '/views/admin/product.php');
         return true;
     }
@@ -42,25 +43,28 @@ class AdminController extends AdminBase
 
         return true;
     }
-	public function actionCategory($categoryId, $page = 1)
+	public function actionCategorys($categoryId)
     {
         $categories = array();
         $categories = Category::getCategoriesList();
-        echo "categoryyy" .$categoryId;
-        echo '<br>Page:' .$page;
+          echo "action Cattegory in AdminController";
+          echo "</br>";
+        echo "categorys" .$categoryId;
+       echo "</br>";
+      echo "страница admin/category";
         
 
         $categoryProducts = array();
-        $categoryProducts = Product::getProductsListByCategory($categoryId, $page);
+        $categoryProducts = Product::getProductsListByCategory($categoryId);
          $userId = User::checkLoggedSite();
         $user = User::getUserById($userId);
 
         $total = Product::getTotalProductsInCategory($categoryId);
         // Создаем объект Pagination - постраничная навигация
-        $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page-');
+      
       
 
-        require_once(ROOT . '/views/admin_product/category.php');
+        require_once(ROOT . '/views/admin/category.php');
 
         return true;
     }

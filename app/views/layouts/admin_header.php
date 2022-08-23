@@ -4,7 +4,7 @@
             <div class="icons d-flex align-items-center justify-content-between">
                  <div class="icons__item icons__item_padding d-flex  align-items-center">
                     <img src="/template/images/admin.png" alt="">
-                     <div class="content-form__data text__item"><a href="/admin" class="brownDark fontSans size29px">АминПанель</a></div>
+                     <div class="content-form__data text__item"><a href="/admin" class="brownDark fontSans size29px">АдминПанель</a></div>
                 </div>
                  <div class="icons__item icons__item_padding d-flex  align-items-center">
                     <img src="/template/images/admin3.png" alt="">

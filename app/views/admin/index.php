@@ -24,6 +24,6 @@ include ROOT . '/views/layouts/header.php';
 <button class="content-order-end__click__btn btn btn-success size29px col-xl-9 col-lg-9 col-md-9 col-sm-9 col-9 " type="button">Отправить</button></div></div>
    </form>
     </div></div></div>
-<?php include ROOT . '/views/layouts/admin_footer.php'; ?>
+<?php include ROOT . '/views/layouts/footer_admin.php'; ?>
 
 

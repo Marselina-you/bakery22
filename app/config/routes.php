@@ -19,19 +19,19 @@ return array(
 	'user/logout' => 'user/logout',
 	'cabinet/edit' => 'cabinet/edit',//actionEdit in CabinetController
 	'cabinet' => 'cabinet/index',
-	'admin' => 'admin/index',
+	
 	//Управление товарами
 	'admin/product/create' => 'adminProduct/create',
     'admin/product/update/([0-9]+)' => 'adminProduct/update/$1',
     'admin/product/delete/([0-9]+)' => 'adminProduct/delete/$1',
-    'admin/product' => 'adminProduct/index',
-	 
+    //'admin/catalog/([0-9]+)' => 'adminProduct/catalog/$1',
+   
 	
 	//управление категориями
 	'admin/category/create' => 'adminCategory/create',
 	'admin/category/update/([0-9]+)' => 'adminCategory/update/$1',
 	'admin/category/delete/([0-9]+)' => 'adminCategory/delete/$1',
-	'admin/category' => 'adminCategory/index',
+	//'admin/category' => 'adminCategory/index',
 
 
 		//управление заказами
@@ -42,6 +42,11 @@ return array(
 
 	
 	'about' => 'about/index',// actionIndex в aboutController
+	'admin/categorys/([0-9]+)' => 'admin/categorys/$1', //actionCategory in CatalogController
+	'categorys/([0-9]+)' => 'admin/categorys/$1',
+	'admin' => 'admin/index',
+	 //'admin/catalog' => 'adminProduct/index',
+	 
 	'' => 'site/index',// actionIndex в SiteController 
 
 
