@@ -12,10 +12,7 @@ class AdminProductController extends AdminBase
 		require_once(ROOT . '/views/admin/index.php');
 		return true;
 	}
-	public function actionCategory()
-	{
-		echo "categ";
-	}
+	
 
 	public function actionDelete($id)
 	{
@@ -31,6 +28,9 @@ class AdminProductController extends AdminBase
 	public function actionCreate()
 	{
 		self::checkAdmin();
+	
+        $userId = User::checkLoggedSite();
+        $user = User::getUserById($userId);
 		$categoriesList = Category::getCategoriesListAdmin();
 
 		if (isset($_POST['submit'])) {

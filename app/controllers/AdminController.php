@@ -47,7 +47,7 @@ class AdminController extends AdminBase
     {
         $categories = array();
         $categories = Category::getCategoriesList();
-          echo "action Cattegory in AdminController";
+          echo "action Categorys in AdminController";
           echo "</br>";
         echo "categorys" .$categoryId;
        echo "</br>";

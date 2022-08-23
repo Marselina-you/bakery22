@@ -21,7 +21,7 @@ return array(
 	'cabinet' => 'cabinet/index',
 	
 	//Управление товарами
-	'admin/product/create' => 'adminProduct/create',
+	'create' => 'adminProduct/create',
     'admin/product/update/([0-9]+)' => 'adminProduct/update/$1',
     'admin/product/delete/([0-9]+)' => 'adminProduct/delete/$1',
     //'admin/catalog/([0-9]+)' => 'adminProduct/catalog/$1',
@@ -42,7 +42,7 @@ return array(
 
 	
 	'about' => 'about/index',// actionIndex в aboutController
-	'admin/categorys/([0-9]+)' => 'admin/categorys/$1', //actionCategory in CatalogController
+	'admin/categorys/([0-9]+)' => 'admin/categorys/$1', //actionCategorys in adminController
 	'categorys/([0-9]+)' => 'admin/categorys/$1',
 	'admin' => 'admin/index',
 	 //'admin/catalog' => 'adminProduct/index',

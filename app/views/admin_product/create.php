@@ -1,6 +1,9 @@
-<?php include ROOT . '/views/layouts/header_admin.php'; ?>
-
-<h1>АДМИНКАюДобавление товарав</h1>
+<?php include ROOT . '/views/layouts/admin_header.php';
+include ROOT . '/views/layouts/header.php'; ?>
+ <div class="wrap-content">
+    <div class="main">
+  <div class="container-fluid col-xl-12 edit">
+<h1>АДМИНКА Добавление товарав</h1>
  <?php if (isset($errors) && is_array($errors)): ?>
                 <ul>
                     <?php foreach ($errors as $error): ?>
@@ -50,5 +53,5 @@
 
 
 	<input type="submit" name="submit" value="Сохранить">
-</form>
+</form></div></div></div>
 <?php include ROOT . '/views/layouts/footer_admin.php'; ?>
