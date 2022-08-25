@@ -14,7 +14,7 @@ include ROOT.'/views/layouts/header_category.php';?>
             <div class="d-flex view-product flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column justify-content-center justify-content-sm-start">
                 <div class="view-product-left col-xl-6 col-lg-6 flex-column">
                 <div class="d-flex view-product-left__img justify-content-center">
-                    <img src="/template/images/page2.png"  alt="" /></div>
+                    <img src="/template/images/<?php echo $product['photo'];?>"  alt="" /></div>
                 <div class="wrap-view-product-left__info d-flex justify-content-center"><div class="d-flex view-product-left__info title_padding align-items-start flex-column">
                  
                   <div class="brownDark justify-content-center font-weight-bold size24px"><?php echo $product['price'];?><span class="rubl">₽</span></div>

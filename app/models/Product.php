@@ -41,7 +41,7 @@ public static function getLatestProducts($count = self::SHOW_BY_DEFAULT) {
 		$db = Db::getConnection();
 		$latestProducts = array();
 
-		$result = $db->query('SELECT id, name, description, price, weight, top1, top2, top3, slogan, ing1, ing2, ing3, best, nal FROM assortiment ORDER BY id ASC LIMIT '. $count);
+		$result = $db->query('SELECT id, name, description, price, weight, top1, top2, top3, slogan, ing1, ing2, ing3, best, nal, photo FROM assortiment ORDER BY id ASC LIMIT '. $count);
 
 		$i = 0;
 		while($row = $result->fetch()) {
@@ -60,6 +60,7 @@ public static function getLatestProducts($count = self::SHOW_BY_DEFAULT) {
 			$latestProducts[$i]['ing3'] = $row['ing3'];
             $latestProducts[$i]['best'] = $row['best'];
             $latestProducts[$i]['nal'] = $row['nal'];
+             $latestProducts[$i]['photo'] = $row['photo'];
 			$i++;
 		}
 
@@ -75,7 +76,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
 
             $db = Db::getConnection();            
             $products = array();
-            $result = $db->query("SELECT  id, name, price, weight, description, ing1, ing2, ing3, slogan, top1, top2, top3, best, nal FROM assortiment WHERE category_id = '$categoryId' "
+            $result = $db->query("SELECT  id, name, price, weight, description, ing1, ing2, ing3, slogan, top1, top2, top3, best, nal, photo FROM assortiment WHERE category_id = '$categoryId' "
                     . "ORDER BY id ASC LIMIT ".self::SHOW_BY_DEFAULT
                      . ' OFFSET '. $offset);
 
@@ -96,6 +97,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
                 $products[$i]['top3'] = $row['top3'];
                 $products[$i]['best'] = $row['best'];
                 $products[$i]['nal'] = $row['nal'];
+                $products[$i]['photo'] = $row['photo'];
                 $i++;
             }
 
@@ -142,14 +144,28 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
     	$db = Db::getConnection();
 		$productsList = array();
 
-		$result = $db->query('SELECT id, name,  price FROM assortiment ORDER BY id');
+		$result = $db->query('SELECT* FROM assortiment ORDER BY id');
 		$i = 0;
 		while($row = $result->fetch()) {
 			$productsList[$i]['id'] = $row['id'];
+            $productsList[$i]['category_id'] = $row['category_id'];
 			$productsList[$i]['name'] = $row['name'];
 			$productsList[$i]['price'] = $row['price'];
-			
+            $productsList[$i]['weight'] = $row['weight'];
+            $productsList[$i]['photo'] = $row['photo'];
+			$productsList[$i]['description'] = $row['description'];
+            $productsList[$i]['ing1'] = $row['ing1'];
+            $productsList[$i]['ing2'] = $row['ing2'];
+            $productsList[$i]['ing3'] = $row['ing3'];
+            $productsList[$i]['slogan'] = $row['slogan'];
+            $productsList[$i]['top1'] = $row['top1'];
+            $productsList[$i]['top2'] = $row['top2'];
+            $productsList[$i]['top3'] = $row['top3'];
+            $productsList[$i]['best'] = $row['best'];
+            $productsList[$i]['nal'] = $row['nal'];
+           
 			$i++;
+
 		}
 
 		return $productsList;
@@ -169,10 +185,10 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
 
     	$sql = 'INSERT INTO assortiment '
                 . '(category_id, name,  price,  weight, '
-                . 'description, ing1, ing2, ing3, slogan, top1, top2, top3, best, nal)'
+                . 'description, ing1, ing2, ing3, slogan, top1, top2, top3, best, nal, photo)'
                 . 'VALUES '
                 . '(:category_id, :name,  :price,  :weight, '
-                . ':description, :ing1, :ing2, :ing3, :slogan, :top1, :top2, :top3, :best, :nal)';
+                . ':description, :ing1, :ing2, :ing3, :slogan, :top1, :top2, :top3, :best, :nal, :photo)';
     	$result = $db->prepare($sql);
     	$result->bindParam(':category_id', $options['category_id'], PDO::PARAM_INT);
     	$result->bindParam(':name', $options['name'], PDO::PARAM_STR);
@@ -188,6 +204,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
     	$result->bindParam(':top3', $options['top3'], PDO::PARAM_STR);
         $result->bindParam(':best', $options['best'], PDO::PARAM_STR);
         $result->bindParam(':nal', $options['nal'], PDO::PARAM_STR);
+         $result->bindParam(':photo', $options['photo'], PDO::PARAM_STR);
     	if ($result->execute()) {
     		return $db->lastInsertId();
 
@@ -236,7 +253,8 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
                 top2 = :top2,
                 top3 = :top3,
                 best = :best,
-                nal = :nal
+                nal = :nal,
+                photo = :photo
             WHERE id = :id";
 
         // Получение и возврат результатов. Используется подготовленный запрос

@@ -46,6 +46,9 @@ class AdminProductController extends AdminBase
 			$options['top1'] = $_POST['top1'];
 			$options['top2'] = $_POST['top2'];
 			$options['top3'] = $_POST['top3'];
+			$options['best'] = $_POST['best'];
+			$options['nal'] = $_POST['nal'];
+			$options['photo'] = $_POST['photo'];
 
 			$errors = false;
 

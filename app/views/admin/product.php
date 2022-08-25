@@ -19,12 +19,32 @@ include ROOT . '/views/layouts/admin_header.php';
 	<?php foreach ($productsList as $product): ?>
 		 
 
- <div class="edit-cart bottom_padding d-flex col-xl-4 col-lg-6">
-         <div class="edit-cart__img"><img width ="80%" src="../template/images/page.png"></div>
+ <div class="edit-cart bottom_padding d-flex col-xl-6 col-lg-6">
+         <div class="edit-cart__img col-xl-4"><img width ="80%" src="../template/images/<?php echo $product['photo']; ?>"></div>
          <div class="edit-cart__content d-flex flex-column">
-        <div class="edit-cart__title bottom_padding10 font-weight-bold size20px"><?php echo $product['name']; ?></div>
-       <div class=""><div class="edit-cart__title bottom_padding10 size20px">Цена: <?php echo $product['price']; ?></div>
+        <div class="edit-cart__title bottom_padding10 font-weight-bold size20px"><div class="burgundy  fontSegoePrint font-weight-bold size35px padding-15"><?php echo $product['name']; ?></div></div>
+       <div class=""><div class="edit-cart__title bottom_padding10 size20px"><div class="brownDark justify-content-center font-weight-bold size24px"><?php echo $product['price']; ?><span class="rubl">₽</span></div></div>
          <div class="edit__category bottom_padding10 size20px">Категория: пирожные</div></div>
+          <div class=""><div class="view-product-right-info__item brownDark bottom_padding fontSegoePrint size20px"><?php echo $product['weight']; ?> грамм</div>
+        <div class="bottom_padding d-flex flex-column brownDark fontSegoePrint size20px line-height1"><?php echo $product['description']; ?></div></div>
+          <div class=""><div class="">Ингредиенты: <div class="view-product-right-info__item brownDark fontSegoePrint size20px"><span class=""> -</span><?php echo $product['ing1']; ?></div>
+         <div class="view-product-right-info__item brownDark fontSegoePrint size20px"><span class=""> -</span><?php echo $product['ing2']; ?></div>
+          <div class="view-product-right-info__item brownDark fontSegoePrint size20px"><span class=""> -</span><?php echo $product['ing3']; ?></div>
+      </div>
+         <div class="d-flex"><div class="size20px">Слоган:&nbsp; </div><div class="view-product-right-info__slogan brownLight size20px fontSegoePrint"> <?php echo $product['slogan']; ?></div>
+     </div></div>
+          <div class=""><div class="edit-cart__title bottom_padding10 size20px">Топ1: <div class="view-product-right-info__ing1 view-product-right-info__ing_padding d-flex justify-content-center align-items-center  white size24px fontTahoma"><?php echo $product['top1']; ?> </div></div>
+           <div class=""><div class="edit-cart__title bottom_padding10 size20px">Топ1: <div class="view-product-right-info__ing_padding d-flex justify-content-center align-items-center size24px fontTahoma"><?php echo $product['top2']; ?></div> </div>
+            <div class=""><div class="edit-cart__title bottom_padding10 size20px">Топ1:<div class="view-product-right-info__ing3 view-product-right-info__ing_padding d-flex justify-content-center align-items-center white size24px fontTahoma"> <?php echo $product['top3']; ?></div> </div>
+         <div class="edit__category bottom_padding10 size20px d-flex">Статус: <div class="view-product-right__status padding_status justify-content-center orange size24px"><?php echo $product['best']; ?></div></div>
+          <div class="edit__category bottom_padding10 size20px">Наличие: <div class="view-product-right__status  brownGrey size16px"><?php echo $product['nal']; ?></div></div>
+     </div></div></div>
+
+
+
+
+
+
         <div class="edit-cart__operations">
         <div class="edit-cart__operation bottom_padding10"><a href="" class="size20px darkBlue">Скрыть для пользователя</a></div>
         <div class="edit-cart__operation bottom_padding10"><a href="/admin/product/update/<?php echo $product['id']; ?>" class="size20px darkBlue">Редактировать</a></div>
