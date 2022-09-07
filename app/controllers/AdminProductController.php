@@ -48,7 +48,8 @@ class AdminProductController extends AdminBase
 			$options['top3'] = $_POST['top3'];
 			$options['best'] = $_POST['best'];
 			$options['nal'] = $_POST['nal'];
-			$options['photo'] = $_POST['photo'];
+			
+			
 
 			$errors = false;
 
@@ -58,11 +59,15 @@ class AdminProductController extends AdminBase
 			if ($errors == false) {
 				$id = Product::createProduct($options);
 				if ($id) {
-					if (is_uploaded_file($_FILES["image"]["tmp_name"])) {
-						move_uploaded_file($_FILES["image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "/upload/images/products/{$id}.jpg");
-					}
-				};
-				header("Location: /admin/product");
+                    // Проверим, загружалось ли через форму изображение
+                    if (is_uploaded_file($_FILES["image"]["tmp_name"])) {
+                        // Если загружалось, переместим его в нужную папке, дадим новое имя
+                        move_uploaded_file($_FILES["image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "/upload/images/products/{$id}.jpg");
+                    }
+                };
+				// Перенаправляем пользователя на страницу управлениями товарами
+                header("Location: /admin/catalog");
+				
 			}
 			
 		}

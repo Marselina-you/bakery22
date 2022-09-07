@@ -152,7 +152,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
 			$productsList[$i]['name'] = $row['name'];
 			$productsList[$i]['price'] = $row['price'];
             $productsList[$i]['weight'] = $row['weight'];
-            $productsList[$i]['photo'] = $row['photo'];
+            //$productsList[$i]['photo'] = $row['photo'];
 			$productsList[$i]['description'] = $row['description'];
             $productsList[$i]['ing1'] = $row['ing1'];
             $productsList[$i]['ing2'] = $row['ing2'];
@@ -185,13 +185,14 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
 
     	$sql = 'INSERT INTO assortiment '
                 . '(category_id, name,  price,  weight, '
-                . 'description, ing1, ing2, ing3, slogan, top1, top2, top3, best, nal, photo)'
+                . 'description, ing1, ing2, ing3, slogan, top1, top2, top3, best, nal)'
                 . 'VALUES '
                 . '(:category_id, :name,  :price,  :weight, '
-                . ':description, :ing1, :ing2, :ing3, :slogan, :top1, :top2, :top3, :best, :nal, :photo)';
+                . ':description, :ing1, :ing2, :ing3, :slogan, :top1, :top2, :top3, :best, :nal )';
     	$result = $db->prepare($sql);
-    	$result->bindParam(':category_id', $options['category_id'], PDO::PARAM_INT);
+    	
     	$result->bindParam(':name', $options['name'], PDO::PARAM_STR);
+        $result->bindParam(':category_id', $options['category_id'], PDO::PARAM_INT);
     	$result->bindParam(':price', $options['price'], PDO::PARAM_STR);
     	$result->bindParam(':weight', $options['weight'], PDO::PARAM_STR);
     	$result->bindParam(':description', $options['description'], PDO::PARAM_STR);
@@ -203,8 +204,8 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
     	$result->bindParam(':top2', $options['top2'], PDO::PARAM_STR);
     	$result->bindParam(':top3', $options['top3'], PDO::PARAM_STR);
         $result->bindParam(':best', $options['best'], PDO::PARAM_STR);
-        $result->bindParam(':nal', $options['nal'], PDO::PARAM_STR);
-         $result->bindParam(':photo', $options['photo'], PDO::PARAM_STR);
+        $result->bindParam(':nal', $options['nal'], PDO::PARAM_INT);
+         
     	if ($result->execute()) {
     		return $db->lastInsertId();
 
