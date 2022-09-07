@@ -20,7 +20,7 @@ include ROOT . '/views/layouts/admin_header.php';
 		 
 
  <div class="edit-cart bottom_padding d-flex col-xl-6 col-lg-6">
-         <div class="edit-cart__img col-xl-4"><img width ="80%" src="../upload/images/products/<?php echo $product['new_picture'];?>"></div>
+         <div class="edit-cart__img col-xl-4"><img width ="80%" src="/upload/images/products/<?php echo $product['new_picture'];?>"></div>
          <div class="edit-cart__content d-flex flex-column">
         <div class="edit-cart__title bottom_padding10 font-weight-bold size20px"><div class="burgundy fontSegoePrint font-weight-bold size35px padding-15"><?php echo $product['name']; ?></div></div>
        <div class=""><div class="edit-cart__title bottom_padding10 size20px"><div class="brownDark justify-content-center font-weight-bold size24px"><?php echo $product['price']; ?><span class="rubl">₽</span></div></div>
