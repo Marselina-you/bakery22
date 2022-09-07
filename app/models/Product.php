@@ -188,7 +188,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
                 . 'description, ing1, ing2, ing3, slogan, top1, top2, top3, best, nal)'
                 . 'VALUES '
                 . '(:category_id, :name,  :price,  :weight, '
-                . ':description, :ing1, :ing2, :ing3, :slogan, :top1, :top2, :top3, :best, :nal )';
+                . ':description, :ing1, :ing2, :ing3, :slogan, :top1, :top2, :top3, :best, :nal)';
     	$result = $db->prepare($sql);
     	
     	$result->bindParam(':name', $options['name'], PDO::PARAM_STR);
@@ -205,6 +205,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
     	$result->bindParam(':top3', $options['top3'], PDO::PARAM_STR);
         $result->bindParam(':best', $options['best'], PDO::PARAM_STR);
         $result->bindParam(':nal', $options['nal'], PDO::PARAM_INT);
+        
          
     	if ($result->execute()) {
     		return $db->lastInsertId();

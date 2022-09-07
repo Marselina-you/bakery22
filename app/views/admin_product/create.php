@@ -82,7 +82,7 @@ include ROOT . '/views/layouts/header.php'; ?>
 		    		</div>
 <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
 	<div class="burgundyLight edit-cart__title size20px">Изображение товара</div>
-	<input type="file" name="image" placeholder="" value=""></div>		    	
+	<input type="file" name="new_picture" placeholder="" value=""></div>		    	
 <div class="d-flex justify-content-end">
 	<input type="submit" name="submit" value="Сохранить" class="btn btn-success size24px"></div>
 </form></div>
