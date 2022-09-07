@@ -185,10 +185,10 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
 
     	$sql = 'INSERT INTO assortiment '
                 . '(category_id, name,  price,  weight, '
-                . 'description, ing1, ing2, ing3, slogan, top1, top2, top3, best, nal)'
+                . 'description, ing1, ing2, ing3, slogan, top1, top2, top3, best, nal, new_picture)'
                 . 'VALUES '
                 . '(:category_id, :name,  :price,  :weight, '
-                . ':description, :ing1, :ing2, :ing3, :slogan, :top1, :top2, :top3, :best, :nal)';
+                . ':description, :ing1, :ing2, :ing3, :slogan, :top1, :top2, :top3, :best, :nal, :new_picture)';
     	$result = $db->prepare($sql);
     	
     	$result->bindParam(':name', $options['name'], PDO::PARAM_STR);
@@ -205,7 +205,8 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
     	$result->bindParam(':top3', $options['top3'], PDO::PARAM_STR);
         $result->bindParam(':best', $options['best'], PDO::PARAM_STR);
         $result->bindParam(':nal', $options['nal'], PDO::PARAM_INT);
-        
+        $result->bindParam(':new_picture', $options['new_picture'], PDO::PARAM_STR);
+
          
     	if ($result->execute()) {
     		return $db->lastInsertId();
