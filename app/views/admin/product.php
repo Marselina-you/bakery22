@@ -5,7 +5,7 @@ include ROOT . '/views/layouts/admin_header.php';
     <div class="main">
   <div class="container-fluid col-xl-12 edit">
   	<?php include ROOT . '/views/layouts/admin_menu.php';?>
-<div class="edit__title title_padding fontSans size29px"><a href="/create" class="orange">Добавить новый товар</a></div>
+<div class="edit__title title_padding fontSans size29px"><a href="/create" class="orange">Добаить новый товар</a></div>
 <div class="d-flex col-xl-12">
                     <?php foreach ($categories as $categoryItem): ?>
                 <div class="edit__title title_padding darkBlue fontSans size29px"><a href="categorys/<?php echo $categoryItem['id'];?>" class="col-xl-6 <?php if ($categoryId == $categoryItem['id']) echo 'active'; else echo'brownLight'; ?>"><?php echo $categoryItem['name'];?></a>
@@ -20,7 +20,7 @@ include ROOT . '/views/layouts/admin_header.php';
 		 
 
  <div class="edit-cart bottom_padding d-flex col-xl-6 col-lg-6">
-         <div class="edit-cart__img col-xl-4"><img width ="80%" src="../template/images/<?php echo $product['photo']; ?>"></div>
+         <div class="edit-cart__img col-xl-4"><img width ="80%" src="../upload/images/products/<?php echo $product['new_picture'];?>"></div>
          <div class="edit-cart__content d-flex flex-column">
         <div class="edit-cart__title bottom_padding10 font-weight-bold size20px"><div class="burgundy fontSegoePrint font-weight-bold size35px padding-15"><?php echo $product['name']; ?></div></div>
        <div class=""><div class="edit-cart__title bottom_padding10 size20px"><div class="brownDark justify-content-center font-weight-bold size24px"><?php echo $product['price']; ?><span class="rubl">₽</span></div></div>

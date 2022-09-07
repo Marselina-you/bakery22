@@ -76,8 +76,8 @@ include ROOT . '/views/layouts/header.php'; ?>
 	<div class="burgundyLight edit-cart__title size20px">Наличие</div>
 	<select name="nal" class="size24px admin_input">
 		    	
-		    			<option value="1">В наличии</option>
-		    			<option value="0">Нет</option></select>
+		    			<option value="В наличии">В наличии</option>
+		    			<option value="Нет">Нет</option></select>
 
 		    		</div>
 <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
