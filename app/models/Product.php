@@ -258,7 +258,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
                 top3 = :top3,
                 best = :best,
                 nal = :nal,
-                photo = :photo
+                new_picture = :new_picture
             WHERE id = :id";
 
         // Получение и возврат результатов. Используется подготовленный запрос
@@ -278,6 +278,8 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
         $result->bindParam(':top3', $options['top3'], PDO::PARAM_STR);
         $result->bindParam(':best', $options[':best'], PDO::PARAM_STR);
         $result->bindParam(':nal', $options['nal'], PDO::PARAM_STR);
+        $result->bindParam(':new_picture', $options['new_picture'], PDO::PARAM_STR);
+
         return $result->execute();
     }
 

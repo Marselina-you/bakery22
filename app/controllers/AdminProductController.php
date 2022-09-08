@@ -112,6 +112,9 @@ class AdminProductController extends AdminBase
             $options['top1'] = $_POST['top1'];
             $options['top2'] = $_POST['top2'];
             $options['top3'] = $_POST['top3'];
+            $options['best'] = $_POST['best'];
+			$options['nal'] = $_POST['nal'];
+			$options['new_picture'] = $_FILES['new_picture']['name']; 
             
 
             // Сохраняем изменения
@@ -121,14 +124,14 @@ class AdminProductController extends AdminBase
                 // Если запись сохранена
                 // Проверим, загружалось ли через форму изображение
                  // Если загружалось, переместим его в нужную папке, дадим новое имя
-                if (is_uploaded_file($_FILES["image"]["tmp_name"])) {
-                   move_uploaded_file($_FILES["image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "/upload/images/products/{$id}.jpg");
+                if (is_uploaded_file($_FILES["new_picture"]["tmp_name"])) {
+                   move_uploaded_file($_FILES["new_picture"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "/upload/images/products/".$_FILES['new_picture']['name']);
                 }
                 
             }
 
             // Перенаправляем пользователя на страницу управлениями товарами
-            header("Location: /admin/product");
+            header("Location: /admin/catalog");
         }
 
         // Подключаем вид

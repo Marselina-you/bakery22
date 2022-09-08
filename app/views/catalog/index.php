@@ -18,7 +18,7 @@ include ROOT.'/views/layouts/header_category.php';?>
                 <div class="wrap-view-product-left__info d-flex justify-content-center"><div class="d-flex view-product-left__info title_padding align-items-start flex-column">
                  
                   <div class="brownDark justify-content-center font-weight-bold size24px"><?php echo $product['price'];?><span class="rubl">₽</span></div>
-                  <div class="view-product-right__status padding_status justify-content-center orange size24px "><?php echo $product['best'];?></div>
+                  <div class="view-product-right__status padding_status justify-content-center orange size24px"><?php echo $product['best'];?></div>
                   <div class="view-product-right__name_sm bottom_padding"><a href="/product/<?php echo $product['id'];?>" class="burgundy  fontSegoePrint font-weight-bold size35px padding-15"><?php echo $product['name'];?></a>
                        
                         <div class="view-product-right__status  brownGrey size16px"><?php echo $product['nal'];?></div></div>
