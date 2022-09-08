@@ -241,9 +241,8 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
         $db = Db::getConnection();
 
         // Текст запроса к БД
-        $sql = "UPDATE assortiment
-            SET 
-
+        $sql = "UPDATE assortiment SET 
+                
                 category_id = :category_id, 
                 name = :name, 
                 weight = :weight, 

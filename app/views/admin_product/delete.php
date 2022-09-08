@@ -1,8 +1,17 @@
-<?php include ROOT . '/views/layouts/header_admin.php'; ?>
+<?php include ROOT . '/views/layouts/header.php';
+include ROOT . '/views/layouts/admin_header.php';
+ ?>
+<div class="wrap-content">
+    <div class="main">
+  <div class="container-fluid col-xl-12 edit">
+    <?php include ROOT . '/views/layouts/admin_menu.php';?>
+<div class="edit__title title_padding fontSans size29px orange">Удаление товара <?php echo $id; ?></div>
 
-<h1>АДМИНКА.Удаление</h1>
-<h4>Удалить<?php echo $id; ?></h4> 
+  <div class="d-flex flex-column col-xl-8 col-lg-8 form-create form_padding">          
+
 <form method="post">
-	<input type="submit" name="submit">
+	  <div class="d-flex justify-content-center">
+    <input type="submit" name="submit" value="Удалить" class="btn btn-success size24px"></div>
 </form>
-<?php include ROOT . '/views/layouts/footer_admin.php'; ?>
+</div></div></div></div>
+<?php include ROOT . '/views/layouts/admin_footer.php'; ?>

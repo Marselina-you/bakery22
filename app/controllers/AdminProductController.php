@@ -17,7 +17,9 @@ class AdminProductController extends AdminBase
 	public function actionDelete($id)
 	{
 		self::checkAdmin();
-
+$productsList = Product::getProductsList();
+        $userId = User::checkLoggedSite();
+        $user = User::getUserById($userId);
 		if (isset($_POST['submit'])) {
 			Product::deleteProductById($id);
 			header("Location: /admin/product");
@@ -99,9 +101,9 @@ class AdminProductController extends AdminBase
         if (isset($_POST['submit'])) {
             // Если форма отправлена
             // Получаем данные из формы редактирования. При необходимости можно валидировать значения
+            $options['id'] = $_POST['id'];
             $options['name'] = $_POST['name'];
             $options['category_id'] = $_POST['category_id'];
-			
 			$options['price'] = $_POST['price'];
 			$options['weight'] = $_POST['weight'];
 			$options['description'] = $_POST['description'];
