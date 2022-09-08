@@ -1,31 +1,31 @@
-<?php include ROOT . '/views/layouts/admin_header.php';
-include ROOT . '/views/layouts/header.php';
+<?php include ROOT . '/views/layouts/header.php';
+include ROOT . '/views/layouts/admin_header.php';
  ?>
+<div class="wrap-content">
+    <div class="main">
+  <div class="container-fluid col-xl-12 edit">
+    <?php include ROOT . '/views/layouts/admin_menu.php';?>
+<div class="edit__title title_padding fontSans size29px orange">Редактирование категорий</div>
 
 <section>
     <div class="container">
         <div class="row">
 
-            <br/>
+         
 
-            <div class="breadcrumbs">
-                <ol class="breadcrumb">
-                    <li><a href="/admin">Админпанель</a></li>
-                    <li class="active">Управление категориями</li>
-                </ol>
-            </div>
+           
 
-            <a href="/admin/category/create" class="btn btn-default back"><i class="fa fa-plus"></i> Добавить категорию</a>
+            <a href="/admin/category/create" class="btn btn-default back"></i> Добавить категорию</a>
             
-            <h4>Список категорий</h4>
+           
 
-            <br/>
+           
 
             <table class="table-bordered table-striped table">
                 <tr>
                     <th>ID категории</th>
                     <th>Название категории</th>
-                    <
+                    
                     <th></th>
                     <th></th>
                 </tr>
@@ -43,5 +43,5 @@ include ROOT . '/views/layouts/header.php';
         </div>
     </div>
 </section>
-
-<?php include ROOT . '/views/layouts/footer_admin.php'; ?>
+</div></div></div>
+<?php include ROOT . '/views/layouts/admin_footer.php'; ?>

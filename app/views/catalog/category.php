@@ -18,7 +18,7 @@ include ROOT.'/views/layouts/header_category.php';
                   <div class="view-product-right__status padding_status justify-content-center orange size24px "><?php echo $product['best'];?></div>
                   <div class="view-product-right__name_sm bottom_padding"><a href="/product/<?php echo $product['id'];?>" class="burgundy  fontSegoePrint font-weight-bold size35px padding-15"><?php echo $product['name'];?></a>
                        
-                        <div class="view-product-right__status  brownGrey size16px"><?php echo $product['nal'];?></div></div>
+                        <div class="view-product-right__status  brownGrey size16px"><?php if ($product['nal'] == 1) echo 'в наличии'; else echo 'нет в наличии';?></div></div>
               </div></div>
                    <div class="d-flex view-product-left__button  justify-content-center">
                   <div class="d-flex content-order-end__click__btn btn btn-success justify-content-center size29px size20px "><a href="/cart/add/<?php echo $product['id']; ?>" class="add-to-cart" data-id="<?php echo $product['id'];?>">В корзину</a></div></div>
@@ -28,7 +28,7 @@ include ROOT.'/views/layouts/header_category.php';
                 <div class="view-product-right col-xl-6 col-lg-6 flex-column">
                     <div class="view-product-right__name bottom_padding"><a href="/product/<?php echo $product['id'] ;?>" class="burgundy  fontSegoePrint font-weight-bold size35px padding-15"><?php echo $product['name'];?></a>
                        
-                        <div class="view-product-right__status  brownGrey size22px"><?php echo $product['nal'];?></div>
+                        <div class="view-product-right__status  brownGrey size22px"><?php if ($product['nal'] == 1) echo 'в наличии'; else echo 'нет в наличии';?></div>
                         <span class="view-product-right-info__item brownDark bottom_padding fontSegoePrint size20px"><?php echo $product['weight'];?> грамм</span></div>
                 <div class="view-product-right-info flex-column">
                 <div class="view-product-right-info__title bottom_padding burgundy size29px fontTahoma padding-15">+ Описание</div>

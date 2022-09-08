@@ -25,7 +25,7 @@ include ROOT . '/views/layouts/admin_header.php';
         <div class="edit-cart__title bottom_padding10 font-weight-bold size20px"><div class="burgundy fontSegoePrint font-weight-bold size35px padding-15"><?php echo $product['name']; ?></div></div>
        <div class=""><div class="edit-cart__title bottom_padding10 size20px"><div class="brownDark justify-content-center font-weight-bold size24px"><?php echo $product['price']; ?><span class="rubl">₽</span></div></div>
          </div>
-          <div class="edit__category size20px"><div class="view-product-right__status  brownGrey size16px"><?php echo $product['nal']; ?></div></div>
+          <div class="edit__category size20px"><div class="view-product-right__status  brownGrey size16px"><?php if ($product['nal'] == 1) echo 'в наличии'; else echo 'нет в наличии';?></div></div>
           <div class="view-product-right-info__item brownDark bottom_padding fontSegoePrint size20px"><?php echo $product['weight']; ?> грамм</div>
           <div class="edit__category size22px burgundyLight">Описание:</div>
         <div class="bottom_padding10 d-flex flex-column brownDark fontSegoePrint size20px line-height1"><?php echo $product['description']; ?></div>

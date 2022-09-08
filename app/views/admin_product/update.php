@@ -74,9 +74,9 @@ include ROOT . '/views/layouts/admin_header.php';
 <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
         <div class="view-product-right__status  brownGrey size16px">Наличие</div>
    <select name="nal" class="size24px admin_input">
-                
-                        <option value="В наличии"><?php echo $product['nal']; ?></option>
-                        <option value="Нет">Нет</option></select></div>
+                <option value="1" <?php if ($product['nal'] == 1) echo ' selected="selected"'; ?>>Да</option>
+                        <option value="0" <?php if ($product['nal'] == 0) echo ' selected="selected"';?>>Нет</option></select>
+                        </div>
 
  <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
         <div class="burgundyLight edit-cart__title size20px">Изображение товара</div>
