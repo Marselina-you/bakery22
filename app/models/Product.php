@@ -194,8 +194,8 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
     	
     	$result->bindParam(':name', $options['name'], PDO::PARAM_STR);
         $result->bindParam(':category_id', $options['category_id'], PDO::PARAM_INT);
-    	$result->bindParam(':price', $options['price'], PDO::PARAM_STR);
-    	$result->bindParam(':weight', $options['weight'], PDO::PARAM_STR);
+    	$result->bindParam(':price', $options['price'], PDO::PARAM_INT);
+    	$result->bindParam(':weight', $options['weight'], PDO::PARAM_INT);
     	$result->bindParam(':description', $options['description'], PDO::PARAM_STR);
     	$result->bindParam(':ing1', $options['ing1'], PDO::PARAM_STR);
     	$result->bindParam(':ing2', $options['ing2'], PDO::PARAM_STR);
@@ -266,8 +266,8 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
         $result->bindParam(':id', $id, PDO::PARAM_INT);
         $result->bindParam(':category_id', $options['category_id'], PDO::PARAM_INT);
         $result->bindParam(':name', $options['name'], PDO::PARAM_STR);
-        $result->bindParam(':weight', $options['weight'], PDO::PARAM_STR);
-        $result->bindParam(':price', $options['price'], PDO::PARAM_STR);
+        $result->bindParam(':weight', $options['weight'], PDO::PARAM_INT);
+        $result->bindParam(':price', $options['price'], PDO::PARAM_INT);
         $result->bindParam(':description', $options['description'], PDO::PARAM_STR);
         $result->bindParam(':ing1', $options['ing1'], PDO::PARAM_STR);
         $result->bindParam(':ing2', $options['ing2'], PDO::PARAM_STR);

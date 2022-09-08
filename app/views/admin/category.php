@@ -57,6 +57,10 @@ include ROOT . '/views/layouts/header.php';
             <div class="burgundyLight edit-cart__title size22px">Статус:</div> 
             <div class="view-product-right__status padding_status justify-content-center orange size20px  icons__item_padding"><?php echo $product['best']; ?></div>
         </div>
+        <div class="edit-cart__operations">
+        <div class="edit-cart__operation bottom_padding10"><a href="" class="size20px darkBlue">Скрыть для пользователя</a></div>
+        <div class="edit-cart__operation bottom_padding10"><a href="/admin/product/update/<?php echo $product['id']; ?>" class="size20px darkBlue">Редактировать</a></div>
+        <div class="edit-cart__operation bottom_padding10"><a href="/admin/product/delete/<?php echo $product['id']; ?>" class="burgundy size20px">Удалить</a></div></div>
          
      
 
