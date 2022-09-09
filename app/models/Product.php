@@ -206,7 +206,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
     	$result->bindParam(':top3', $options['top3'], PDO::PARAM_STR);
         $result->bindParam(':best', $options['best'], PDO::PARAM_STR);
         $result->bindParam(':nal', $options['nal'], PDO::PARAM_STR);
-        $result->bindParam(':new_picture', $options['new_picture'], PDO::PARAM_STR);
+        $result->bindParam(':new_picture', $options['new_picture']['name'], PDO::PARAM_STR);
 
          
     	if ($result->execute()) {
@@ -214,6 +214,51 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
 
     	}
     	return 0;
+    }
+    
+     public static function updateProductById($id, $options)
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $sql = "UPDATE assortiment SET category_id = :category_id, 
+                name = :name, 
+                weight = :weight, 
+                price = :price, 
+                description = :description, 
+                ing1 = :ing1, 
+                ing2 = :ing2,
+                ing3 = :ing3,
+                slogan = :slogan, 
+                top1 = :top1, 
+                top2 = :top2,
+                top3 = :top3,
+                best = :best,
+                nal = :nal,
+                new_picture = :new_picture
+            WHERE id = :id";
+
+        // Получение и возврат результатов. Используется подготовленный запрос
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, PDO::PARAM_INT);
+        $result->bindParam(':category_id', $options['category_id'], PDO::PARAM_INT);
+        $result->bindParam(':name', $options['name'], PDO::PARAM_STR);
+        $result->bindParam(':weight', $options['weight'], PDO::PARAM_STR);
+        $result->bindParam(':price', $options['price'], PDO::PARAM_STR);
+        $result->bindParam(':description', $options['description'], PDO::PARAM_STR);
+        $result->bindParam(':ing1', $options['ing1'], PDO::PARAM_STR);
+        $result->bindParam(':ing2', $options['ing2'], PDO::PARAM_STR);
+        $result->bindParam(':ing3', $options['ing3'], PDO::PARAM_STR);
+        $result->bindParam(':slogan', $options['slogan'], PDO::PARAM_STR);
+        $result->bindParam(':top1', $options['top1'], PDO::PARAM_STR);
+        $result->bindParam(':top2', $options['top2'], PDO::PARAM_STR);
+        $result->bindParam(':top3', $options['top3'], PDO::PARAM_STR);
+        $result->bindParam(':best', $options[':best'], PDO::PARAM_STR);
+        $result->bindParam(':nal', $options['nal'], PDO::PARAM_STR);
+        $result->bindParam(':new_picture', $options['new_picture'], PDO::PARAM_STR);
+       
+        return $result->execute();
     }
     public static function getImage($id)
     {
@@ -234,51 +279,6 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
 
         // Возвращаем путь изображения-пустышки
         return $path . $noImage;
-    }
-     public static function updateProductById($id, $options)
-    {
-        // Соединение с БД
-        $db = Db::getConnection();
-
-        // Текст запроса к БД
-        $sql = "UPDATE assortiment SET 
-                
-                category_id = :category_id, 
-                name = :name, 
-                weight = :weight, 
-                price = :price, 
-                description = :description, 
-                ing1 = :ing1, 
-                ing2 = :ing2,
-                ing3 = :ing3,
-                slogan = :slogan, 
-                top1 = :top1, 
-                top2 = :top2,
-                top3 = :top3,
-                best = :best,
-                nal = :nal,
-                
-            WHERE id = :id";
-
-        // Получение и возврат результатов. Используется подготовленный запрос
-        $result = $db->prepare($sql);
-        $result->bindParam(':id', $id, PDO::PARAM_INT);
-        $result->bindParam(':category_id', $options['category_id'], PDO::PARAM_INT);
-        $result->bindParam(':name', $options['name'], PDO::PARAM_STR);
-        $result->bindParam(':weight', $options['weight'], PDO::PARAM_INT);
-        $result->bindParam(':price', $options['price'], PDO::PARAM_INT);
-        $result->bindParam(':description', $options['description'], PDO::PARAM_STR);
-        $result->bindParam(':ing1', $options['ing1'], PDO::PARAM_STR);
-        $result->bindParam(':ing2', $options['ing2'], PDO::PARAM_STR);
-        $result->bindParam(':ing3', $options['ing3'], PDO::PARAM_STR);
-        $result->bindParam(':slogan', $options['slogan'], PDO::PARAM_STR);
-        $result->bindParam(':top1', $options['top1'], PDO::PARAM_STR);
-        $result->bindParam(':top2', $options['top2'], PDO::PARAM_STR);
-        $result->bindParam(':top3', $options['top3'], PDO::PARAM_STR);
-        $result->bindParam(':best', $options[':best'], PDO::PARAM_STR);
-        $result->bindParam(':nal', $options['nal'], PDO::PARAM_STR);
-       
-        return $result->execute();
     }
 
 }

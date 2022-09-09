@@ -131,7 +131,6 @@ $productsList = Product::getProductsList();
             $options['name'] = $_POST['name'];
             $options['price'] = $_POST['price'];
             $options['weight'] = $_POST['weight'];
-            
             $options['description'] = $_POST['description'];
             $options['ing1'] = $_POST['ing1'];
             $options['ing2'] = $_POST['ing2'];
@@ -141,8 +140,8 @@ $productsList = Product::getProductsList();
             $options['top2'] = $_POST['top2'];
             $options['top3'] = $_POST['top3'];
             $options['nal'] = $_POST['nal'];
-            
             $options['best'] = $_POST['best'];
+            $options['new_picture'] = $_FILES['new_picture']['name']; 
 
             // Сохраняем изменения
             if (Product::updateProductById($id, $options)) {
@@ -152,13 +151,13 @@ $productsList = Product::getProductsList();
                 // Проверим, загружалось ли через форму изображение
                  // Если загружалось, переместим его в нужную папке, дадим новое имя
                 if (is_uploaded_file($_FILES["new_picture"]["tmp_name"])) {
-                   move_uploaded_file($_FILES["new_picture"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "/upload/images/products/{$id}.jpg");
+                   move_uploaded_file($_FILES['new_picture']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] .'/upload/images/products/'.$_FILES['new_picture']['name']);
                 }
                 
             }
 
             // Перенаправляем пользователя на страницу управлениями товарами
-            header("Location: /admin/catalog");
+            header("Location: /admin/product");
         }
 
         // Подключаем вид

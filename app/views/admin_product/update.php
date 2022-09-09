@@ -53,9 +53,9 @@ include ROOT . '/views/layouts/header.php'; ?>
                         <textarea name="description"><?php echo $product['description']; ?></textarea>
                         <p>Изображение товара</p>
                         <img src="/upload/images/products/<?php echo $product['new_picture']; ?>" width="200" alt="" />
-                        <input type="file" name="new_picture" placeholder="" value="<?php echo $product['image']; ?>">
+                        <input type="file" name="new_picture" placeholder="" value="<?php echo $product['new_picture']; ?>">
                         <br/><br/>
-                        <p>Ингредиент1</p>
+                        <p>Ингредиен1</p>
     <input type="text" name="ing1" placeholder="" value="<?php echo $product['ing1']; ?>">
     <p>Ингредиент2</p>
     <input type="text" name="ing2" placeholder="" value="<?php echo $product['ing2']; ?>">
