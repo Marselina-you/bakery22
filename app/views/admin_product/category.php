@@ -6,7 +6,7 @@ include ROOT . '/views/layouts/header.php';
     <div class="main">
   <div class="container-fluid col-xl-12 edit">
   <?php include ROOT . '/views/layouts/admin_menu.php';?>   
-<div class="edit__title title_padding fontSans size29px"><a href="/create" class="orange">Добавить новый товар</a></div>
+<div class="edit__title title_padding fontSans size29px"><a href="/admin/product/create" class="orange">Добавить новый товар</a></div>
 <div class="d-flex col-xl-12">
                     <?php foreach ($categories as $categoryItem): ?>
                 <div class="edit__title title_padding darkBlue fontSans size29px"><a href="<?php echo $categoryItem['id'];?>" class="col-xl-6 <?php if ($categoryId == $categoryItem['id']) echo 'active'; else echo'white'; ?>"><?php echo $categoryItem['name'];?></a>

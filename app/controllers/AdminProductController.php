@@ -9,10 +9,34 @@ class AdminProductController extends AdminBase
         $user = User::getUserById($userId);
         $categories = array();
         $categories = Category::getCategoriesList();
-		require_once(ROOT . '/views/admin/index.php');
+		require_once(ROOT . '/views/admin_product/index.php');
 		return true;
 	}
-	
+	public function actionCategorya($categoryId)
+    {
+        $categories = array();
+        $categories = Category::getCategoriesList();
+          echo "action Categorya in AdminProductController";
+          echo "</br>";
+        echo "categorys" .$categoryId;
+       echo "</br>";
+      echo "страница admin/category";
+        
+
+        $categoryProducts = array();
+        $categoryProducts = Product::getProductsListByCategory($categoryId);
+         $userId = User::checkLoggedSite();
+        $user = User::getUserById($userId);
+
+        $total = Product::getTotalProductsInCategory($categoryId);
+        // Создаем объект Pagination - постраничная навигация
+      
+      
+
+        require_once(ROOT . '/views/admin_product/category.php');
+
+        return true;
+    }
 
 	public function actionDelete($id)
 	{
@@ -73,7 +97,7 @@ $productsList = Product::getProductsList();
 				$id = Product::createProduct($options);
 				
 				// Перенаправляем пользователя на страницу управлениями товарами
-                header("Location: /admin/catalog");
+                header("Location: /admin/product");
 				
 			}
 			
