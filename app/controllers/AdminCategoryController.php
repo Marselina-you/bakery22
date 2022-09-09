@@ -14,7 +14,7 @@ class AdminCategoryController extends AdminBase
     {
         // Проверка доступа
         self::checkAdmin();
-         $userId = User::checkLoggedSite();
+        $userId = User::checkLoggedSite();
         $user = User::getUserById($userId);
 
         // Получаем список категорий
@@ -70,7 +70,8 @@ class AdminCategoryController extends AdminBase
     {
         // Проверка доступа
         self::checkAdmin();
-
+        $userId = User::checkLoggedSite();
+        $user = User::getUserById($userId);
         // Получаем данные о конкретной категории
         $category = Category::getCategoryById($id);
 

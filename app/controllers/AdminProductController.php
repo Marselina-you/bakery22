@@ -134,7 +134,8 @@ $productsList = Product::getProductsList();
             }
 
             // Перенаправляем пользователя на страницу управлениями товарами
-            header("Location: /admin/product");
+            echo "categ";
+            header("Location: /admin/catalog");
         }
 
         // Подключаем вид

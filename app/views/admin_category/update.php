@@ -1,51 +1,54 @@
-<?php include ROOT . '/views/layouts/header_admin.php'; ?>
-
-<section>
-    <div class="container">
-        <div class="row">
-
-            <br/>
-
-            <div class="breadcrumbs">
-                <ol class="breadcrumb">
-                    <li><a href="/admin">Админпанель</a></li>
-                    <li><a href="/admin/category">Управление категориями</a></li>
-                    <li class="active">Редактировать категорию</li>
-                </ol>
-            </div>
+<?php include ROOT . '/views/layouts/admin_header.php';
+include ROOT . '/views/layouts/header.php'; ?>
+<div class="wrap-content">
+    <div class="main">
+  <div class="container-fluid col-xl-12 edit">
 
 
-            <h4>Редактировать категорию "<?php echo $category['name']; ?>"</h4>
+          
+          
 
-            <br/>
+            <div class="edit__title title_padding fontSans size29px orange">Редактировать категорию "<?php echo $category['name']; ?>"</div>
 
-            <div class="col-lg-4">
-                <div class="login-form">
+            
+
+            
+            <div class="d-flex flex-column col-xl-8 col-lg-8 form-create form_padding">
                     <form action="#" method="post">
+                        <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
+            <div class="burgundy fontSegoePrint font-weight-bold size35px padding-15">Название категории</div>
+                        <input type="text" class="size24px admin_input" name="name" placeholder="" value="<?php echo $category['name']; ?>"></div>
+                          <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
+                <div class="burgundy fontSegoePrint font-weight-bold size35px padding-15">Sort_order</div>
+                        <input type="text" name="sort_order" placeholder=""  class="size24px admin_input" name="name" value="<?php echo $category['sort_order']; ?>"></div>
 
-                        <p>Название</p>
-                        <input type="text" name="name" placeholder="" value="<?php echo $category['name']; ?>">
+                        
                        
-                         <p>Sort_order</p>
-                        <input type="text" name="sort_order" placeholder="" value="<?php echo $category['sort_order']; ?>">
-                         <p>Status</p>
-                        <input type="text" name="status" placeholder="" value="<?php echo $category['status']; ?>">
-                         <p>Style</p>
-                        <input type="text" name="style" placeholder="" value="<?php echo $category['style']; ?>">
-                         <p>Style2</p>
-                        <input type="text" name="style2" placeholder="" value="<?php echo $category['style2']; ?>">
+                       <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
+                        <div class="burgundy fontSegoePrint font-weight-bold size35px padding-15">Status</div>
+                        <input type="text" class="size24px admin_input" name="status" placeholder="" value="<?php echo $category['status']; ?>"></div>
+
+                          <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
+                <div class="burgundy fontSegoePrint font-weight-bold size35px padding-15">Style</div>
+                        <input type="text" name="style" placeholder=""  class="size24px admin_input" name="name" value="<?php echo $category['style']; ?>"></div>  
+                       
+                         <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
+                <div class="burgundy fontSegoePrint font-weight-bold size35px padding-15">Style2</div>
+                        <input type="text" name="style2" placeholder=""  class="size24px admin_input" name="name" value="<?php echo $category['style2']; ?>"></div>     
 
 
 
                         
                         
                         
-                        <input type="submit" name="submit" class="btn btn-default" value="Сохранить">
+                       
+                        <div class="d-flex justify-content-end">
+    <input type="submit" name="submit" value="Сохранить" class="btn btn-success size24px"></div>
                     </form>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
+            </div></div></div>
+        
+    
 
-<?php include ROOT . '/views/layouts/footer_admin.php'; ?>
+
+<?php include ROOT . '/views/layouts/admin_footer.php'; ?>
