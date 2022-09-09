@@ -9,18 +9,18 @@ class AdminController extends AdminBase
 		require_once(ROOT . '/views/admin/index.php');
 		return true;
 	}
-    public function actionCatalog()
-    {
-        self::checkAdmin();
-        $productsList = Product::getProductsList();
-        $userId = User::checkLoggedSite();
-        $user = User::getUserById($userId);
-        $categories = array();
-        $categories = Category::getCategoriesList();
-        echo "action Catalog in AdminController";
-        require_once(ROOT . '/views/admin/product.php');
-        return true;
-    }
+   // public function actionCatalog()
+   // {
+        //self::checkAdmin();
+       // $productsList = Product::getProductsList();
+       // $userId = User::checkLoggedSite();
+        //$user = User::getUserById($userId);
+       // $categories = array();
+        //$categories = Category::getCategoriesList();
+        //echo "action Catalog in AdminController";
+        //require_once(ROOT . '/views/admin_product/index.php');
+        //return true;
+    //}
      public function actionItem($categoryId, $page = 1)
     {
         $categories = array();

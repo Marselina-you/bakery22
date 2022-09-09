@@ -21,10 +21,12 @@ return array(
 	'cabinet' => 'cabinet/index',
 	
 	//Управление товарами
-	'create' => 'adminProduct/create',
+	//'create' => 'adminProduct/create',
+	'admin/product/create' => 'adminProduct/create',
     'admin/product/update/([0-9]+)' => 'adminProduct/update/$1',
     'admin/product/delete/([0-9]+)' => 'adminProduct/delete/$1',
-    //'admin/catalog' => 'adminProduct/index',
+    'admin/product/categorya/([0-9]+)' => 'adminProduct/categorya/$1',
+    'admin/product' => 'adminProduct/index',
     //'admin/catalog/([0-9]+)' => 'adminProduct/catalog/$1',
    
 	

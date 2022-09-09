@@ -4,7 +4,7 @@ include ROOT . '/views/layouts/header.php'; ?>
     <div class="main">
   <div class="container-fluid col-xl-12 edit">
   	<?php include ROOT . '/views/layouts/admin_menu.php';?>
-<div class="edit__title title_padding fontSans size29px orange">Добавление товарoв</div>
+<div class="edit__title title_padding fontSans size29px orange">Добavlение товарoв</div>
  <?php if (isset($errors) && is_array($errors)): ?>
                 <ul>
                     <?php foreach ($errors as $error): ?>
