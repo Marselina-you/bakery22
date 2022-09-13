@@ -32,6 +32,8 @@ class AdminCategoryController extends AdminBase
     {
         // Проверка доступа
         self::checkAdmin();
+         $userId = User::checkLoggedSite();
+        $user = User::getUserById($userId);
 
         // Обработка формы
         if (isset($_POST['submit'])) {

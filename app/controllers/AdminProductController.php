@@ -85,8 +85,12 @@ $productsList = Product::getProductsList();
 				$errors[] = 'заполните поле, собака';
 			 }
 			if ($errors == false) {
+				$id = Product::createProduct($options);
+				 if ($id) {
+				 	if (is_uploaded_file($_FILES["new_picture"]["tmp_name"])) {
 				move_uploaded_file($_FILES['new_picture']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] .'/upload/images/products/'.$_FILES['new_picture']['name']); 
-					
+					}
+				};
 			  	
 
 
@@ -94,7 +98,7 @@ $productsList = Product::getProductsList();
                   
 			  	
 
-				$id = Product::createProduct($options);
+				
 				
 				// Перенаправляем пользователя на страницу управлениями товарами
                 header("Location: /admin/product");

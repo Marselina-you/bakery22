@@ -1,23 +1,18 @@
-<?php include ROOT . '/views/layouts/header_admin.php'; ?>
+<?php include ROOT . '/views/layouts/header.php';
+include ROOT . '/views/layouts/admin_header.php';
+ ?>
+<div class="wrap-content">
+    <div class="main">
+  <div class="container-fluid col-xl-12 edit">
+    <?php include ROOT . '/views/layouts/admin_menu.php';?>
 
-<section>
-    <div class="container">
-        <div class="row">
+        <div class="edit__title title_padding fontSans size29px orange">Добавление новой категории</div> 
 
-            <br/>
+           
 
-            <div class="breadcrumbs">
-                <ol class="breadcrumb">
-                    <li><a href="/admin">Админпанель</a></li>
-                    <li><a href="/admin/order">Управление категориями</a></li>
-                    <li class="active">Добавить категорию</li>
-                </ol>
-            </div>
+           
 
-
-            <h4>Добавить новую категорию</h4>
-
-            <br/>
+            
 
             <?php if (isset($errors) && is_array($errors)): ?>
                 <ul>
@@ -27,26 +22,30 @@
                 </ul>
             <?php endif; ?>
 
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="login-form">
                     <form action="#" method="post">
 
-                        <p>Название</p>
-                        <input type="text" name="name" placeholder="" value="">
-
-
+                      
                         
 
-                        <br><br>
 
-                        <input type="submit" name="submit" class="btn btn-default" value="Сохранить">
+                <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
+        <div class="burgundyLight size22px">Название</div>
+        <input type="text" name="name" placeholder="" value="" class="size24px admin_input">
+            </div>        
+
+                       
+
+                       <div class="d-flex justify-content-end">
+    <input type="submit" name="submit" value="Сохранить" class="btn btn-success size24px"></div>
                     </form>
                 </div>
             </div>
 
 
         </div>
-    </div>
-</section>
+    </div></div>
 
-<?php include ROOT . '/views/layouts/footer_admin.php'; ?>
+
+<?php include ROOT . '/views/layouts/admin_footer.php'; ?>

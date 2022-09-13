@@ -8,7 +8,7 @@ include ROOT . '/views/layouts/admin_header.php';
 <div class="edit__title title_padding fontSans size29px"><a href="/admin/product/create" class="orange">Добаить новый товар</a></div>
 <div class="d-flex col-xl-12">
                     <?php foreach ($categories as $categoryItem): ?>
-                <div class="edit__title title_padding darkBlue fontSans size29px"><a href="/admin/product/categorya/<?php echo $categoryItem['id'];?>" class="col-xl-6 <?php if ($categoryId == $categoryItem['id']) echo 'active'; else echo'brownLight'; ?>"><?php echo $categoryItem['name'];?></a>
+                <div class="edit__title title_padding darkBlue fontSans size29px"><a href="/admin/product/categorya/<?php echo $categoryItem['id'];?>" class=""><?php echo $categoryItem['name'];?></a>
         </div>
        
                    
