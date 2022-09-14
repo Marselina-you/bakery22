@@ -87,7 +87,7 @@ $productsList = Product::getProductsList();
 			if ($errors == false) {
 				$id = Product::createProduct($options);
 				 if ($id) {
-				 	if (is_uploaded_file($_FILES["new_picture"]["tmp_name"])) {
+				 	if (is_uploaded_file($_FILES['new_picture']['tmp_name'])) {
 				move_uploaded_file($_FILES['new_picture']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] .'/upload/images/products/'.$_FILES['new_picture']['name']); 
 					}
 				};
@@ -154,7 +154,7 @@ $productsList = Product::getProductsList();
                 // Если запись сохранена
                 // Проверим, загружалось ли через форму изображение
                  // Если загружалось, переместим его в нужную папке, дадим новое имя
-                if (is_uploaded_file($_FILES["new_picture"]["tmp_name"])) {
+                if (is_uploaded_file($_FILES['new_picture']['tmp_name'])) {
                    move_uploaded_file($_FILES['new_picture']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] .'/upload/images/products/'.$_FILES['new_picture']['name']);
                 }
                 

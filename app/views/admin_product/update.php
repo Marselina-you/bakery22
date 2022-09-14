@@ -81,7 +81,7 @@ include ROOT . '/views/layouts/header.php'; ?>
                       <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
                           <div class="burgundyLight edit-cart__title size20px">Изображение товара</div>
                         <img src="/upload/images/products/<?php echo $product['new_picture']; ?>" width="200" alt="" />
-                        <input type="file" name="new_picture" placeholder="" value="<?php echo $product['new_picture']; ?>">
+                        <input type="file" name="new_picture" multiple>
                        </div>
                         
    
