@@ -145,8 +145,8 @@ $productsList = Product::getProductsList();
             $options['top3'] = $_POST['top3'];
             $options['nal'] = $_POST['nal'];
             $options['best'] = $_POST['best'];
-            $options['old_picture'] = $_POST['old_picture']; 
-            $options['new_picture'] = $_FILES['new_picture'];
+           
+            $options['new_picture'] = $_FILES['new_picture']['name'];
 
             // Сохраняем изменения
             if (Product::updateProductById($id, $options)) {
