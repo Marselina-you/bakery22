@@ -186,7 +186,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
 
     	$sql = 'INSERT INTO assortiment '
                 . '(category_id, name,  price,  weight, '
-                . 'description, ing1, ing2, ing3, slogan, top1, top2, top3, best, nal, new_picture)'
+                . 'description, ing1, ing2, ing3, slogan, top1, top2, top3, best, nal, photo)'
                 . 'VALUES '
                 . '(:category_id, :name,  :price,  :weight, '
                 . ':description, :ing1, :ing2, :ing3, :slogan, :top1, :top2, :top3, :best, :nal, :new_picture)';
@@ -236,7 +236,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
                 top3 = :top3,
                 best = :best,
                 nal = :nal,
-                photo = :new_picture
+                photo = :old_picture
             WHERE id = :id";
 
         // Получение и возврат результатов. Используется подготовленный запрос
@@ -256,7 +256,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
         $result->bindParam(':top3', $options['top3'], PDO::PARAM_STR);
         $result->bindParam(':best', $options['best'], PDO::PARAM_STR);
         $result->bindParam(':nal', $options['nal'], PDO::PARAM_STR);
-        $result->bindParam(':photo', $options['new_picture'], PDO::PARAM_STR);
+        $result->bindParam(':old_picture', $options['old_picture'], PDO::PARAM_STR);
        
         return $result->execute();
     }
