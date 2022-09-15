@@ -19,17 +19,29 @@ const SHOW_BY_DEFAULT = 3;
 			$password = '';
 			$db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);*/
 			$db = Db::getConnection();
-			$result = $db->query('SELECT * FROM assortiment WHERE id=' . $id);
+			$result = $db->query('SELECT  id, name, description, price, weight, top1, top2, top3, slogan, ing1, ing2, ing3, best, nal, photo FROM assortiment WHERE id=' . $id);
+            
 
 			/*$result->setFetchMode(PDO::FETCH_NUM);*/
 			$result->setFetchMode(PDO::FETCH_ASSOC);
 
-			$product = $result->fetch();
+			$product = $result->fetch();//массив из столбцов таблицы
+            
+
 
 			return $product;
 		}
 
 	}
+    public static function getPictureById($id)
+    {
+       
+
+
+          
+       
+ }
+
 
 	/**
 	* Returns an array of news items
@@ -41,7 +53,7 @@ public static function getLatestProducts($count = self::SHOW_BY_DEFAULT) {
 		$db = Db::getConnection();
 		$latestProducts = array();
 
-		$result = $db->query('SELECT id, name, description, price, weight, top1, top2, top3, slogan, ing1, ing2, ing3, best, nal, new_picture FROM assortiment ORDER BY id ASC LIMIT '. $count);
+		$result = $db->query('SELECT id, name, description, price, weight, top1, top2, top3, slogan, ing1, ing2, ing3, best, nal, photo FROM assortiment ORDER BY id ASC LIMIT '. $count);
 
 		$i = 0;
 		while($row = $result->fetch()) {
@@ -60,7 +72,7 @@ public static function getLatestProducts($count = self::SHOW_BY_DEFAULT) {
 			$latestProducts[$i]['ing3'] = $row['ing3'];
             $latestProducts[$i]['best'] = $row['best'];
             $latestProducts[$i]['nal'] = $row['nal'];
-             $latestProducts[$i]['new_picture'] = $row['new_picture'];
+             $latestProducts[$i]['new_picture'] = $row['photo'];
 			$i++;
 		}
 
@@ -76,7 +88,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
 
             $db = Db::getConnection();            
             $products = array();
-            $result = $db->query("SELECT  id, name, price, weight, description, ing1, ing2, ing3, slogan, top1, top2, top3, best, nal, new_picture FROM assortiment WHERE category_id = '$categoryId' "
+            $result = $db->query("SELECT  id, name, price, weight, description, ing1, ing2, ing3, slogan, top1, top2, top3, best, nal, photo FROM assortiment WHERE category_id = '$categoryId' "
                     . "ORDER BY id ASC LIMIT ".self::SHOW_BY_DEFAULT
                      . ' OFFSET '. $offset);
 
@@ -97,7 +109,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
                 $products[$i]['top3'] = $row['top3'];
                 $products[$i]['best'] = $row['best'];
                 $products[$i]['nal'] = $row['nal'];
-                $products[$i]['new_picture'] = $row['new_picture'];
+                $products[$i]['new_picture'] = $row['photo'];
                 $i++;
             }
 
@@ -236,7 +248,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
                 top3 = :top3,
                 best = :best,
                 nal = :nal,
-                photo = :old_picture
+                photo = :new_picture
             WHERE id = :id";
 
         // Получение и возврат результатов. Используется подготовленный запрос
@@ -256,7 +268,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
         $result->bindParam(':top3', $options['top3'], PDO::PARAM_STR);
         $result->bindParam(':best', $options['best'], PDO::PARAM_STR);
         $result->bindParam(':nal', $options['nal'], PDO::PARAM_STR);
-        $result->bindParam(':old_picture', $options['old_picture'], PDO::PARAM_STR);
+        $result->bindParam(':new_picture', $options['new_picture'], PDO::PARAM_STR);
        
         return $result->execute();
     }

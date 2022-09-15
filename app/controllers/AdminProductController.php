@@ -123,8 +123,8 @@ $productsList = Product::getProductsList();
         $categoriesList = Category::getCategoriesListAdmin();
 
         // Получаем данные о конкретном заказе
-        $product = Product::getProductById($id);
-
+        $product = Product::getProductById($id);//получили вид товара
+        //$old_picture = Product::getPictureById($id);
         // Обработка формы
         if (isset($_POST['submit'])) {
             // Если форма отправлена
@@ -145,7 +145,7 @@ $productsList = Product::getProductsList();
             $options['top3'] = $_POST['top3'];
             $options['nal'] = $_POST['nal'];
             $options['best'] = $_POST['best'];
-            $options['old_picture'] = $_POST['old_picture'];
+            //$options['old_picture'] = $_POST['old_picture'];
             $options['new_picture'] = $_FILES['new_picture']['name'];
 
             // Сохраняем изменения

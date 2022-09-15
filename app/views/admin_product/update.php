@@ -80,8 +80,8 @@ include ROOT . '/views/layouts/header.php'; ?>
                  
                       <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
                           <div class="burgundyLight edit-cart__title size20px">Изображение товара</div>
-                          <input type="hidden" name="old_picture" value="<?php if (!empty($old_picture)) echo $old_picture; ?>"/>
-                          <input type="text" name="old_picture" value="<?php echo $product['photo']; ?>">
+                          <input type="hidden" name="old_picture" value="<?php  echo $product['photo'];?>"/>
+                          
                         <img src="/upload/images/products/<?php echo $product['photo']; ?>" width="200" alt="" />
                         <input type="file" name="new_picture" placeholder="" value="">
                        </div>
