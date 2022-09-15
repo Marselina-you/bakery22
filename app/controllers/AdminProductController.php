@@ -9,6 +9,7 @@ class AdminProductController extends AdminBase
         $user = User::getUserById($userId);
         $categories = array();
         $categories = Category::getCategoriesList();
+
 		require_once(ROOT . '/views/admin_product/index.php');
 		return true;
 	}
@@ -119,6 +120,7 @@ $productsList = Product::getProductsList();
         self::checkAdmin();
  $userId = User::checkLoggedSite();
         $user = User::getUserById($userId);
+
         // Получаем список категорий для выпадающего списка
         $categoriesList = Category::getCategoriesListAdmin();
 
@@ -145,16 +147,17 @@ $productsList = Product::getProductsList();
             $options['top3'] = $_POST['top3'];
             $options['nal'] = $_POST['nal'];
             $options['best'] = $_POST['best'];
-            
-            if (isset($_POST['new_picture']['name'])) {
-            	$options['new_picture'] = $_FILES['new_picture']['name'];
-            } else {
-            	$options['new_picture'] = $_POST['old_picture'];
+            $options['new_picture'] = $_POST['old_picture'];
+ if (is_uploaded_file($_FILES["new_picture"]["tmp_name"])) {
+                   move_uploaded_file($_FILES['new_picture']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] .'/upload/images/products/'.$_FILES['new_picture']['name']);
+
+                $options['new_picture'] = $_FILES['new_picture']['name'];
             }
-            //$options['new_picture'] = $_FILES['new_picture']['name'];
+            
+           
 
             // Сохраняем изменения
-            if (Product::updateProductById($id, $options)) {
+            if (Product::updateProductById($id, $options)) //{
 //if (empty ($_FILES['new_picture']['name'])) {
 	 //move_uploaded_file($_POST['old_picture'],$_SERVER['DOCUMENT_ROOT'] .'/upload/images/products/'.$_POST['old_picture']);
 //}else  {
@@ -164,11 +167,9 @@ $productsList = Product::getProductsList();
                 // Если запись сохранена
                 // Проверим, загружалось ли через форму изображение
                  // Если загружалось, переместим его в нужную папке, дадим новое имя
-                if (is_uploaded_file($_FILES["new_picture"]["tmp_name"])) {
-                   move_uploaded_file($_FILES['new_picture']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] .'/upload/images/products/'.$_FILES['new_picture']['name']);
-                }
+               
                 
-            }
+           // }
 
             // Перенаправляем пользователя на страницу управлениями товарами
             header("Location: /admin/product");
