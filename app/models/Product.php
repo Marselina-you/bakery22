@@ -19,7 +19,7 @@ const SHOW_BY_DEFAULT = 3;
 			$password = '';
 			$db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);*/
 			$db = Db::getConnection();
-			$result = $db->query('SELECT  id, name, description, price, weight, top1, top2, top3, slogan, ing1, ing2, ing3, best, nal, photo FROM assortiment WHERE id=' . $id);
+			$result = $db->query('SELECT * FROM assortiment WHERE id=' . $id);
             
 
 			/*$result->setFetchMode(PDO::FETCH_NUM);*/
@@ -291,6 +291,31 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
 
         // Возвращаем путь изображения-пустышки
         return $path . $noImage;
+    }
+    public static function getProductCategoryName($id)
+    {
+        $id = intval($id);
+
+        if ($id) {
+/*          $host = 'localhost';
+            $dbname = 'php_base';
+            $user = 'root';
+            $password = '';
+            $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);*/
+            $db = Db::getConnection();
+            $result = $db->query('SELECT category.id, category.status, category.name FROM category JOIN assortiment ON assortiment.category_id= category.id');
+            
+
+            /*$result->setFetchMode(PDO::FETCH_NUM);*/
+            $result->setFetchMode(PDO::FETCH_ASSOC);
+
+            $name_category = $result->fetch();//массив из столбцов таблицы
+            
+
+
+            return $name_category;
+        }
+
     }
 
 }

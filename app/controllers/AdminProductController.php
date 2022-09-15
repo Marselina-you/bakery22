@@ -118,12 +118,12 @@ $productsList = Product::getProductsList();
     {
         // Проверка доступа
         self::checkAdmin();
- $userId = User::checkLoggedSite();
+        $userId = User::checkLoggedSite();
         $user = User::getUserById($userId);
 
         // Получаем список категорий для выпадающего списка
         $categoriesList = Category::getCategoriesListAdmin();
-
+        $name_category = Product::getProductCategoryName($id);
         // Получаем данные о конкретном заказе
         $product = Product::getProductById($id);//получили вид товара
         //$old_picture = Product::getPictureById($id);
@@ -157,7 +157,7 @@ $productsList = Product::getProductsList();
            
 
             // Сохраняем изменения
-            if (Product::updateProductById($id, $options)) //{
+            Product::updateProductById($id, $options); //{
 //if (empty ($_FILES['new_picture']['name'])) {
 	 //move_uploaded_file($_POST['old_picture'],$_SERVER['DOCUMENT_ROOT'] .'/upload/images/products/'.$_POST['old_picture']);
 //}else  {

@@ -16,6 +16,11 @@ include ROOT . '/views/layouts/header.php'; ?>
 <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
         <div class="burgundyLight size22px">Категория</div>
     <select name="category_id" class="size24px admin_input">
+        <option value="<?php echo $product['category_id']; ?>" name="">
+                    <?php echo $name_category['name']; ?>
+                    <?php echo $name_category['id']; ?>
+                    <?php echo $name_category['status']; ?>
+                </option>
          <?php if (is_array($categoriesList)): ?>
             <?php foreach ($categoriesList as $category): ?>
                 <option value="<?php echo $category['id']; ?>" name="">
@@ -24,6 +29,7 @@ include ROOT . '/views/layouts/header.php'; ?>
             <?php endforeach; ?>
              <?php endif; ?>
     </select></div>
+
     <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
         <div class="burgundy fontSegoePrint font-weight-bold size35px">Название товара</div>
     <input type="text" name="name" placeholder="" value="<?php echo $product['name']; ?>"  class="size24px admin_input"></div>
