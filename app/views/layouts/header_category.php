@@ -4,7 +4,7 @@
                 
                    <div class="menu-category-titles col-xl-4 <?php echo $categoryItem['style2'];?>">
         <div class="menu-category-titles-item <?php echo $categoryItem['style'];?> text-center">
-            <a href="/category/<?php echo $categoryItem['id'];?>" class="col-xl-6 size29px <?php if ($categoryId == $categoryItem['id']) echo 'active'; else echo'white'; ?>"><?php echo $categoryItem['name'];?></a>
+            <a href="/category/<?php echo $categoryItem['id'];?>" class="col-xl-6 size29px <?php if ($categoryId == $categoryItem['id']) echo 'active'; else echo'white'; ?>"><?php echo $categoryItem['name_category'];?></a>
         </div></div>
          
                    

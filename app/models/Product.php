@@ -43,13 +43,17 @@ public static function getLatestProducts($count = self::SHOW_BY_DEFAULT) {
 		$db = Db::getConnection();
 		$latestProducts = array();
 
-		$result = $db->query('SELECT id, name, description, price, weight, top1, top2, top3, slogan, ing1, ing2, ing3, best, nal, photo FROM assortiment ORDER BY id ASC LIMIT '. $count);
+		$result = $db->query('SELECT  assortiment.*, category.name_category, status.value, status.style 
+FROM assortiment INNER JOIN category ON category.id = assortiment.category_id  
+LEFT JOIN status ON status.id = assortiment.best   ORDER BY id ASC LIMIT '. $count);
 
 		$i = 0;
 		while($row = $result->fetch()) {
 			$latestProducts[$i]['id'] = $row['id'];
 			$latestProducts[$i]['name'] = $row['name'];
-			
+            $latestProducts[$i]['name_category'] = $row['name_category'];
+			$latestProducts[$i]['value'] = $row['value'];
+            $latestProducts[$i]['style'] = $row['style'];
 			$latestProducts[$i]['description'] = $row['description'];
 			$latestProducts[$i]['price'] = $row['price'];
 			$latestProducts[$i]['weight'] = $row['weight'];
