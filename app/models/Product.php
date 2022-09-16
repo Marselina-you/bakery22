@@ -303,7 +303,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
             $password = '';
             $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);*/
             $db = Db::getConnection();
-            $result = $db->query('SELECT category.id, category.status, category.name FROM category JOIN assortiment ON assortiment.category_id= category.id');
+            $result = $db->query('SELECT category.id, category.status, category.name FROM category JOIN assortiment ON assortiment.category_id= category.id WHERE assortiment.id =' .$id);
             
 
             /*$result->setFetchMode(PDO::FETCH_NUM);*/
