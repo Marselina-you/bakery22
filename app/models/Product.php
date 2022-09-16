@@ -94,6 +94,14 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
 
             $i = 0;
             while ($row = $result->fetch()) {
+$result2 = $db->query("SELECT status.value, status.style FROM status JOIN assortiment ON assortiment.best = status.id WHERE assortiment.category_id = '$categoryId' ");
+       $o = 0;
+          while($row2 = $result2->fetch()) {
+                $products[$o]['best'] = $row2['value'];
+                $row['best'] = $row2['value'];
+                $o++;
+             
+                }
                 
                 $products[$i]['name'] = $row['name'];
                 $products[$i]['id'] = $row['id'];
@@ -160,16 +168,20 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
 		$i = 0;
 		while($row = $result->fetch()) {
 
-         $result2 = $db->query('SELECT status.value, status.style FROM status JOIN assortiment ON assortiment.best = status.id ORDER BY assortiment.id');
-        $n = 0;
+         $result2 = $db->query('SELECT status.value, status.style FROM status JOIN assortiment ON assortiment.best = status.id');
+       $o = 0;
          
             
              while($row2 = $result2->fetch()) {
+                $productsList[$o]['best'] = $row2['value'];
                 $row['best'] = $row2['value'];
-                $n++;
+                $o++;
+             }
+                
+              
              
              
-         }
+         
 
 			$productsList[$i]['id'] = $row['id'];
             $productsList[$i]['category_id'] = $row['category_id'];
@@ -192,6 +204,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
 			$i++;
 
 		}
+        //array_push($productsList, var)
 
 		return $productsList;
     }

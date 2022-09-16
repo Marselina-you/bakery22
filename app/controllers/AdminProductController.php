@@ -9,7 +9,7 @@ class AdminProductController extends AdminBase
         $user = User::getUserById($userId);
         $categories = array();
         $categories = Category::getCategoriesList();
-        
+
 
 		require_once(ROOT . '/views/admin_product/index.php');
 		return true;
