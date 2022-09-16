@@ -159,6 +159,18 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
 		$result = $db->query('SELECT* FROM assortiment ORDER BY id');
 		$i = 0;
 		while($row = $result->fetch()) {
+
+         $result2 = $db->query('SELECT status.value, status.style FROM status JOIN assortiment ON assortiment.best = status.id ORDER BY assortiment.id');
+        $n = 0;
+         
+            
+             while($row2 = $result2->fetch()) {
+                $row['best'] = $row2['value'];
+                $n++;
+             
+             
+         }
+
 			$productsList[$i]['id'] = $row['id'];
             $productsList[$i]['category_id'] = $row['category_id'];
 			$productsList[$i]['name'] = $row['name'];
