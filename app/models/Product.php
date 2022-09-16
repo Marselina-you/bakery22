@@ -19,7 +19,9 @@ const SHOW_BY_DEFAULT = 3;
 			$password = '';
 			$db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);*/
 			$db = Db::getConnection();
-			$result = $db->query('SELECT * FROM assortiment WHERE id=' . $id);
+			$result = $db->query('SELECT assortiment.*, category.name_category, status.value 
+FROM assortiment INNER JOIN category ON category.id = assortiment.category_id  
+LEFT JOIN status ON status.id = assortiment.best  WHERE assortiment.id=' . $id);
             
 
 			/*$result->setFetchMode(PDO::FETCH_NUM);*/
@@ -33,19 +35,7 @@ const SHOW_BY_DEFAULT = 3;
 		}
 
 	}
-    public static function getPictureById($id)
-    {
-       
-
-
-          
-       
- }
-
-
-	/**
-	* Returns an array of news items
-	*/
+    
 
 public static function getLatestProducts($count = self::SHOW_BY_DEFAULT) {
 		
@@ -88,24 +78,18 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
 
             $db = Db::getConnection();            
             $products = array();
-            $result = $db->query("SELECT  id, name, price, weight, description, ing1, ing2, ing3, slogan, top1, top2, top3, best, nal, photo FROM assortiment WHERE category_id = '$categoryId' "
+            $result = $db->query("SELECT assortiment.*, status.value, status.style FROM assortiment JOIN status ON status.id = assortiment.best WHERE category_id = '$categoryId' "
                     . "ORDER BY id ASC LIMIT ".self::SHOW_BY_DEFAULT
                      . ' OFFSET '. $offset);
 
             $i = 0;
             while ($row = $result->fetch()) {
-$result2 = $db->query("SELECT status.value, status.style FROM status JOIN assortiment ON assortiment.best = status.id WHERE assortiment.category_id = '$categoryId' ");
-       $o = 0;
-          while($row2 = $result2->fetch()) {
-                $products[$o]['best'] = $row2['value'];
-                $row['best'] = $row2['value'];
-                $products[$o]['style'] = $row2['style'];
-                $o++;
-             
-                }
+
                 
                 $products[$i]['name'] = $row['name'];
                 $products[$i]['id'] = $row['id'];
+                 $products[$i]['value'] = $row['value']; 
+                $products[$i]['style'] = $row['style']; 
                 $products[$i]['price'] = $row['price'];
                 $products[$i]['weight'] = $row['weight'];
                 $products[$i]['description'] = $row['description'];
@@ -131,7 +115,7 @@ $result2 = $db->query("SELECT status.value, status.style FROM status JOIN assort
        
         $productsList = array();
 
-        $result = $db->query('SELECT assortiment.*, status.value, status.style  FROM assortiment JOIN status ON status.id = assortiment.best');
+        $result = $db->query('SELECT assortiment.*, status.value, status.style  FROM assortiment JOIN status ON status.id = assortiment.best ORDER BY assortiment.id');
         $i = 0;
         while($row = $result->fetch()) {
 

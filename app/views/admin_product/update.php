@@ -14,12 +14,12 @@ include ROOT . '/views/layouts/header.php'; ?>
         <div class="burgundyLight size22px">Категория</div>
     <select name="category_id" class="size24px admin_input">
         <option value="<?php echo $product['category_id']; ?>" name="">
-                    <?php echo $general['name']; ?>
+                    <?php echo $product['name_category']; ?>
                 </option>
          <?php if (is_array($categoriesList)): ?>
             <?php foreach ($categoriesList as $category): ?>
                 <option value="<?php echo $category['id']; ?>" name="">
-                    <?php echo $category['name']; ?>
+                    <?php echo $category['name_category']; ?>
                 </option>
             <?php endforeach; ?>
              <?php endif; ?>
@@ -61,8 +61,8 @@ include ROOT . '/views/layouts/header.php'; ?>
                        
     <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
     <div class="view-product-right__status padding_status justify-content-center size24px <?php echo $general['style']; ?>">Статус</div>
-    <select name="best" class="size24px admin_input <?php echo $general['style']; ?>">
-                <option value="<?php echo $product['best']; ?>"><?php echo $general['value']; ?></option>
+    <select name="best" class="size24px admin_input <?php echo $product['style']; ?>">
+                <option value="<?php echo $product['best']; ?>"><?php echo $product['value']; ?></option>
                         <option value="1">Бестселлер</option>
                         <option value="2">Новинка!</option>
                          <option value="3">Уже в продаже</option>

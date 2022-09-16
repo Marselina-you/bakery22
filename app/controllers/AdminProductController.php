@@ -124,7 +124,7 @@ $productsList = Product::getProductsList();
 
         // Получаем список категорий для выпадающего списка
         $categoriesList = Category::getCategoriesListAdmin();
-        $general = Product::getProductCategoryName($id);
+        //$general = Product::getProductCategoryName($id);
         // Получаем данные о конкретном заказе
         $product = Product::getProductById($id);//получили вид товара
         //$old_picture = Product::getPictureById($id);

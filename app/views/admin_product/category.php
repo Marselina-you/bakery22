@@ -9,7 +9,7 @@ include ROOT . '/views/layouts/header.php';
 <div class="edit__title title_padding fontSans size29px"><a href="/admin/product/create" class="orange">Добавить новый товар</a></div>
 <div class="d-flex col-xl-12">
                     <?php foreach ($categories as $categoryItem): ?>
-                <div class="edit__title title_padding darkBlue fontSans size29px"><a href="<?php echo $categoryItem['id'];?>" class="col-xl-6 <?php if ($categoryId == $categoryItem['id']) echo 'active'; else echo'white'; ?>"><?php echo $categoryItem['name'];?></a>
+                <div class="edit__title title_padding darkBlue fontSans size29px"><a href="<?php echo $categoryItem['id'];?>" class="col-xl-6 <?php if ($categoryId == $categoryItem['id']) echo 'active'; else echo'white'; ?>"><?php echo $categoryItem['name_category'];?></a>
         </div>
        
                    
@@ -55,7 +55,7 @@ include ROOT . '/views/layouts/header.php';
          </div>     
          <div class="d-flex align-items-center bottom_padding">
             <div class="burgundyLight edit-cart__title size22px">Статус:</div> 
-            <div class="view-product-right__status padding_status justify-content-center size20px  icons__item_padding <?php echo $product['style']; ?>"><?php echo $product['best']; ?></div>
+            <div class="view-product-right__status padding_status justify-content-center size20px  icons__item_padding <?php echo $product['style']; ?>"><?php echo $product['value']; ?></div>
         </div>
         <div class="edit-cart__operations">
         <div class="edit-cart__operation bottom_padding10"><a href="" class="size20px darkBlue">Скрыть для пользователя</a></div>

@@ -7,13 +7,13 @@ class Category
 
         $categoryList = array();
 
-        $result = $db->query('SELECT id, name, style, style2 FROM category '
+        $result = $db->query('SELECT id, name_category, style, style2 FROM category '
                 . 'ORDER BY sort_order ASC');
 
         $i = 0;
         while ($row = $result->fetch()) {
             $categoryList[$i]['id'] = $row['id'];
-            $categoryList[$i]['name'] = $row['name'];
+            $categoryList[$i]['name_category'] = $row['name_category'];
 
             $categoryList[$i]['style'] = $row['style'];
             $categoryList[$i]['style2'] = $row['style2'];
@@ -28,13 +28,13 @@ class Category
 
       
 
-        $result = $db->query('SELECT id, name, sort_order, status, style, style2 FROM category '
+        $result = $db->query('SELECT id, name_category, sort_order, status, style, style2 FROM category '
                 . 'ORDER BY sort_order ASC');
         $categoryList = array();
         $i = 0;
         while ($row = $result->fetch()) {
             $categoryList[$i]['id'] = $row['id'];
-            $categoryList[$i]['name'] = $row['name'];
+            $categoryList[$i]['name_category'] = $row['name_category'];
             $categoryList[$i]['sort_order'] = $row['sort_order'];
             $categoryList[$i]['status'] = $row['status'];
             $categoryList[$i]['style'] = $row['style'];
@@ -57,7 +57,7 @@ class Category
         $result->bindParam(':id', $id, PDO::PARAM_INT);
         return $result->execute();
     }
-    public static function updateCategoryById($id, $name, $sort_order, $status, $style, $style2)
+    public static function updateCategoryById($id, $name_category, $sort_order, $status, $style, $style2)
     {
         // Соединение с БД
         $db = Db::getConnection();
@@ -65,7 +65,7 @@ class Category
         // Текст запроса к БД
         $sql = "UPDATE category
             SET 
-                name = :name, 
+                name_category = :name_category, 
                 sort_order = :sort_order,
                 status = :status,
                 
@@ -78,7 +78,7 @@ class Category
         // Получение и возврат результатов. Используется подготовленный запрос
         $result = $db->prepare($sql);
         $result->bindParam(':id', $id, PDO::PARAM_INT);
-        $result->bindParam(':name', $name, PDO::PARAM_STR);
+        $result->bindParam(':name_category', $name_category, PDO::PARAM_STR);
         $result->bindParam(':sort_order', $sort_order, PDO::PARAM_INT);
         $result->bindParam(':status', $status, PDO::PARAM_INT);
         
