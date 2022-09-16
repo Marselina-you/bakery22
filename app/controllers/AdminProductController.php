@@ -18,11 +18,11 @@ class AdminProductController extends AdminBase
     {
         $categories = array();
         $categories = Category::getCategoriesList();
-          echo "action Categorya in AdminProductController";
-          echo "</br>";
-        echo "categorys" .$categoryId;
-       echo "</br>";
-      echo "страница admin/category";
+          //echo "action Categorya in AdminProductController";
+          //echo "</br>";
+        //echo "categorys" .$categoryId;
+       //echo "</br>";
+      //echo "страница admin/category";
         
 
         $categoryProducts = array();

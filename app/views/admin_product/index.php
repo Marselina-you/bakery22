@@ -52,8 +52,8 @@ include ROOT . '/views/layouts/admin_header.php';
             </div>
          </div>     
          <div class="d-flex align-items-center bottom_padding">
-            <div class="burgundyLight edit-cart__title size22px">Статус:</div> 
-            <div class="<?php echo $product['style']; ?> view-product-right__status padding_status justify-content-center size20px  icons__item_padding"><?php echo $product['best']; ?></div>
+            <div class="burgundyLight edit-cart__title size22px">Статус:<?php echo $product['best']; ?></div> 
+            <div class="<?php echo $product['style']; ?> view-product-right__status padding_status justify-content-center size20px  icons__item_padding"><?php echo $product['value']; ?></div>
         </div>
          
      
