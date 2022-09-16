@@ -99,6 +99,7 @@ $result2 = $db->query("SELECT status.value, status.style FROM status JOIN assort
           while($row2 = $result2->fetch()) {
                 $products[$o]['best'] = $row2['value'];
                 $row['best'] = $row2['value'];
+                $products[$o]['style'] = $row2['style'];
                 $o++;
              
                 }
@@ -162,28 +163,27 @@ $result2 = $db->query("SELECT status.value, status.style FROM status JOIN assort
     public static function getProductsList()
     {
     	$db = Db::getConnection();
+       
 		$productsList = array();
 
 		$result = $db->query('SELECT* FROM assortiment ORDER BY id');
 		$i = 0;
 		while($row = $result->fetch()) {
 
-         $result2 = $db->query('SELECT status.value, status.style FROM status JOIN assortiment ON assortiment.best = status.id');
+         $result2 = $db->query('SELECT status.value, status.style FROM status JOIN assortiment ON assortiment.best = status.id WHERE assortiment.id = ' .$row['id']);
        $o = 0;
          
             
              while($row2 = $result2->fetch()) {
                 $productsList[$o]['best'] = $row2['value'];
                 $row['best'] = $row2['value'];
+                $productsList[$o]['style'] = $row2['style'];
+                $row['style'] = $row2['style'];
                 $o++;
              }
-                
-              
-             
-             
-         
-
-			$productsList[$i]['id'] = $row['id'];
+            $productsList[$i]['best'] = $row['best']; 
+            $productsList[$i]['style'] = $row['style'];   
+            $productsList[$i]['id'] = $row['id'];
             $productsList[$i]['category_id'] = $row['category_id'];
 			$productsList[$i]['name'] = $row['name'];
 			$productsList[$i]['price'] = $row['price'];
@@ -197,7 +197,7 @@ $result2 = $db->query("SELECT status.value, status.style FROM status JOIN assort
             $productsList[$i]['top1'] = $row['top1'];
             $productsList[$i]['top2'] = $row['top2'];
             $productsList[$i]['top3'] = $row['top3'];
-            $productsList[$i]['best'] = $row['best'];
+           
             $productsList[$i]['nal'] = $row['nal'];
             $productsList[$i]['new_picture'] = $row['photo'];
            
@@ -205,7 +205,7 @@ $result2 = $db->query("SELECT status.value, status.style FROM status JOIN assort
 
 		}
         //array_push($productsList, var)
-
+print_r($productsList);
 		return $productsList;
     }
     public static function deleteProductById($id)

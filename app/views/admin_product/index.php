@@ -22,7 +22,7 @@ include ROOT . '/views/layouts/admin_header.php';
  <div class="edit-cart bottom_padding d-flex col-xl-6 col-lg-6">
          <div class="edit-cart__img col-xl-4"><img width ="80%" src="/upload/images/products/<?php echo $product['new_picture'];?>"></div>
          <div class="edit-cart__content d-flex flex-column">
-        <div class="edit-cart__title bottom_padding10 font-weight-bold size20px"><div class="burgundy fontSegoePrint font-weight-bold size35px padding-15"><?php echo $product['name']; ?></div></div>
+        <div class="edit-cart__title bottom_padding10 font-weight-bold size20px"><div class="burgundy fontSegoePrint font-weight-bold size35px padding-15"><?php echo $product['name']; ?> #<?php echo $product['id']; ?></div></div>
        <div class=""><div class="edit-cart__title bottom_padding10 size20px"><div class="brownDark justify-content-center font-weight-bold size24px"><?php echo $product['price']; ?><span class="rubl">₽</span></div></div>
          </div>
           <div class="edit__category size20px"><div class="view-product-right__status  brownGrey size16px"><?php if ($product['nal'] == 1) echo 'в наличии'; else echo 'нет в наличии';?></div></div>
@@ -48,12 +48,12 @@ include ROOT . '/views/layouts/admin_header.php';
            </div>
             <div class="block-top_top d-flex align-items-center">
                 <div class="burgundyLight edit-cart__title size20px">Топ 3:</div>
-                    <div class="d-flex fontTahoma size20px icons__item_padding"> <?php echo $product['top3']; ?></div>
+                    <div class="d-flex fontTahoma size20px icons__item_padding"><?php echo $product['top3']; ?></div>
             </div>
          </div>     
-         <div class="burgundyLight d-flex align-items-center bottom_padding">
+         <div class="d-flex align-items-center bottom_padding">
             <div class="burgundyLight edit-cart__title size22px">Статус:</div> 
-            <div class="view-product-right__status padding_status justify-content-center orange size20px  icons__item_padding"><?php echo $product['best']; ?></div>
+            <div class="<?php echo $product['style']; ?> view-product-right__status padding_status justify-content-center size20px  icons__item_padding"><?php echo $product['best']; ?></div>
         </div>
          
      

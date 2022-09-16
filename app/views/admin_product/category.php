@@ -53,9 +53,9 @@ include ROOT . '/views/layouts/header.php';
                     <div class="d-flex fontTahoma size20px icons__item_padding"> <?php echo $product['top3']; ?></div>
             </div>
          </div>     
-         <div class="burgundyLight d-flex align-items-center bottom_padding">
+         <div class="d-flex align-items-center bottom_padding">
             <div class="burgundyLight edit-cart__title size22px">Статус:</div> 
-            <div class="view-product-right__status padding_status justify-content-center orange size20px  icons__item_padding"><?php echo $product['best']; ?></div>
+            <div class="view-product-right__status padding_status justify-content-center size20px  icons__item_padding <?php echo $product['style']; ?>"><?php echo $product['best']; ?></div>
         </div>
         <div class="edit-cart__operations">
         <div class="edit-cart__operation bottom_padding10"><a href="" class="size20px darkBlue">Скрыть для пользователя</a></div>
