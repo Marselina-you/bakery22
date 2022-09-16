@@ -9,6 +9,7 @@ class AdminProductController extends AdminBase
         $user = User::getUserById($userId);
         $categories = array();
         $categories = Category::getCategoriesList();
+        
 
 		require_once(ROOT . '/views/admin_product/index.php');
 		return true;
@@ -123,7 +124,7 @@ $productsList = Product::getProductsList();
 
         // Получаем список категорий для выпадающего списка
         $categoriesList = Category::getCategoriesListAdmin();
-        $name_category = Product::getProductCategoryName($id);
+        $general = Product::getProductCategoryName($id);
         // Получаем данные о конкретном заказе
         $product = Product::getProductById($id);//получили вид товара
         //$old_picture = Product::getPictureById($id);

@@ -303,19 +303,27 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
             $password = '';
             $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);*/
             $db = Db::getConnection();
-            $result = $db->query('SELECT category.id, category.status, category.name FROM category JOIN assortiment ON assortiment.category_id= category.id WHERE assortiment.id =' .$id);
-            
+            $result = $db->query('SELECT category.id, category.name FROM category JOIN assortiment ON assortiment.category_id= category.id WHERE assortiment.id =' .$id);
+            $result2 = $db->query('SELECT status.value, status.style FROM status JOIN assortiment ON assortiment.best = status.id WHERE assortiment.id = ' .$id);
 
             /*$result->setFetchMode(PDO::FETCH_NUM);*/
             $result->setFetchMode(PDO::FETCH_ASSOC);
+            $result2->setFetchMode(PDO::FETCH_ASSOC);
 
-            $name_category = $result->fetch();//массив из столбцов таблицы
+            $name_category = $result->fetch();
+            $status = $result2->fetch();
+$general = $name_category + $status;
+            //массив из столбцов таблицы
+            //$status = $result2->fetch();
+            //$general = array_merge($name_category, $status);
+            print_r($general);
+ return $general;
+
             
-
-
-            return $name_category;
         }
 
     }
+    
+
 
 }
