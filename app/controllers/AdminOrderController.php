@@ -14,6 +14,8 @@ class AdminOrderController extends AdminBase
     {
         // Проверка доступа
         self::checkAdmin();
+        $userId = User::checkLoggedSite();
+        $user = User::getUserById($userId);
 
         // Получаем список заказов
         $ordersList = Order::getOrdersList();
@@ -88,7 +90,8 @@ class AdminOrderController extends AdminBase
     {
         // Проверка доступа
         self::checkAdmin();
-
+        $userId = User::checkLoggedSite();
+        $user = User::getUserById($userId);
         // Обработка формы
         if (isset($_POST['submit'])) {
             // Если форма отправлена

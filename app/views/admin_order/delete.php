@@ -1,31 +1,27 @@
-<?php include ROOT . '/views/layouts/header_admin.php'; ?>
+<?php include ROOT . '/views/layouts/admin_header.php';
+include ROOT . '/views/layouts/header.php'; ?>
 
-<section>
-    <div class="container">
-        <div class="row">
+<div class="wrap-content">
+    <div class="main">
+        <div class="container-fluid col-xl-12 edit">
+    <?php include ROOT . '/views/layouts/admin_menu.php';?>
 
-            <br/>
+           
 
-            <div class="breadcrumbs">
-                <ol class="breadcrumb">
-                    <li><a href="/admin">Админпанель</a></li>
-                    <li><a href="/admin/order">Управление заказами</a></li>
-                    <li class="active">Удалить заказ</li>
-                </ol>
-            </div>
+           
 
 
-            <h4>Удалить заказ #<?php echo $id; ?></h4>
+             <div class="edit__title title_padding fontSans size29px orange">Удалить заказ #<?php echo $id; ?></div>
 
 
-            <p>Вы действительно хотите удалить этот заказ?</p>
+             <div class="edit__title title_padding fontSans size29px">Вы действительно хотите удалить этот заказ?</div>
 
-            <form method="post">
-                <input type="submit" name="submit" value="Удалить" />
+            <form method="post" class="d-flex justify-content-end edit__title title_padding col-xl-5">
+                <input type="submit" name="submit" value="Удалить"  class="fontSans size29px btn btn-danger" />
             </form>
 
         </div>
     </div>
-</section>
+</div>
 
-<?php include ROOT . '/views/layouts/footer_admin.php'; ?>
+<?php include ROOT . '/views/layouts/admin_footer.php'; ?>

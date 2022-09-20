@@ -1,21 +1,18 @@
-<?php include ROOT . '/views/layouts/header_admin.php'; ?>
+<?php include ROOT . '/views/layouts/admin_header.php';
+include ROOT . '/views/layouts/header.php'; ?>
 
-<section>
-    <div class="container">
-        <div class="row">
+<div class="wrap-content">
+    <div class="main">
+        <div class="container-fluid col-xl-12 edit">
+    <?php include ROOT . '/views/layouts/admin_menu.php';?>
 
-            <br/>
+           
                         
-            <div class="breadcrumbs">
-                <ol class="breadcrumb">
-                    <li><a href="/admin">Админпанель</a></li>
-                    <li class="active">Управление заказами</li>
-                </ol>
-            </div>
+           
 
-            <h4>Список заказов</h4>
+            <div class="edit__title title_padding fontSans size29px orange">Список заказов</div>
 
-            <br/>
+            
 
             
             <table class="table-bordered table-striped table">
@@ -49,6 +46,6 @@
 
         </div>
     </div>
-</section>
+</div>
 
-<?php include ROOT . '/views/layouts/footer_admin.php'; ?>
+<?php include ROOT . '/views/layouts/admin_footer.php'; ?>
