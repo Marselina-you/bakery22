@@ -196,6 +196,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
             $products[$i]['name'] = $row['name'];
             $products[$i]['price'] = $row['price'];
             $products[$i]['weight'] = $row['weight'];
+            $products[$i]['photo'] = $row['photo'];
             $i++;
         }
 

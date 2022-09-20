@@ -55,7 +55,8 @@ $productsBest = Product::getProductsBest();
         // Список категорий для левого меню
         $categories = array();
         $categories = Category::getCategoriesList();
-
+$userId = User::checkLoggedSite();
+        $user = User::getUserById($userId);
 
         // Статус успешного оформления заказа
         $result = false;

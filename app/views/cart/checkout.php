@@ -1,30 +1,37 @@
-<?php include ROOT . '/views/layouts/header.php'; ?>
+<?php include ROOT . '/views/layouts/header.php';
+include ROOT . '/views/layouts/header2.php'; 
+//include ROOT . '/views/layouts/header3.php';?>
+<div class="wrap-content">
+    <div class="main">
 
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="left-sidebar">
-                    <h2>Каталог</h2>
-                    <div class="panel-group category-products">
-                        <?php foreach ($categories as $categoryItem): ?>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a href="/category/<?php echo $categoryItem['id']; ?>">
-                                            <?php echo $categoryItem['name']; ?>
-                                        </a>
-                                    </h4>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
+
+    <div class="content-empty">
+        <div class="content-empty-text col-xl-11 offset-xl-1">
+            <div class="col-xl-10">
+                <div class="col-xl-4 title size35px brownDark fontTahoma letter-space">Корзина </div></div>
+            <div class="col-xl-10  undertitle_check_padding d-flex align-items-center">
+                <div class="size29px fontTahoma letter-space"><a href="/catalog" class="undertitle_check brownLight">Перейти в каталог</a></div>
+            <div class="d-flex col-xl-8">
+                    <?php foreach ($categories as $categoryItem): ?>
+                <div class="check_padding "><a href="/category/<?php echo $categoryItem['id'];?>" class="darkBlue fontSans size29px"><?php echo $categoryItem['name_category'];?></a>
                 </div>
+            <?php endforeach; ?>
+            </div> 
             </div>
+           
+        </div>
+         
+     
+    </div>        
+                  
+                        
+                    
+              
+          
 
             <div class="col-sm-9 padding-right">
-                <div class="features_items">
-                    <h2 class="title text-center">Корзин</h2>
+             
+                  
 
 
                     <?php if ($result): ?>
@@ -67,11 +74,11 @@
 
                     <?php endif; ?>
 
-                </div>
+                </div></div></div>
 
-            </div>
-        </div>
-    </div>
-</section>
+          
+       
+    
 
-<?php include ROOT . '/views/layouts/footer.php'; ?>
+
+<?php include ROOT . '/views/layouts/footer2.php'; ?>

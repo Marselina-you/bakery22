@@ -3,6 +3,15 @@ include ROOT . '/views/layouts/header2.php';
 //include ROOT . '/views/layouts/header3.php';?>
 <div class="wrap-content">
     <div class="main">
+       <div class="content-empty">
+         <div class="content-empty-text col-xl-6 offset-xl-1">
+            <div class="col-xl-10">
+            <div class="col-xl-4 title size35px brownDark fontTahoma letter-space">Корзина</div></div>
+            <div class="col-xl-10 undertitle d-flex align-items-center">
+            <div class="size29px fontTahoma letter-space"><a href="">Перейти в каталог</a></div></div>
+         </div>
+         
+      </div>
 
        <?php if ($productsInCart): ?>
         <?php foreach ($products as $product): ?>
@@ -11,7 +20,7 @@ include ROOT . '/views/layouts/header2.php';
         <div class="wrap-main-cartFull-list-item">
             <div class="main-cartFull-list-item d-flex col-xl-12 justify-content-between">
          <div class="main-cartFull-list-item__img  col-xl-4 d-flex justify-content-center align-items-center">
-            <img src="/template/images/page2.png">
+            <img src="/upload/images/products/<?php echo $product['photo']; ?>">
          </div>
          <div class="main-cartFull-list-item__info col-xl-4 d-flex flex-column justify-content-center">
             <div class="main-cartFull-list-item__info-name size29px fontSans brownDark"> <?php echo $product['name'];?></div>
@@ -45,7 +54,7 @@ include ROOT . '/views/layouts/header2.php';
 
 <div class="content-form__data d-flex align-items-center justify-content-end">
    <div class="col-xl-6 d-flex justify-content-end">
-<button class="content-order-end__click__btn btn btn-success size29px col-xl-9" type="button">Оформить заказ</button></div></div>
+<button class="content-order-end__click__btn btn btn-success size29px col-xl-9" type="button"><a href="/cart/checkout">Оформить заказ</a></button></div></div>
  <?php else: ?>
      <div class="content-empty">
          <div class="content-empty-text col-xl-6 offset-xl-1">
