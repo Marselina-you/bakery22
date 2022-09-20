@@ -1,5 +1,5 @@
-$(document).ready(function(){
-	function htmSlider(){
+
+	function actionSlider(){
 		/* Зададим следующие переменные */
 
 		/* обертка слайдера */
@@ -77,8 +77,8 @@ $(document).ready(function(){
 	}
 
 	/* иницилизируем функцию слайдера */
-	htmSlider();
-});
+	
+
 
 
 

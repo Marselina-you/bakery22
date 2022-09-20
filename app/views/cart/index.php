@@ -57,8 +57,8 @@ include ROOT . '/views/layouts/header2.php';
       <div class="main">
    <div class="content-empty-slider__title brownDark size29px fontTahoma letter-space d-flex justify-content-center">Рекомендуем</div>
    <div class="arrow-navy d-flex justify-content-between">
-   <div class="d-flex col-xl-1 justify-content-center"><div class="arrow  prev-slide navy-phone"><img src="/template/images/arrow1.png"></div></div>
-   <div class="col-xl-1 d-flex justify-content-center"><div class="arrow next-slide navy-phone"><img src="/template/images/arrow.png"></div></div></div>
+  <div class="arrow prev-slide navy-phone"><img src="/template/images/arrow1.png"></div>
+  <div class="arrow next-slide navy-phone"><img src="/template/images/arrow.png"></div></div>
    <div class="slider d-flex col-xl-10 offset-xl-1 col-md-10 offset-md-1  col-sm-10 offset-sm-1  col-xs-10 offset-xs-1 ">
      
       <div class="slide-list col-xl-12 col-md-12 col-sm-12">
