@@ -77,6 +77,7 @@ $productsList = Product::getProductsList();
 			$options['best'] = $_POST['best'];
 			$options['nal'] = $_POST['nal'];
 			$options['new_picture'] = $_FILES['new_picture']['name']; 
+			$options['recommendation'] = $_POST['recommendation'];
 		
 			
 			
@@ -149,6 +150,7 @@ $productsList = Product::getProductsList();
             $options['nal'] = $_POST['nal'];
             $options['best'] = $_POST['best'];
             $options['new_picture'] = $_POST['old_picture'];
+            $options['recommendation'] = $_POST['recom'];
  if (is_uploaded_file($_FILES["new_picture"]["tmp_name"])) {
                    move_uploaded_file($_FILES['new_picture']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] .'/upload/images/products/'.$_FILES['new_picture']['name']);
 

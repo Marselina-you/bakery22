@@ -73,9 +73,17 @@ include ROOT . '/views/layouts/header.php'; ?>
                 <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
     <div class="view-product-right__status  brownGrey size16px">Наличие</div>
     <select name="nal" class="size24px admin_input">
-                
+                 <option value="<?php echo $product['nal']; ?>"><?php if ($product['nal'] == 1) echo 'в наличии'; else echo 'нет в наличии';?></option>
                         <option value="1">В наличии</option>
                         <option value="2">Нет</option></select>
+
+                    </div>
+                     <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
+    <div class="view-product-right__status  brownGrey size16px">Рекомендуем (в слайдер)</div>
+    <select name="recom" class="size24px admin_input">
+                 <option value="<?php echo $product['recommendation']; ?>"><?php if ($product['recommendation'] == 1) echo 'да'; else echo 'нет';?></option>
+                        <option value="1">Да</option>
+                        <option value="0">Нет</option></select>
 
                     </div>
 

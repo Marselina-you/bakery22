@@ -19,8 +19,8 @@ include ROOT . '/views/layouts/header.php'; ?>
 		    <select name="category_id" class="size24px admin_input">
 		    	<?php if (is_array($categoriesList)): ?>
 		    		<?php foreach ($categoriesList as $category): ?>
-		    			<option value="<?php echo $category['id']; ?>" name="">
-		    				<?php echo $category['name']; ?>
+		    			<option value="<?php echo $category['id']; ?>">
+		    				<?php echo $category['name_category']; ?>
 		    					
 		    				</option>
 			<?php endforeach; ?>
@@ -66,10 +66,10 @@ include ROOT . '/views/layouts/header.php'; ?>
 	<div class="view-product-right__status padding_status justify-content-center orange size24px">Статус</div>
 	<select name="best" class="size24px admin_input">
 		    	
-		    			<option value="Бестселлер">Бестселлер</option>
-		    			<option value="Новинка!">Новинка!</option>
-		    			<option value="Выгодно">Выгодно</option>
-		    			<option value="Уже в продаже">Уже в продаже</option></select>
+		    			<option value="1">Бестселлер</option>
+		    			<option value="2">Новинка!</option>
+		    			<option value="3">Выгодно</option>
+		    			<option value="4">Уже в продаже</option></select>
 
 		    		</div>
 <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
@@ -80,6 +80,14 @@ include ROOT . '/views/layouts/header.php'; ?>
 		    			<option value="Нет">Нет</option></select>
 
 		    		</div>
+ <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
+    <div class="view-product-right__status  brownGrey size16px">Рекомендуем (в слайдер)</div>
+    <select name="recommendation" class="size24px admin_input">
+                
+                        <option value="1">Да</option>
+                        <option value="0">Нет</option></select>
+
+                    </div>
 <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
 	<div class="burgundyLight edit-cart__title size20px">Изображение товара</div>
 	<input type="file" name="new_picture" placeholder="" value=""></div>		    	

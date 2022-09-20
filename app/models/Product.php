@@ -66,7 +66,8 @@ LEFT JOIN status ON status.id = assortiment.best   ORDER BY id ASC LIMIT '. $cou
 			$latestProducts[$i]['ing3'] = $row['ing3'];
             $latestProducts[$i]['best'] = $row['best'];
             $latestProducts[$i]['nal'] = $row['nal'];
-             $latestProducts[$i]['new_picture'] = $row['photo'];
+            $latestProducts[$i]['new_picture'] = $row['photo'];
+            $latestProducts[$i]['recommendation'] = $row['recommendation'];
 			$i++;
 		}
 
@@ -107,6 +108,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
                 $products[$i]['best'] = $row['best'];
                 $products[$i]['nal'] = $row['nal'];
                 $products[$i]['new_picture'] = $row['photo'];
+                $products[$i]['recommendation'] = $row['recommendation'];
                 $i++;
             }
 
@@ -154,6 +156,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
             $productsList[$i]['top3'] = $row['top3'];
             $productsList[$i]['nal'] = $row['nal'];
             $productsList[$i]['new_picture'] = $row['photo'];
+
            
             $i++;
 
@@ -213,10 +216,10 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
 
     	$sql = 'INSERT INTO assortiment '
                 . '(category_id, name,  price,  weight, '
-                . 'description, ing1, ing2, ing3, slogan, top1, top2, top3, best, nal, photo)'
+                . 'description, ing1, ing2, ing3, slogan, top1, top2, top3, best, nal, photo, recommendation)'
                 . 'VALUES '
                 . '(:category_id, :name,  :price,  :weight, '
-                . ':description, :ing1, :ing2, :ing3, :slogan, :top1, :top2, :top3, :best, :nal, :new_picture)';
+                . ':description, :ing1, :ing2, :ing3, :slogan, :top1, :top2, :top3, :best, :nal, :new_picture, :recommendation)';
     	$result = $db->prepare($sql);
     	
     	$result->bindParam(':name', $options['name'], PDO::PARAM_STR);
@@ -234,6 +237,8 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
         $result->bindParam(':best', $options['best'], PDO::PARAM_STR);
         $result->bindParam(':nal', $options['nal'], PDO::PARAM_STR);
         $result->bindParam(':new_picture', $options['new_picture'], PDO::PARAM_STR);
+        $result->bindParam(':recommendation', $options['recommendation'], PDO::PARAM_INT);
+        
 
          
     	if ($result->execute()) {
@@ -263,7 +268,8 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
                 top3 = :top3,
                 best = :best,
                 nal = :nal,
-                photo = :new_picture
+                photo = :new_picture, 
+                recommendation = :recommendation
             WHERE id = :id";
 
         // Получение и возврат результатов. Используется подготовленный запрос
@@ -284,6 +290,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
         $result->bindParam(':best', $options['best'], PDO::PARAM_STR);
         $result->bindParam(':nal', $options['nal'], PDO::PARAM_STR);
         $result->bindParam(':new_picture', $options['new_picture'], PDO::PARAM_STR);
+        $result->bindParam(':recommendation', $options['recommendation'], PDO::PARAM_INT);
        
         return $result->execute();
     }
@@ -337,6 +344,53 @@ $general = $name_category + $status;
             
         }
 
+    }
+    public static function getProductsBest()
+    {
+        $db = Db::getConnection();
+       
+        $productsList = array();
+
+        $result = $db->query('SELECT assortiment.*, status.value, status.style  FROM assortiment JOIN status ON status.id = assortiment.best ORDER BY assortiment.id');
+        $i = 0;
+        while($row = $result->fetch()) {
+
+         //$result2 = $db->query('SELECT status.value, status.style FROM status JOIN assortiment ON assortiment.best = status.id WHERE assortiment.id = ' .$row['id']);
+       //$o = 0;
+         
+            
+             //while($row2 = $result2->fetch()) {
+                //$productsList[$o]['best'] = $row2['value'];
+               // $row['best'] = $row2['value'];
+               // $productsList[$o]['style'] = $row2['style'];
+                //$row['style'] = $row2['style'];
+                //$o++;
+             //}
+             $productsList[$i]['best'] = $row['best'];
+            $productsList[$i]['id'] = $row['id'];
+            $productsList[$i]['name'] = $row['name'];
+             $productsList[$i]['weight'] = $row['weight'];
+            $productsList[$i]['value'] = $row['value']; 
+            $productsList[$i]['style'] = $row['style'];   
+            $productsList[$i]['category_id'] = $row['category_id'];
+            $productsList[$i]['price'] = $row['price'];
+            $productsList[$i]['description'] = $row['description'];
+            $productsList[$i]['ing1'] = $row['ing1'];
+            $productsList[$i]['ing2'] = $row['ing2'];
+            $productsList[$i]['ing3'] = $row['ing3'];
+            $productsList[$i]['slogan'] = $row['slogan'];
+            $productsList[$i]['top1'] = $row['top1'];
+            $productsList[$i]['top2'] = $row['top2'];
+            $productsList[$i]['top3'] = $row['top3'];
+            $productsList[$i]['nal'] = $row['nal'];
+            $productsList[$i]['new_picture'] = $row['photo'];
+           
+            $i++;
+
+        }
+        //array_push($productsList, var)
+//print_r($productsList);
+        return $productsList;
     }
     
 
