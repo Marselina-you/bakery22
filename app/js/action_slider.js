@@ -3,7 +3,7 @@
 		/* Зададим следующие переменные */
 
 		/* обертка слайдера */
-		var slideWrap = $('.slide-wrap');
+		var slideWrap = $('.slide-actions');
 		/* ссылки на предудыщий иследующий слайд */
 		var nextLink = $('.next-slide');
 		var prevLink = $('.prev-slide');

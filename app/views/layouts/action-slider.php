@@ -9,7 +9,7 @@
    <div class="slider-action d-flex">
      
       <div class="slide-list">
-         <div class="slide-wrap">
+         <div class="slide-actions">
              
             <div class="action-slider-slide-item  d-flex flex-column align-items-center justify-content-center">
                <div class="slide-img"><img  src="/template/images/slide2.png" alt="" /></div>

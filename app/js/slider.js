@@ -4,27 +4,27 @@
 		/* Зададим следующие переменные */
 
 		/* обертка слайдера */
-		var slideWrap = $('.slide-wrap');
+		var slideWrap1 = $('.slide-wrap');
 		/* ссылки на предудыщий иследующий слайд */
-		var nextLink = $('.next-slide');
-		var prevLink = $('.prev-slide');
-        var playLink = $('.auto');
+		var nextLink1 = $('.next-slide');
+		var prevLink1 = $('.prev-slide');
+        var playLink1 = $('.auto');
 		var is_animate = false;
 		
 		/* ширина слайда с отступами */
-		var slideWidth = $('.slide-item').outerWidth();
+		var slideWidth1 = $('.slide-item').outerWidth();
 		
 		/* смещение слайдера */
-		var newLeftPos = slideWrap.position().left - slideWidth;
+		var newLeftPos = slideWrap1.position().left - slideWidth1;
 		
 		/* Клик по ссылке на следующий слайд */
-		nextLink.click(function(){
-			if(!slideWrap.is(':animated')) {
+		nextLink1.click(function(){
+			if(!slideWrap1.is(':animated')) {
 	
-				slideWrap.animate({left: newLeftPos}, 600, function(){
-					slideWrap
+				slideWrap1.animate({left: newLeftPos}, 600, function(){
+					slideWrap1
 						.find('.slide-item:first')
-						.appendTo(slideWrap)
+						.appendTo(slideWrap1)
 						.parent()
 						.css({'left': 0});
 				});
@@ -33,13 +33,13 @@
 		});
 
 		/* Клик по ссылке на предыдующий слайд */
-		prevLink.click(function(){
-			if(!slideWrap.is(':animated')) {
+		prevLink1.click(function(){
+			if(!slideWrap1.is(':animated')) {
 			
-				slideWrap
+				slideWrap1
 					.css({'left': newLeftPos})
 					.find('.slide-item:last')
-					.prependTo(slideWrap)
+					.prependTo(slideWrap1)
 					.parent()
 					.animate({left: 0}, 600);
 
@@ -51,10 +51,10 @@
 		function autoplay(){
 			if(!is_animate){
 				is_animate = true;
-				slideWrap.animate({left: newLeftPos}, 500, function(){
-					slideWrap
+				slideWrap1.animate({left: newLeftPos}, 500, function(){
+					slideWrap1
 						.find('.slide-item:first')
-						.appendTo(slideWrap)
+						.appendTo(slideWrap1)
 						.parent()
 						.css({'left': 0});
 					is_animate = false;
@@ -63,13 +63,13 @@
 		}
 		
 		/* Клики по ссылкам старт/пауза */
-		playLink.click(function(){
-			if(playLink.hasClass('play')){
-				playLink.removeClass('play').addClass('pause');
+		playLink1.click(function(){
+			if(playLink1.hasClass('play')){
+				playLink1.removeClass('play').addClass('pause');
 				jQuery('.arrow').addClass('disable');
 				timer = setInterval(autoplay, 1000);
 			} else {
-				playLink.removeClass('pause').addClass('play');
+				playLink1.removeClass('pause').addClass('play');
 				jQuery('.arrow').removeClass('disable');
 				clearInterval(timer);
 			}
