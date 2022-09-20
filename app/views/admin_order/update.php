@@ -1,24 +1,17 @@
-<?php include ROOT . '/views/layouts/header_admin.php'; ?>
+<?php include ROOT . '/views/layouts/admin_header.php';
+include ROOT . '/views/layouts/header.php'; ?>
 
-<section>
-    <div class="container">
-        <div class="row">
+<div class="wrap-content">
+    <div class="main">
+  <div class="container-fluid col-xl-12 edit">
+    <?php include ROOT . '/views/layouts/admin_menu.php';?>
+<div class="edit__title title_padding fontSans size29px orange">Редактировать заказ #<?php echo $id; ?></div>
+        
 
-            <br/>
-
-            <div class="breadcrumbs">
-                <ol class="breadcrumb">
-                    <li><a href="/admin">Админпанель</a></li>
-                    <li><a href="/admin/order">Управление заказами</a></li>
-                    <li class="active">Редактировать заказ</li>
-                </ol>
-            </div>
+          
 
 
-            <h4>Редактировать заказ #<?php echo $id; ?></h4>
-
-            <br/>
-
+           
             <div class="col-lg-4">
                 <div class="login-form">
                     <form action="#" method="post">
@@ -51,6 +44,6 @@
 
         </div>
     </div>
-</section>
+</div>
 
-<?php include ROOT . '/views/layouts/footer_admin.php'; ?>
+<?php include ROOT . '/views/layouts/admin_footer.php'; ?>

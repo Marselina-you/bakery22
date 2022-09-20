@@ -55,7 +55,7 @@ $productsBest = Product::getProductsBest();
         // Список категорий для левого меню
         $categories = array();
         $categories = Category::getCategoriesList();
-$userId = User::checkLoggedSite();
+        $userId = User::checkLoggedSite();
         $user = User::getUserById($userId);
 
         // Статус успешного оформления заказа
@@ -103,6 +103,7 @@ $userId = User::checkLoggedSite();
 
                     // Очищаем корзину
                     Cart::clear();
+                    
                 }
             } else {
                 // Форма заполнена корректно? - Нет

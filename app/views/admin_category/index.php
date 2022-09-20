@@ -23,7 +23,7 @@ include ROOT . '/views/layouts/admin_header.php';
                         <tr>
                        
                        <td class="brownDark size22px">Название категории
-                        <td class="edit__title title_padding darkBlue fontSans size29px"><?php echo $category['name']; ?>
+                        <td class="edit__title title_padding darkBlue fontSans size29px"><?php echo $category['name_category']; ?>
                         <tr>
                        <td><a href="/admin/category/update/<?php echo $category['id']; ?>" title="Редактировать" class="greenVivid size22px edit__title">редактировать</a>
                         <td><a href="/admin/category/delete/<?php echo $category['id']; ?>" title="Удалить" class="burgundyLight size22px edit__title">удалить</a><tr>

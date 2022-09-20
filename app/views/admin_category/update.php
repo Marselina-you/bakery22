@@ -8,7 +8,7 @@ include ROOT . '/views/layouts/header.php'; ?>
           
           
 
-            <div class="edit__title title_padding fontSans size29px orange">Редактировать категорию "<?php echo $category['name']; ?>"</div>
+            <div class="edit__title title_padding fontSans size29px orange">Редактировать категорию "<?php echo $category['name_category']; ?>"</div>
 
             
 
@@ -17,7 +17,7 @@ include ROOT . '/views/layouts/header.php'; ?>
                     <form action="#" method="post">
                         <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
             <div class="burgundy fontSegoePrint font-weight-bold size35px padding-15">Название категории</div>
-                        <input type="text" class="size24px admin_input" name="name" placeholder="" value="<?php echo $category['name']; ?>"></div>
+                        <input type="text" class="size24px admin_input" name="name" placeholder="" value="<?php echo $category['name_category']; ?>"></div>
                           <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
                 <div class="burgundy fontSegoePrint font-weight-bold size35px padding-15">Sort_order</div>
                         <input type="text" name="sort_order" placeholder=""  class="size24px admin_input" name="name" value="<?php echo $category['sort_order']; ?>"></div>

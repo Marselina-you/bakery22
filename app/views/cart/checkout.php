@@ -36,7 +36,8 @@ include ROOT . '/views/layouts/header2.php';
 
                     <?php if ($result): ?>
 
-                        <p>Заказ оформлен. Мы Вам перезвоним.</p>
+                        <p>Заказ создан.</p>
+                        
 
                     <?php else: ?>
 

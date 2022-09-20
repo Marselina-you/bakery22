@@ -3,18 +3,28 @@ include ROOT . '/views/layouts/header2.php';
 //include ROOT . '/views/layouts/header3.php';?>
 <div class="wrap-content">
     <div class="main">
-       <div class="content-empty">
-         <div class="content-empty-text col-xl-6 offset-xl-1">
-            <div class="col-xl-10">
-            <div class="col-xl-4 title size35px brownDark fontTahoma letter-space">Корзина</div></div>
-            <div class="col-xl-10 undertitle d-flex align-items-center">
-            <div class="size29px fontTahoma letter-space"><a href="">Перейти в каталог</a></div></div>
-         </div>
-         
-      </div>
+       
 
        <?php if ($productsInCart): ?>
         <?php foreach ($products as $product): ?>
+          <div class="content-empty">
+        <div class="content-empty-text col-xl-11 offset-xl-1">
+            <div class="col-xl-10">
+                <div class="col-xl-4 title size35px brownDark fontTahoma letter-space">Корзина </div></div>
+            <div class="col-xl-10  undertitle_check_padding d-flex align-items-center">
+                <div class="size29px fontTahoma letter-space"><a href="/catalog" class="undertitle_check brownLight">Перейти в каталог</a></div>
+            <div class="d-flex col-xl-8">
+                    <?php foreach ($categories as $categoryItem): ?>
+                <div class="check_padding "><a href="/category/<?php echo $categoryItem['id'];?>" class="darkBlue fontSans size29px"><?php echo $categoryItem['name_category'];?></a>
+                </div>
+            <?php endforeach; ?>
+            </div> 
+            </div>
+           
+        </div>
+         
+     
+    </div>       
 <div class="wrap-main-cartFull-content col-xl-10 offset-xl-1">
     <div class="main-cartFull-list">
         <div class="wrap-main-cartFull-list-item">
@@ -56,13 +66,24 @@ include ROOT . '/views/layouts/header2.php';
    <div class="col-xl-6 d-flex justify-content-end">
 <button class="content-order-end__click__btn btn btn-success size29px col-xl-9" type="button"><a href="/cart/checkout">Оформить заказ</a></button></div></div>
  <?php else: ?>
-     <div class="content-empty">
-         <div class="content-empty-text col-xl-6 offset-xl-1">
-            <div class="title size35px brownDark fontTahoma letter-space">Корзина пуста</div>
-            <div class="undertitle size29px fontTahoma letter-space"><a href="">Перейти в каталог</a></div>
-         </div>
+      <div class="content-empty">
+        <div class="content-empty-text col-xl-11 offset-xl-1">
+            <div class="col-xl-10">
+                <div class="col-xl-4 title size35px brownDark fontTahoma letter-space">Корзина пуста</div></div>
+            <div class="col-xl-10  undertitle_check_padding d-flex align-items-center">
+                <div class="size29px fontTahoma letter-space"><a href="/catalog" class="undertitle_check brownLight">Перейти в каталог</a></div>
+            <div class="d-flex col-xl-8">
+                    <?php foreach ($categories as $categoryItem): ?>
+                <div class="check_padding "><a href="/category/<?php echo $categoryItem['id'];?>" class="darkBlue fontSans size29px"><?php echo $categoryItem['name_category'];?></a>
+                </div>
+            <?php endforeach; ?>
+            </div> 
+            </div>
+           
+        </div>
          
-      </div>
+     
+    </div>       
       <div class="main">
    <div class="content-empty-slider__title brownDark size29px fontTahoma letter-space d-flex justify-content-center">Рекомендуем</div>
    <div class="arrow-navy d-flex justify-content-between">

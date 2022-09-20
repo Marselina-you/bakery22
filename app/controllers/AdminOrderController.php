@@ -32,6 +32,8 @@ class AdminOrderController extends AdminBase
     {
         // Проверка доступа
         self::checkAdmin();
+        $userId = User::checkLoggedSite();
+        $user = User::getUserById($userId);
 
         // Получаем данные о конкретном заказе
         $order = Order::getOrderById($id);
@@ -65,18 +67,25 @@ class AdminOrderController extends AdminBase
     {
         // Проверка доступа
         self::checkAdmin();
+        $userId = User::checkLoggedSite();
+        $user = User::getUserById($userId);
 
         // Получаем данные о конкретном заказе
         $order = Order::getOrderById($id);
-
+print_r($order);
+ echo '</br>';
         // Получаем массив с идентификаторами и количеством товаров
         $productsQuantity = json_decode($order['products'], true);
-
+ print_r($productsQuantity);
+ echo '</br>';
         // Получаем массив с индентификаторами товаров
         $productsIds = array_keys($productsQuantity);
+        print_r($productsIds);
+        echo '</br>';
 
         // Получаем список товаров в заказе
         $products = Product::getProdustsByIds($productsIds);
+        print_r($products);
 
         // Подключаем вид
         require_once(ROOT . '/views/admin_order/view.php');
