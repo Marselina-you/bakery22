@@ -19,7 +19,7 @@ const SHOW_BY_DEFAULT = 3;
 			$password = '';
 			$db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);*/
 			$db = Db::getConnection();
-			$result = $db->query('SELECT assortiment.*, category.name_category, status.value 
+			$result = $db->query('SELECT assortiment.*, category.name_category, status.value, status.style 
 FROM assortiment INNER JOIN category ON category.id = assortiment.category_id  
 LEFT JOIN status ON status.id = assortiment.best  WHERE assortiment.id=' . $id);
             
@@ -155,6 +155,7 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
             $productsList[$i]['top2'] = $row['top2'];
             $productsList[$i]['top3'] = $row['top3'];
             $productsList[$i]['nal'] = $row['nal'];
+            $productsList[$i]['recommendation'] = $row['recommendation'];
             $productsList[$i]['new_picture'] = $row['photo'];
 
            
@@ -277,8 +278,8 @@ public static function getProductsListByCategory($categoryId = false, $page = 1)
         $result->bindParam(':id', $id, PDO::PARAM_INT);
         $result->bindParam(':category_id', $options['category_id'], PDO::PARAM_INT);
         $result->bindParam(':name', $options['name'], PDO::PARAM_STR);
-        $result->bindParam(':weight', $options['weight'], PDO::PARAM_STR);
-        $result->bindParam(':price', $options['price'], PDO::PARAM_STR);
+        $result->bindParam(':weight', $options['weight'], PDO::PARAM_INT);
+        $result->bindParam(':price', $options['price'], PDO::PARAM_INT);
         $result->bindParam(':description', $options['description'], PDO::PARAM_STR);
         $result->bindParam(':ing1', $options['ing1'], PDO::PARAM_STR);
         $result->bindParam(':ing2', $options['ing2'], PDO::PARAM_STR);
@@ -349,9 +350,9 @@ $general = $name_category + $status;
     {
         $db = Db::getConnection();
        
-        $productsList = array();
+        $productsBest = array();
 
-        $result = $db->query('SELECT assortiment.*, status.value, status.style  FROM assortiment JOIN status ON status.id = assortiment.best ORDER BY assortiment.id');
+        $result = $db->query('SELECT assortiment.*, status.value, status.style  FROM assortiment JOIN status ON status.id = assortiment.best WHERE assortiment.recommendation = 1 ORDER BY assortiment.id');
         $i = 0;
         while($row = $result->fetch()) {
 
@@ -366,31 +367,34 @@ $general = $name_category + $status;
                 //$row['style'] = $row2['style'];
                 //$o++;
              //}
-             $productsList[$i]['best'] = $row['best'];
-            $productsList[$i]['id'] = $row['id'];
-            $productsList[$i]['name'] = $row['name'];
-             $productsList[$i]['weight'] = $row['weight'];
-            $productsList[$i]['value'] = $row['value']; 
-            $productsList[$i]['style'] = $row['style'];   
-            $productsList[$i]['category_id'] = $row['category_id'];
-            $productsList[$i]['price'] = $row['price'];
-            $productsList[$i]['description'] = $row['description'];
-            $productsList[$i]['ing1'] = $row['ing1'];
-            $productsList[$i]['ing2'] = $row['ing2'];
-            $productsList[$i]['ing3'] = $row['ing3'];
-            $productsList[$i]['slogan'] = $row['slogan'];
-            $productsList[$i]['top1'] = $row['top1'];
-            $productsList[$i]['top2'] = $row['top2'];
-            $productsList[$i]['top3'] = $row['top3'];
-            $productsList[$i]['nal'] = $row['nal'];
-            $productsList[$i]['new_picture'] = $row['photo'];
+             $productsBest[$i]['best'] = $row['best'];
+            $productsBest[$i]['id'] = $row['id'];
+            $productsBest[$i]['name'] = $row['name'];
+             $productsBest[$i]['weight'] = $row['weight'];
+            $productsBest[$i]['value'] = $row['value']; 
+            $productsBest[$i]['style'] = $row['style'];   
+            $productsBest[$i]['category_id'] = $row['category_id'];
+            $productsBest[$i]['price'] = $row['price'];
+           
+            
+            $productsBest[$i]['description'] = $row['description'];
+            $productsBest[$i]['ing1'] = $row['ing1'];
+            $productsBest[$i]['ing2'] = $row['ing2'];
+            $productsBest[$i]['ing3'] = $row['ing3'];
+            $productsBest[$i]['slogan'] = $row['slogan'];
+            $productsBest[$i]['top1'] = $row['top1'];
+            $productsBest[$i]['top2'] = $row['top2'];
+            $productsBest[$i]['top3'] = $row['top3'];
+            $productsBest[$i]['nal'] = $row['nal'];
+            $productsBest[$i]['new_picture'] = $row['photo'];
+
            
             $i++;
 
         }
         //array_push($productsList, var)
 //print_r($productsList);
-        return $productsList;
+        return $productsBest;
     }
     
 

@@ -28,7 +28,7 @@ class CartController
         $categories = Category::getCategoriesList();
         $userId = User::checkLoggedSite();
         $user = User::getUserById($userId);
-
+$productsBest = Product::getProductsBest();
         $productsInCart = false;
 
         // Получим данные из корзины
@@ -38,6 +38,7 @@ class CartController
             // Получаем полную информацию о товарах для списка
             $productsIds = array_keys($productsInCart);
             $products = Product::getProdustsByIds($productsIds);
+
 
             // Получаем общую стоимость товаров
             $totalPrice = Cart::getTotalPrice($products);

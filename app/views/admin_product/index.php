@@ -55,6 +55,9 @@ include ROOT . '/views/layouts/admin_header.php';
             <div class="burgundyLight edit-cart__title size22px">Статус:<?php echo $product['best']; ?></div> 
             <div class="<?php echo $product['style']; ?> view-product-right__status padding_status justify-content-center size20px  icons__item_padding"><?php echo $product['value']; ?></div>
         </div>
+        <div class="d-flex align-items-center bottom_padding">
+            <div class="burgundyLight edit-cart__title size22px">Рекомендуем:<?php if ($product['recommendation'] == 1) echo 'да'; else echo 'нет';?></div> </div>
+           
          
      
 

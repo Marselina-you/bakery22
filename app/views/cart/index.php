@@ -63,62 +63,19 @@ include ROOT . '/views/layouts/header2.php';
      
       <div class="slide-list col-xl-12 col-md-12 col-sm-12">
          <div class="slide-wrap">
+            <?php foreach ($productsBest as $product): ?>
              <div class="slide-item d-flex flex-column align-items-center">
-               <div class="slide-img"><img  src="/template/images/page.png" alt="" /></div>
-              <div class="slide-item__value size45px burgundyLight">300 P</div>
-               <div class="slide-item__slogan orange size24px fontTahoma letter-space myBlue">Выгодно</div>
-               <span class="slide-title brownDark size29px text-center">Ассорти из пирожных</span>
+               <div class="slide-img"><img  src="/upload/images/products/<?php echo $product['new_picture'];?>" alt="" /></div>
+              <div class="slide-item__value size45px burgundyLight"><?php echo $product['price'];?><span class="rubl">₽</span></div>
+               <div class="slide-item__slogan size24px fontTahoma letter-space <?php echo $product['style'];?>"><?php echo $product['value'];?></div>
+               <span class="slide-title brownDark size29px text-center"><?php echo $product['name'];?></span>
                <div class="slide-item__button text-center"><a class="white fontTahoma size29px letter-space" href="">В корзину</a></div>
-            </div>
-            <div class="slide-item d-flex flex-column align-items-center">
-               <div class="slide-img"><img  src="/template/images/page1.png" alt="" /></div>
-              <div class="slide-item__value size45px burgundyLight">300 P</div>
-               <div class="slide-item__slogan orange size24px fontTahoma letter-space">Бестселлер</div>
-               <span class="d-flex slide-title brownDark size29px align-items-center">Уже в продаже</span>
-               <div class="slide-item__button text-center"><a class="white fontTahoma size29px letter-space" href="">В корзину</a></div>
-            </div>
-            <div class="slide-item d-flex flex-column align-items-center">
-               <div class="slide-img"><img  src="/template/images/page2.png" alt="" /></div>
-               <div class="slide-item__value size45px burgundyLight">300 P</div>
-               <div class="slide-item__slogan orange size24px fontTahoma letter-space">Бестселлер</div>
-               <span class="d-flex slide-title brownDark size29px align-items-center">Свежие эклеры</span>
-               <div class="slide-item__button text-center"><a class="white fontTahoma size29px letter-space" href="">В корзину</a></div>
-            </div>
-            <div class="slide-item d-flex flex-column align-items-center">
-               <div class="slide-img"><img  src="/template/images/page3.png" alt="" /></div>
-               <div class="slide-item__value size45px burgundyLight">300 P</div>
-               <div class="slide-item__slogan orange size24px fontTahoma letter-space myGreen">Новинка!</div>
-               <span class="slide-title brownDark size29px">Хлеб с гречихой</span>
-               <div class="slide-item__button text-center"><a class="white fontTahoma size29px letter-space" href="">В корзину</a></div>
-            </div>
-            <div class="slide-item d-flex flex-column align-items-center">
-               <div class="slide-img"><img  src="/template/images/page4.png" alt="" /></div>
-               <div class="slide-item__value size45px burgundyLight">300 P</div>
-               <div class="slide-item__slogan orange size24px fontTahoma letter-space">Бестселлер</div>
-               <span class="slide-title brownDark size29px text-center">Шоколадные маффины</span>
-               <div class="slide-item__button text-center"><a class="white fontTahoma size29px letter-space" href="">В корзину</a></div>
-               </div>
-             <div class="slide-item d-flex flex-column align-items-center">
-               <div class="slide-img"><img  src="/template/images/page5.png" alt="" /></div>
-              <div class="slide-item__value size45px burgundyLight">300 P</div>
-               <div class="slide-item__slogan orange size24px fontTahoma letter-space">Бестселлер</div>
-               <span class="d-flex slide-title brownDark size29px align-items-center">Плетенка</span>
-               <div class="slide-item__button text-center"><a class="white fontTahoma size29px letter-space" href="">В корзину</a></div>
-            </div>
-             <div class="slide-item d-flex flex-column align-items-center">
-               <div class="slide-img"><img  src="/template/images/page6.png" alt="" /></div>
-              <div class="slide-item__value size45px burgundyLight">300 P</div>
-               <div class="slide-item__slogan orange size24px fontTahoma letter-space myGreen">Новинка!</div>
-               <span class="d-flex slide-title brownDark size29px align-items-center">Баранки к чаю</span>
-               <div class="slide-item__button text-center"><a class="white fontTahoma size29px letter-space" href="">В корзину</a></div>
-            </div>
-             <div class="slide-item d-flex flex-column align-items-center">
-               <div class="slide-img"><img  src="/template/images/page7.png" alt="" /></div>
-              <div class="slide-item__value size45px burgundyLight">300 P</div>
-               <div class="slide-item__slogan orange size24px fontTahoma letter-space myBlue">Выгодно</div>
-               <span class="d-flex slide-title brownDark size29px align-items-center">Песочные полоски</span>
-               <div class="slide-item__button text-center"><a class="white fontTahoma size29px letter-space" href="">В корзину</a></div>
-            </div>
+            </div><?php endforeach;?> 
+           
+           
+      
+           
+            
       </div>
 <div class="clear"></div>
 </div></div> </div>

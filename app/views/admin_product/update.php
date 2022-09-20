@@ -60,7 +60,7 @@ include ROOT . '/views/layouts/header.php'; ?>
     <input type="text" name="top3" placeholder="" value="<?php echo $product['top3']; ?>"  class="size24px admin_input"></div>
                        
     <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
-    <div class="view-product-right__status padding_status justify-content-center size24px <?php echo $general['style']; ?>">Статус</div>
+    <div class="view-product-right__status padding_status justify-content-center size24px <?php echo $product['style']; ?>">Статус</div>
     <select name="best" class="size24px admin_input <?php echo $product['style']; ?>">
                 <option value="<?php echo $product['best']; ?>"><?php echo $product['value']; ?></option>
                         <option value="1">Бестселлер</option>
