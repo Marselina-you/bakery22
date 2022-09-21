@@ -115,6 +115,27 @@ class Order
      * @param integer $id <p>id заказа</p>
      * @return boolean <p>Результат выполнения метода</p>
      */
+    public static function getOrderByIduser($userId)
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $sql = 'SELECT * FROM product_order WHERE user_id = '.$userId;
+
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, PDO::PARAM_INT);
+
+        // Указываем, что хотим получить данные в виде массива
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+
+        // Выполняем запрос
+        $result->execute();
+
+        // Возвращаем данные
+        return $result->fetch();
+    }
+
     public static function deleteOrderById($id)
     {
         // Соединение с БД

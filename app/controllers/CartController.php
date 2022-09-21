@@ -87,6 +87,8 @@ $productsBest = Product::getProductsBest();
                     $userId = User::checkLogged();
                      // Сохраняем заказ в БД
                 $result = Order::save($userName, $userPhone, $userComment, $userId, $productsInCart);
+
+
                 
 
                
@@ -100,6 +102,10 @@ $productsBest = Product::getProductsBest();
 
                     // Очищаем корзину
                     Cart::clear();
+                    
+         header("Location: /cart/result");
+         exit;
+
                     
                 }
             } else {
@@ -137,8 +143,9 @@ $productsBest = Product::getProductsBest();
                 // Пользователь авторизирован?
                 if (User::isGuest()) {
                     // Нет
-                    echo 'Значения для формы пустые';
+                   
                     header("Location: /user/loginForOrder");
+                    //отправляем его регистрироваться или авторизироваться
                     // Значения для формы пустые
                 } else {
                     // Да, авторизирован                    
@@ -151,8 +158,53 @@ $productsBest = Product::getProductsBest();
                 }
             }
         }
-
+ 
         require_once(ROOT . '/views/cart/checkout.php');
+
+        return true;
+    }
+     public function actionResult()
+    {
+        $categories = array();
+        $categories = Category::getCategoriesList();
+        $userId = User::checkLoggedSite();
+        $user = User::getUserById($userId);
+
+        // Получим данные из корзины
+        
+
+     
+                    $result2 = Order::getOrderByIduser($userId);
+                     $order = Order::getOrderById($userId);
+                                print_r($order);
+                                echo '</br>';
+                    $productOrder = json_decode($result2['products'], true);
+                    echo '$result2 - заказ';
+                    echo '</br>';
+                      print_r($result2);
+                      echo '</br>';
+                      echo '$productOrder';
+                       echo '</br>';
+                       print_r($productOrder);
+                        echo '</br>';
+                   $productsQuantity = json_decode($order['products'], true);
+                     echo '</br>';
+                      echo '$productQuantity';
+                       echo '</br>'; 
+ print_r($productsQuantity);
+ echo '</br>';
+                   
+                        
+                         echo '</br>';   
+                        $productsIds = array_keys($productOrder);
+        print_r($productsIds);
+       echo '</br>';
+          //Получаем список товаров в заказе
+        $products = Product::getProdustsByIds($productsIds);
+        print_r($products);
+
+
+        require_once(ROOT . '/views/cart/result.php');
 
         return true;
     }

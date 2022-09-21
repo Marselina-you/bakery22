@@ -37,7 +37,17 @@ include ROOT . '/views/layouts/header2.php';
                     <?php if ($result): ?>
 
                         <p>Заказ создан.</p>
+                         <p>Выбрано товаров: <?php echo $result2['user_name']; ?>, рублей.</p><br/>
+                          <?php foreach ($products as $product): ?>
+                    <tr>
                         
+                       
+                        <td><?php echo $product['name']; ?></td>
+                         <td> <img src="../upload/images/products/<?php echo $product['photo']; ?>"  alt="" /></td>
+                        
+                        <td><?php echo $productOrder[$product['id']]; ?> штуки</td>
+                    </tr>
+                <?php endforeach; ?>
 
                     <?php else: ?>
 
