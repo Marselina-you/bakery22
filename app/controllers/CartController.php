@@ -83,16 +83,13 @@ $productsBest = Product::getProductsBest();
                 // Сохраняем заказ в базе данных
                 // Собираем информацию о заказе
                 $productsInCart = Cart::getProducts();
-                if (User::isGuest()) {
-                    $userId = 0; //в оригинале = false, но так не оформляется заказ
-                     //echo 'nowAvtor';
-
-                } else {
+               
                     $userId = User::checkLogged();
-                }
-
-                // Сохраняем заказ в БД
+                     // Сохраняем заказ в БД
                 $result = Order::save($userName, $userPhone, $userComment, $userId, $productsInCart);
+                
+
+               
 
                 if ($result) {
                     // Оповещаем администратора о новом заказе                
@@ -140,7 +137,8 @@ $productsBest = Product::getProductsBest();
                 // Пользователь авторизирован?
                 if (User::isGuest()) {
                     // Нет
-                    echo 'now';
+                    echo 'Значения для формы пустые';
+                    header("Location: /user/loginForOrder");
                     // Значения для формы пустые
                 } else {
                     // Да, авторизирован                    
@@ -149,6 +147,7 @@ $productsBest = Product::getProductsBest();
                     $user = User::getUserById($userId);
                     // Подставляем в форму
                     $userName = $user['name'];
+                    $userPhone = $user['phone'];
                 }
             }
         }

@@ -18,8 +18,8 @@ include ROOT . '/views/layouts/header3.php';?>
                 <?php endif; ?>
 
                 
-                    <div class="main-enter-content__title title_padding col-xl-12  size29px fontTahoma letter-space undertitle__edit">Войти или 
-            <a href="/user/register" class="main-enter-content__title-a">зареистрироваться</a>
+                    <div class="main-enter-content__title title_padding col-xl-12  size29px fontTahoma letter-space undertitle__edit">Для оформления заказа нужно войти или 
+            <a href="/user/register" class="main-enter-content__title-a">заргистрироваться</a>
             </div>
                     <form action="#" method="post" class="main-enter-content__form form_padding  d-flex flex-column">
                          <div class="content-form__data d-flex align-items-center justify-content-between flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">

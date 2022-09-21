@@ -6,8 +6,7 @@ include ROOT . '/views/layouts/header2.php';
        
 
        <?php if ($productsInCart): ?>
-        <?php foreach ($products as $product): ?>
-          <div class="content-empty">
+        <div class="content-empty">
         <div class="content-empty-text col-xl-11 offset-xl-1">
             <div class="col-xl-10">
                 <div class="col-xl-4 title size35px brownDark fontTahoma letter-space">Корзина </div></div>
@@ -25,6 +24,8 @@ include ROOT . '/views/layouts/header2.php';
          
      
     </div>       
+        <?php foreach ($products as $product): ?>
+          
 <div class="wrap-main-cartFull-content col-xl-10 offset-xl-1">
     <div class="main-cartFull-list">
         <div class="wrap-main-cartFull-list-item">

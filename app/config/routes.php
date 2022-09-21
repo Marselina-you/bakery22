@@ -16,6 +16,7 @@ return array(
 	'user/register' => 'user/register',//actionRegister b UserController
 	//'user/result' => 'user/result',//actionRersult b UserController
 	'user/login' => 'user/login',
+	'user/loginForOrder' => 'user/loginForOrder',
 	'user/logout' => 'user/logout',
 	'cabinet/edit' => 'cabinet/edit',//actionEdit in CabinetController
 	'cabinet' => 'cabinet/index',
