@@ -185,6 +185,27 @@ class Order
         $result->bindParam(':status', $status, PDO::PARAM_INT);
         return $result->execute();
     }
+    public static function getOrderByIduserLast($userId)
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $sql = 'SELECT * FROM product_order ORDER BY id WHERE user_id = '.$userId;
+
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, PDO::PARAM_INT);
+
+        // Указываем, что хотим получить данные в виде массива
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+
+        // Выполняем запрос
+        $result->execute();
+
+        // Возвращаем данные
+        return $result->fetch();
+    }
+    
 
 
 

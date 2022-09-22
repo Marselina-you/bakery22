@@ -19,6 +19,7 @@ return array(
 	'user/login' => 'user/login',
 	'user/loginForOrder' => 'user/loginForOrder',
 	'user/logout' => 'user/logout',
+	'user/order' => 'user/order',
 	'cabinet/edit' => 'cabinet/edit',//actionEdit in CabinetController
 	'cabinet' => 'cabinet/index',
 	

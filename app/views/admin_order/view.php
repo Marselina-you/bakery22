@@ -6,16 +6,7 @@ include ROOT . '/views/layouts/header.php'; ?>
   <div class="container-fluid col-xl-12 edit">
     <?php include ROOT . '/views/layouts/admin_menu.php';?>
 <div class="edit__title title_padding fontSans size29px orange">Просмотр заказа #<?php echo $id; ?></div>
-                   
-         
-
-
-          
-
-
-
-
-            <h5>Информация о заказе</h5>
+                 <h5>Информация о заказе</h5>
             <table class="table-admin-small table-bordered table-striped table">
                 <tr>
                     <td>Номер заказа</td>

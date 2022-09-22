@@ -8,14 +8,14 @@
                      <div class="text__item brownDark fontSans size16px"><a href="/">Главная</a></div>
                 </div>
                  <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
-                    <img src="/template/images/basket.png" alt="">
-                     <div class="text__item brownDark fontSans size16px"><a href="/cart">Корзин</a><span id="cart-count"><?php if(Cart::countItems() > 0): echo'('; echo Cart::countItems();  echo ')';?><?php endif; ?></span></div>
+                    <a href="/cart"><img src="/template/images/basket.png" alt=""></a>
+                     <div class="text__item brownDark fontSans size16px"><a href="/cart/">Корзинa</a><span id="cart-count"><?php if(Cart::countItems() > 0): echo'('; echo Cart::countItems();  echo ')';?><?php endif; ?></span></div>
                 </div>
                
                 
                  <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
                     <img src="/template/images/order.png" alt="">
-                     <div class="text__item brownDark fontSans size16px">Заказы</div>
+                     <div class="text__item brownDark fontSans size16px"><a href="/user/order/">Заказы</a></div>
                 </div>
                  <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
                     <img src="/template/images/mail.png" alt="">

@@ -135,5 +135,14 @@ class UserController
         unset($_SESSION["user"]);
         header("Location: /");
     }
+    public function actionOrder()
+    {
+        
+        $userId = User::checkLoggedSite();
+        $user = User::getUserById($userId);
+        require_once(ROOT . '/views/user/orderUser.php');
+
+        return true;
+    }
     
 }

@@ -88,5 +88,5 @@ class Cart
         // Записываем массив товаров с удаленным элементом в сессию
         $_SESSION['products'] = $productsInCart;
     }
-
+     
 }

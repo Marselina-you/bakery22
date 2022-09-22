@@ -163,6 +163,9 @@ $productsBest = Product::getProductsBest();
 
         return true;
     }
+    
+    
+
      public function actionResult()
     {
         $categories = array();
@@ -175,33 +178,29 @@ $productsBest = Product::getProductsBest();
 
      
                     $result2 = Order::getOrderByIduser($userId);
-                     $order = Order::getOrderById($userId);
-                                print_r($order);
-                                echo '</br>';
-                    $productOrder = json_decode($result2['products'], true);
-                    echo '$result2 - заказ';
-                    echo '</br>';
-                      print_r($result2);
-                      echo '</br>';
-                      echo '$productOrder';
-                       echo '</br>';
-                       print_r($productOrder);
-                        echo '</br>';
-                   $productsQuantity = json_decode($order['products'], true);
-                     echo '</br>';
-                      echo '$productQuantity';
-                       echo '</br>'; 
- print_r($productsQuantity);
+                   //$order = Order::getOrderById($id);
  echo '</br>';
-                   
-                        
-                         echo '</br>';   
-                        $productsIds = array_keys($productOrder);
+                  
+ $id = $result2['id']; 
+ print_r($id);
+ // Получаем данные о конкретном заказе
+$order = Order::getOrderById($id);
+print_r($order);
+ echo '</br>';
+        // Получаем массив с идентификаторами и количеством товаров
+$productsQuantity = json_decode($order['products'], true);
+print_r($productsQuantity);
+echo '</br>';
+        // Получаем массив с индентификаторами товаров
+        $productsIds = array_keys($productsQuantity);
         print_r($productsIds);
-       echo '</br>';
-          //Получаем список товаров в заказе
+        echo '</br>';
+
+        // Получаем список товаров в заказе
         $products = Product::getProdustsByIds($productsIds);
         print_r($products);
+
+                       
 
 
         require_once(ROOT . '/views/cart/result.php');
