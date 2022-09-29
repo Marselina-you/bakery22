@@ -121,10 +121,10 @@ class Order
         $db = Db::getConnection();
 
         // Текст запроса к БД
-        $sql = 'SELECT * FROM product_order WHERE user_id = '.$userId;
+        $sql = 'SELECT  * FROM product_order WHERE user_id = '.$userId;
 
         $result = $db->prepare($sql);
-        $result->bindParam(':id', $id, PDO::PARAM_INT);
+        $result->bindParam(':id', $id, PDO::PARAM_INT);//bindParam привязывает параметр запроса к переменной 
 
         // Указываем, что хотим получить данные в виде массива
         $result->setFetchMode(PDO::FETCH_ASSOC);
@@ -185,14 +185,34 @@ class Order
         $result->bindParam(':status', $status, PDO::PARAM_INT);
         return $result->execute();
     }
-    public static function getOrderByIduserLast($userId)
+    public static function getOrderByIduserLas($id)
     {
         // Соединение с БД
         $db = Db::getConnection();
 
         // Текст запроса к БД
-        $sql = 'SELECT * FROM product_order ORDER BY id WHERE user_id = '.$userId;
+        $sql = 'SELECT * FROM product_order WHERE id = :id';
 
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, PDO::PARAM_INT);
+
+        // Указываем, что хотим получить данные в виде массива
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+
+        // Выполняем запрос
+        $result->execute();
+
+        // Возвращаем данные
+        return $result->fetch();
+    }
+     public static function getOrderByIduserLast($userId)
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $sql = 'SELECT * FROM product_order WHERE user_id = '.$userId.  'ORDER BY DESC';
+//здесь надо выбирать последний заказ
         $result = $db->prepare($sql);
         $result->bindParam(':id', $id, PDO::PARAM_INT);
 
