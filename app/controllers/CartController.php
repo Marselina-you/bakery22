@@ -174,17 +174,27 @@ $productsBest = Product::getProductsBest();
         $user = User::getUserById($userId);
 
         // Получим данные из корзины
-        
+        $ordersList = Order::getOrderByIduserMy($userId);
 
      
-                    $result2 = Order::getOrderByIduser($userId);
+                   // $result2 = Order::getOrderByIduserMy($userId);
                    //$order = Order::getOrderById($id);
-                    echo 'id заказа';
+                    
+
  echo '</br>';
-                  
- $id = $result2['id']; 
- print_r($id);
+ print_r($ordersList);
  echo '</br>';
+   foreach ($ordersList as $order): 
+    $id = $order['id'];
+    $products = $order['products'];
+   
+     endforeach; 
+      echo '</br>';
+echo 'id заказа';
+  echo $id; 
+   echo '</br>';
+ print_r($products);
+ //echo '</br>';
  // Получаем данные о конкретном заказе
 $order = Order::getOrderById($id);
 print_r($order);
@@ -192,15 +202,15 @@ print_r($order);
         // Получаем массив с идентификаторами и количеством товаров
 $productsQuantity = json_decode($order['products'], true);
 print_r($productsQuantity);
-echo '</br>';
+//echo '</br>';
         // Получаем массив с индентификаторами товаров
-       // $productsIds = array_keys($productsQuantity);
-        //print_r($productsIds);
+       $productsIds = array_keys($productsQuantity);
+        print_r($productsIds);
         echo '</br>';
 
         // Получаем список товаров в заказе
-       // $products = Product::getProdustsByIds($productsIds);
-       // print_r($products);
+        $products = Product::getProdustsByIds($productsIds);
+        print_r($products);
 
                        
 

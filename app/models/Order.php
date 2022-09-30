@@ -121,19 +121,19 @@ class Order
         $db = Db::getConnection();
 
         // Текст запроса к БД
-        $sql = 'SELECT  * FROM product_order WHERE user_id = '.$userId;
+        $sql = 'SELECT *FROM product_order WHERE user_id = '.$userId;
 
-        $result = $db->prepare($sql);
+        $result = $db->prepare($sql);// Подготавливает запрос к выполнению и возвращает связанный с этим запросом объект
         $result->bindParam(':id', $id, PDO::PARAM_INT);//bindParam привязывает параметр запроса к переменной 
 
         // Указываем, что хотим получить данные в виде массива
         $result->setFetchMode(PDO::FETCH_ASSOC);
 
         // Выполняем запрос
-        $result->execute();
+        $result->execute();//Запускает подготовленный запрос на выполнение
 
         // Возвращаем данные
-        return $result->fetch();
+        return $result->fetch();//Связывает результаты подготовленного выражения с переменными
     }
 
     public static function deleteOrderById($id)
@@ -224,6 +224,29 @@ class Order
 
         // Возвращаем данные
         return $result->fetch();
+    }
+    public static function getOrderByIduserMy($userId)
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $result = $db->query('SELECT *FROM product_order WHERE user_id = '.$userId.' ORDER BY id ASC');
+
+        $ordersList = array();
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $ordersList[$i]['id'] = $row['id'];
+            $ordersList[$i]['user_name'] = $row['user_name'];
+            $ordersList[$i]['products'] = $row['products'];
+           //$i++;//для получения всего массива
+           
+        }
+        return $ordersList;
+        
+
+        // Выполняем запрос
+        
     }
     
 

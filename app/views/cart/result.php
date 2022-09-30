@@ -37,16 +37,29 @@ include ROOT . '/views/layouts/header2.php';
                     
 
                         <p>Заказ создан.</p>
-                         <p><?php echo $result2['user_name']; ?>, рублей.</p><br/>
+                      
                           
                              
-                   
+                   <?php foreach ($ordersList as $order): ?>
+                    <tr>
+                        <td>
+                            <a href="/admin/order/view/<?php echo $order['id']; ?>">
+                                <?php //echo $order['id']; ?>
+                            </a>
+                        </td>
+                        <td><?php echo $order['user_name']; ?></td>
+                          <td><?php //echo $order['products']; ?></td>
+                       
+                       
+                      
+                    </tr>
+                <?php endforeach; ?>
                 <?php foreach ($products as $product): ?>
                     <tr>
-                        <td><?php echo $product['id']; ?></td>
+                        <td><?php //echo $product['id']; ?></td>
                          <td> <img src="../upload/images/products/<?php echo $product['photo']; ?>"  alt="" /></td>
                         <td>Вы заказали <?php echo $product['name']; ?></td>
-                        <td>На сумму $<?php echo $product['price']; ?></td>
+                        <td>На сумму <?php echo $product['price']; ?> рублей</td>
                         <td><?php echo $productsQuantity[$product['id']]; ?> штук</td>
                     </tr>
                 <?php endforeach; ?>
