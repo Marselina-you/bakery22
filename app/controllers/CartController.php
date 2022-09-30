@@ -113,9 +113,11 @@ $productsBest = Product::getProductsBest();
                 // Итоги: общая стоимость, количество товаров
                 $productsInCart = Cart::getProducts();
                 $productsIds = array_keys($productsInCart);
+
                 $products = Product::getProdustsByIds($productsIds);
                 $totalPrice = Cart::getTotalPrice($products);
                 $totalQuantity = Cart::countItems();
+
             }
         } else {
             // Форма отправлена? - Нет
@@ -158,6 +160,10 @@ $productsBest = Product::getProductsBest();
                 }
             }
         }
+         //print_r($products);
+         //echo '</br>';
+        //print_r($productsIds);
+
  
         require_once(ROOT . '/views/cart/checkout.php');
 
