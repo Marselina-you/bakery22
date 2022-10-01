@@ -81,7 +81,7 @@ include ROOT . '/views/layouts/header2.php';
                                     <input type="text" name="userComment" placeholder="Сообщение" value="<?php echo $userComment; ?>" class="content-form__data-input col-xl-12"/></div></div>
 
                                    <div class="content-form__data d-flex align-items-center justify-content-end">
-   <div class="col-xl-7 col-lg-4 col-md-4 col-sm-4 col-6  d-flex justify-content-end">
+   <div class="col-xl-7 col-lg-4 col-md-4 col-sm-4 col-6 d-flex justify-content-end">
 
  <input type="submit" name="submit" class="content-order-end__click__btn btn btn-success size29px col-xl-6" value="оформить" /></div></div>
                                    

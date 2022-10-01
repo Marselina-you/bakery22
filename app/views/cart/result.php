@@ -18,56 +18,32 @@ include ROOT . '/views/layouts/header2.php';
             <?php endforeach; ?>
             </div> 
             </div>
-           
         </div>
-         
-     
     </div>        
-                  
-                        
-                    
-              
-          
-
-            <div class="col-sm-9 padding-right">
-             
-                  
-
-
-                    
-
-                        <p>Заказ создан.</p>
-                      
-                          
-                             
-                   <?php foreach ($ordersList as $order): ?>
-                    <tr>
-                        <td>
-                            <a href="/admin/order/view/<?php echo $order['id']; ?>">
-                                <?php //echo $order['id']; ?>
-                            </a>
-                        </td>
-                        <td><?php echo $order['user_name']; ?></td>
-                          <td><?php //echo $order['products']; ?></td>
-                       
-                       
-                      
-                    </tr>
-                <?php endforeach; ?>
+        <div class="content-empty-text col-xl-11 offset-xl-1">
+            <div class="col-xl-8">
+                <div class="form-item_padding main-enter-content__title col-xl-12  size29px fontTahoma letter-space undertitle__edit">Заказ создан.</div>
+                 <div class="d-flex align-items-center">     
                 <?php foreach ($products as $product): ?>
-                    <tr>
-                        <td><?php //echo $product['id']; ?></td>
-                         <td> <img src="../upload/images/products/<?php echo $product['photo']; ?>"  alt="" /></td>
-                        <td>Вы заказали <?php echo $product['name']; ?></td>
-                        <td>На сумму <?php echo $product['price']; ?> рублей</td>
-                        <td><?php echo $productsQuantity[$product['id']]; ?> штук</td>
-                    </tr>
+                    <div class="">
+                        <div class=""><img src="../upload/images/products/<?php echo $product['photo']; ?>"  alt="" /></div>
+                    
+                      </div> 
+                <?php endforeach; ?></div>
+                <div class="d-flex align-items-center">     
+                <?php foreach ($products as $product): ?>
+                    <div class="">
+                       
+                        <div class="form-item_padding main-order-item-name size20px no-blue justify-content-center align-items-center"><a href="/product/view/<?php echo $product['id']; ?>" class="justify-content-center"><?php echo $product['name']; ?></a>(<?php echo $productsQuantity[$product['id']]; ?>)
+                           </div>
+                      </div> 
                 <?php endforeach; ?>
+            </div>
 
                   
                        
 
-                </div></div></div>
+                </div></div></div></div>
 
           
        

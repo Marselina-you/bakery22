@@ -140,7 +140,25 @@ class UserController
         
         $userId = User::checkLoggedSite();
         $user = User::getUserById($userId);
-        require_once(ROOT . '/views/user/orderUser.php');
+        $ordersList = Order::getOrderByIduserAll($userId);
+        $ordersListOld = Order::getOrderByIduserOld($userId);
+
+ foreach ($ordersList as $order): 
+     $productsQuantity = json_decode($order['products'], true);
+     $productsIds = array_keys($productsQuantity);
+     $products = Product::getProdustsByIds($productsIds);
+ endforeach;  
+ foreach ($ordersListOld as $orderOld): 
+     $productsQuantityOld = json_decode($orderOld['products'], true);
+     $productsIdsOld = array_keys($productsQuantityOld);
+     $productsOld = Product::getProdustsByIds($productsIdsOld);
+ endforeach; 
+
+
+
+
+
+        require_once(ROOT . '/views/user/order.php');
 
         return true;
     }

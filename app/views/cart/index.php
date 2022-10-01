@@ -64,8 +64,8 @@ include ROOT . '/views/layouts/header2.php';
 <div class="size29px fontTahoma letter-space brownDark font-weight-bold title_padding"><?php echo $totalPrice;?>₽</div></div>
 
 <div class="content-form__data d-flex align-items-center justify-content-end">
-   <div class="col-xl-6 d-flex justify-content-end">
-<button class="content-order-end__click__btn btn btn-success size29px col-xl-9" type="button"><a href="/cart/checkout">Оформить заказ</a></button></div></div>
+   <div class="col-xl-7 col-lg-4 col-md-4 col-sm-4 col-6 d-flex justify-content-end">
+<button class="content-order-end__click__btn btn btn-success size29px col-xl-10" type="button"><a href="/cart/checkout">Оформить заказ</a></button></div></div>
  <?php else: ?>
       <div class="content-empty">
         <div class="content-empty-text col-xl-11 offset-xl-1">

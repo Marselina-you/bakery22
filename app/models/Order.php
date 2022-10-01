@@ -248,8 +248,55 @@ class Order
         // Выполняем запрос
         
     }
-    
+    public static function getOrderByIduserAll($userId)
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
 
+        // Текст запроса к БД
+        $result = $db->query('SELECT product_order.*, order_status.value FROM product_order JOIN order_status ON order_status.id = product_order.status WHERE status = 2 AND user_id = '.$userId);
 
+        $ordersList = array();
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $ordersList[$i]['id'] = $row['id'];
+           
+            $ordersList[$i]['products'] = $row['products'];
+            $ordersList[$i]['status'] = $row['value'];
+           $i++;//для получения всего массива
+           
+        }
+        return $ordersList;
+        
+
+        // Выполняем запрос
+        
+    }
+    public static function getOrderByIduserOld($userId)
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $result = $db->query('SELECT product_order.*, order_status.value FROM product_order JOIN order_status ON order_status.id = product_order.status WHERE status = 1 AND user_id = '.$userId);
+
+        $ordersList = array();
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $ordersList[$i]['id'] = $row['id'];
+           
+            $ordersList[$i]['products'] = $row['products'];
+            $ordersList[$i]['status'] = $row['value'];
+           $i++;//для получения всего массива
+           
+        }
+        return $ordersList;
+        
+
+        // Выполняем запрос
+        
+    }
+
+ 
 
 }
