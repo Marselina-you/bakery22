@@ -9,14 +9,14 @@ include ROOT.'/views/layouts/header_category.php';?>
             <div class="d-flex view-product flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column justify-content-center justify-content-sm-start">
                 <div class="view-product-left col-xl-6 col-lg-6 flex-column">
                 <div class="d-flex view-product-left__img justify-content-center">
-                    <img src="/template/images/page2.png"  alt="" /></div>
+                    <img src="/upload/images/products/<?php echo $product['photo'];?>"  alt="" /></div>
                 <div class="wrap-view-product-left__info d-flex justify-content-center"><div class="d-flex view-product-left__info title_padding align-items-start flex-column">
                  
                   <div class="brownDark justify-content-center font-weight-bold size24px"><?php echo $product['price'];?><span class="rubl">₽</span></div>
-                  <div class="view-product-right__status padding_status justify-content-center orange size24px "><?php echo $product['best'];?></div>
+                 <div class="view-product-right__status padding_status justify-content-center size24px <?php echo $product['style'];?>"><?php echo $product['value'];?></div>
                   <div class="view-product-right__name_sm bottom_padding"><a href="/product/<?php echo $product['id'];?>" class="burgundy  fontSegoePrint font-weight-bold size35px padding-15"><?php echo $product['name'];?></a>
                        
-                        <div class="view-product-right__status  brownGrey size16px"><?php echo $product['nal'];?></div></div>
+                        <div class="view-product-right__status  brownGrey size16px"><?php if ($product['nal'] == 1) echo 'в наличии'; else echo 'нет в наличии';?></div></div>
               </div></div>
                    <div class="d-flex view-product-left__button  justify-content-center">
                   <button class="d-flex content-order-end__click__btn btn btn-success justify-content-center size29px size20px" type="button">В корзину</button></div>
@@ -26,7 +26,7 @@ include ROOT.'/views/layouts/header_category.php';?>
                 <div class="view-product-right col-xl-6 col-lg-6 flex-column">
                     <div class="view-product-right__name bottom_padding"><a href="/product/<?php echo $product['id'] ;?>" class="burgundy  fontSegoePrint font-weight-bold size35px padding-15"><?php echo $product['name'];?></a>
                        
-                        <div class="view-product-right__status  brownGrey size22px"><?php echo $product['nal'];?></div>
+                        <div class="view-product-right__status  brownGrey size22px"><?php if ($product['nal'] == 1) echo 'в наличии'; else echo 'нет в наличии';?></div>
                         <span class="view-product-right-info__item brownDark bottom_padding fontSegoePrint size20px"><?php echo $product['weight'];?> грамм</span></div>
                 <div class="view-product-right-info flex-column">
                 <div class="view-product-right-info__title bottom_padding burgundy size29px fontTahoma padding-15">+ Описание</div>

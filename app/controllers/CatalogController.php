@@ -27,9 +27,9 @@ class CatalogController
 
         $categoryProducts = array();
         $categoryProducts = Product::getProductsListByCategory($categoryId, $page);
-         $userId = User::checkLoggedSite();
+        $userId = User::checkLoggedSite();
         $user = User::getUserById($userId);
-
+        //$product = Product::getProductById($id);
         $total = Product::getTotalProductsInCategory($categoryId);
         // Создаем объект Pagination - постраничная навигация
         $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page-');
