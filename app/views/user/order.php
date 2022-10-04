@@ -5,6 +5,10 @@ include ROOT . '/views/layouts/header2.php';
 <div class="wrap-content">
     <div class="main">
         <div class="content-empty-text col-xl-11 offset-xl-1 d-flex flex-column">
+             <div class="col-xl-10  undertitle_check_padding d-flex align-items-center">
+                <div class="size29px fontTahoma letter-space"><a href="/catalog" class="undertitle_check brownLight">Перейти в кабинет</a></div>
+           
+            </div>
             <div class="col-xl-12">
  <div class="form-item_padding main-enter-content__title col-xl-12  size29px fontTahoma letter-space undertitle__edit brownDark">Мои доставки</div>
  <div class="d-flex">

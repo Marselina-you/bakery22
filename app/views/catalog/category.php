@@ -56,6 +56,8 @@ include ROOT.'/views/layouts/header_category.php';
 
 		<?php endforeach;?>
 		<!-- Постраничная навигация -->
+        <div class="wrap-pagination col-xl-12 d-flex justify-content-center">
                     <?php echo $pagination->get(); ?>
+                    </div>
 </div></div>
 <?php include ROOT.'/views/layouts/footer2.php';?>

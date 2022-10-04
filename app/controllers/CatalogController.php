@@ -21,8 +21,8 @@ class CatalogController
     {
         $categories = array();
         $categories = Category::getCategoriesList();
-        echo "categoryProducts" .$categoryId;
-        echo '<br>Page:' .$page;
+        //echo "categoryProducts" .$categoryId;
+        //echo '<br>Page:' .$page;
         
 
         $categoryProducts = array();

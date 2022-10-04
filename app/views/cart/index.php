@@ -96,7 +96,7 @@ include ROOT . '/views/layouts/header2.php';
          <div class="slide-wrap">
             <?php foreach ($productsBest as $product): ?>
              <div class="slide-item d-flex flex-column align-items-center">
-               <div class="slide-img"><img  src="/upload/images/products/<?php echo $product['new_picture'];?>" alt="" /></div>
+               <div class="slide-img wrap_img"><img src="/upload/images/products/<?php echo $product['new_picture'];?>" alt="" /></div>
               <div class="slide-item__value size45px burgundyLight"><?php echo $product['price'];?><span class="rubl">₽</span></div>
                <div class="slide-item__slogan size24px fontTahoma letter-space <?php echo $product['style'];?>"><?php echo $product['value'];?></div>
                <span class="slide-title brownDark size29px text-center"><?php echo $product['name'];?></span>
