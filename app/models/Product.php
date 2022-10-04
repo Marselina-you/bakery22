@@ -3,7 +3,7 @@
 
 class Product
 {
-const SHOW_BY_DEFAULT = 6;
+const SHOW_BY_DEFAULT = 4;
 	/** Returns single news items with specified id
 	* @rapam integer &id
 	*/
