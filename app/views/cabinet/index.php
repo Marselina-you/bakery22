@@ -5,15 +5,15 @@ include ROOT . '/views/layouts/header3.php';?>
     <div class="main">
       <div class="user-index d-flex flex-column">
          <div class="content-empty-text content-empty-text_padding col-xl-11 offset-xl-1">
-            <div class="bottom_padding size35px  brownDark fontTahoma letter-space">Личный кабинет</div>
+            <div class="bottom_padding size35px  brownDark fontTahoma letter-space"></a>Личный кабинет</div>
             <div class="edit-cart__content_padding size35px brownDark fontTahoma letter-space"><?php echo $user['name'];?>!</div>
             
         
          <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column">
     <div class="edit__title  user-index_padding darkBlue fontSans size32px"><a href="" class="">Доставки</a></div>
-     <div class="edit__title user-index_padding darkBlue fontSans size32px"><a href="" class="">Покупки</a></div>
+     <div class="edit__title user-index_padding darkBlue fontSans size32px"><a href="#forOrder" class="">Покупки</a></div>
       <div class="edit__title user-index_padding darkBlue fontSans size32px"><a href="/cart" class="">Корзина<span id="cart-count"><?php echo '('; echo Cart::countItems();  echo ')';?></span></a></div>
-      <div class="edit__title user-index_padding darkBlue fontSans size32px"><a href="" class="">Мои данные</a></div>
+      <div class="edit__title user-index_padding darkBlue fontSans size32px"><a href="#forDown" class="">Мои данные</a></div>
 
 </div> </div>
          <div class="user-index-actual content-empty-text d-flex flex-column content-empty-text_padding col-xl-10 offset-xl-1">
@@ -40,7 +40,7 @@ include ROOT . '/views/layouts/header3.php';?>
 
 
           <div class="user-index-actual content-empty-text d-flex flex-column content-empty-text_padding col-xl-11 offset-xl-1">
-            <div class="undertitle size29px fontTahoma text-center letter-space"><a href="">Покупки</a></div>
+            <div class="undertitle size29px fontTahoma text-center letter-space" id="forOrder"><a href="">Покупки</a></div>
      <div class="d-flex">       
         <?php foreach ($ordersListOld as $order): ?>  
               <div class="user-index-actual-info d-flex flex-column align-items-center  col-xl-4">
@@ -62,7 +62,7 @@ include ROOT . '/views/layouts/header3.php';?>
          </div>
 
          <div class="user-index-actual content-empty-text d-flex flex-column content-empty-text_padding col-xl-11 offset-xl-1">
-            <div class="undertitle size29px fontTahoma text-center letter-space"><a href="">Мои данные</a></div>
+            <div class="undertitle size29px fontTahoma text-center letter-space" id="forDown"><a href="">Мои данные</a></div>
           <form class="main-enter-content__form form_padding col-xl-8 offset-xl-1 d-flex flex-column"  method="post">
       <div class="content-form__data d-flex align-items-center justify-content-between flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
           <label for="email" class="content-form__data-title size35px col-xl-4">E-mail:</label>

@@ -6,7 +6,7 @@ include ROOT . '/views/layouts/header2.php';
     <div class="main">
         <div class="content-empty-text col-xl-11 offset-xl-1 d-flex flex-column">
              <div class="col-xl-10  undertitle_check_padding d-flex align-items-center">
-                <div class="size29px fontTahoma letter-space"><a href="/catalog" class="undertitle_check brownLight">Перейти в кабинет</a></div>
+                <div class="size29px fontTahoma letter-space"><a href="/cabinet" class="undertitle_check brownLight">Перейти в кабинет</a></div>
            
             </div>
             <div class="col-xl-12">

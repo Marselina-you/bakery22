@@ -7,6 +7,10 @@
                     <img src="/template/images/houm2.png" alt="">
                      <div class="text__item brownDark fontSans size16px"><a href="/">Главная</a></div>
                 </div>
+                <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
+                    <img src="/template/images/catalog.png" alt="">
+                     <div class="text__item brownDark fontSans size16px"><a href="/catalog">Каталог</a></div>
+                </div>
                  <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
                     <a href="/cart"><img src="/template/images/basket.png" alt=""></a>
                      <div class="text__item brownDark fontSans size16px"><a href="/cart/">Корзинa</a><span id="cart-count"><?php if(Cart::countItems() > 0): echo'('; echo Cart::countItems();  echo ')';?><?php endif; ?></span></div>
