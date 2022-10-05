@@ -3,36 +3,49 @@
             <div class="footer-block1">
                 <div class="footer-block1_content">Alferova.studio.com</div>
             </div>
-            <div class="header d-flex justify-content-end">
+            
      <div class ="header-up-footer">
-        <div class ="header-row1 col-xl-4 col-lg-5 col-md-6 col-sm-12 d-flex flex-column">
-            <div class="icons d-flex align-items-center justify-content-between">
+        
+            <div class="icons d-flex align-items-center justify-content-between bottom_padding10">
                  <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
-                    <img src="/template/images/houm2.png" alt="">
-                     <div class="text__item brownDark fontSans size16px">Главная</div>
+                   
+                     <a href="/"> <img src="/template/images/houm2.png" alt=""></a>
+                </div>
+                <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
+                    <a href="/catalog"><img src="/template/images/catalog.png" alt=""></a>
+                     
                 </div>
                  <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
-                    <img src="/template/images/basket.png" alt="">
-                     <div class="text__item brownDark fontSans size16px">Корзинa<span id="cart-count"><?php if(Cart::countItems() > 0): echo'('; echo Cart::countItems();  echo ')';?><?php endif; ?></span></div>
+                   
+                   <a href="/cart/"> <img src="/template/images/basket.png" alt=""><span id="cart-count"><?php if(Cart::countItems() > 0): echo'('; echo Cart::countItems();  echo ')';?><?php endif; ?></span></a>
                 </div>
                <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
-                    <img src="/template/images/order.png" alt="">
-                     <div class="text__item brownDark fontSans size16px">Заказы</div>
+                                         <a href="/user/order/"><img src="/template/images/order.png" alt=""></a>
+
                 </div>
                  <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
-                    <img src="/template/images/mail.png" alt="">
-                     <div class="text__item brownDark fontSans size16px">Написать</div>
+                     <a href="/user/login/"
+                    ><img src="/template/images/mail.png" alt="">
+                    </a>
                 </div>
                  <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
-                    <img src="/template/images/account.png" alt="">
-                    <div class="text__item brownDark fontSans size16px">Войти</div>
+                   <?php if (User::isGuest()): ?>
+                    <a href="/user/login/"
+                    ><img src="/template/images/account.png" alt=""></a>
+                     
+                      <?php else: ?>
+               <a href="/cabinet/"
+                    ><img src="/template/images/account.png" alt=""></a>
+                     
+             
+               <?php endif; ?>    
                 </div>
             </div>
                  <div class="text d-flex justify-content-between">
                   </div>
-        </div></div>
+        </div>
             
- </div>
+ 
             <div class="footer-block2 d-flex align-items-center">
                 <div class="icon"><img src="/template/images/face.png"></div>
                 <div class="icon"><img src="/template/images/vk.png"></div>
@@ -94,6 +107,8 @@
             return false;
         });
     });
+    
+
 
 </script>
         </body>

@@ -1,7 +1,7 @@
 <?php include ROOT . '/views/layouts/header.php';
 include ROOT . '/views/layouts/header2.php'; 
 //include ROOT . '/views/layouts/header3.php';?>
-<div class="wrap-content">
+<div class="wrap-content  container-fluid">
     <div class="main">
        
 
@@ -10,33 +10,33 @@ include ROOT . '/views/layouts/header2.php';
         <div class="content-empty-text col-xl-11 offset-xl-1">
             <div class="col-xl-10">
                 <div class="col-xl-4 title size35px brownDark fontTahoma letter-space">Корзина </div></div>
-            <div class="col-xl-10  undertitle_check_padding d-flex align-items-center">
-                <div class="size29px fontTahoma letter-space"><a href="/catalog" class="undertitle_check brownLight">Перейти в каталог</a></div>
-            <div class="d-flex col-xl-8">
+            <div class="col-xl-12 col-lg-12 undertitle_check_padding d-flex align-items-center">
+                <div class="d-flex col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6 size29px fontTahoma letter-space"><a href="/catalog" class="undertitle_check brownLight">Перейти в каталог</a></div>
+            <div class="d-flex col-xl-8 col-lg-8 col-md-6 col-sm-6 col-6 flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column">
                     <?php foreach ($categories as $categoryItem): ?>
-                <div class="check_padding "><a href="/category/<?php echo $categoryItem['id'];?>" class="darkBlue fontSans size29px"><?php echo $categoryItem['name_category'];?></a>
+                <div class="check_padding d-flex"><a href="/category/<?php echo $categoryItem['id'];?>" class="darkBlue fontSans size29px"><?php echo $categoryItem['name_category'];?></a>
                 </div>
             <?php endforeach; ?>
             </div> 
             </div>
-           
         </div>
          
      
     </div>       
         <?php foreach ($products as $product): ?>
           
-<div class="wrap-main-cartFull-content col-xl-10 offset-xl-1">
+<div class="wrap-main-cartFull-content col-xl-11 offset-xl-1">
     <div class="main-cartFull-list">
         <div class="wrap-main-cartFull-list-item">
             <div class="main-cartFull-list-item d-flex col-xl-12 justify-content-between">
-         <div class="main-cartFull-list-item__img  col-xl-4 d-flex justify-content-center align-items-center">
+         <div class="main-cartFull-list-item__img  col-xl-6 d-flex justify-content-center align-items-center">
             <img src="/upload/images/products/<?php echo $product['photo']; ?>">
          </div>
-         <div class="main-cartFull-list-item__info col-xl-4 d-flex flex-column justify-content-center">
+         <div class="main-cartFull-list-item__info col-xl-5 d-flex flex-column justify-content-center">
             <div class="main-cartFull-list-item__info-name size29px fontSans brownDark"> <?php echo $product['name'];?></div>
             <div class="main-cartFull-list-item__info-weight size24px fontSans brownSweet main-cartFull-list-item__info-weight_padding"> <?php echo $product['weight'];?> грамм</div>
              <div class="main-cartFull-list-item__info-weight size24px fontSans brownSweet main-cartFull-list-item__info-weight_padding">Количество: <?php echo $productsInCart[$product['id']];?></div>
+             <div class="main-cartFull-list-item__info-weight size24px fontSans brownSweet main-cartFull-list-item__info-weight_padding"><?php echo $product['price'];?>₽</div>
            
 
 <div class="main-cartFull-list-item__info-deleting d-flex justify-content-between align-items-center main-cartFull-list-item__info-delete_padding">
@@ -45,7 +45,7 @@ include ROOT . '/views/layouts/header2.php';
              
              <div class="size22px burgundyLight"><a href="/cart/delete/<?php echo $product['id'];?>">удалить</a></div></div></form>
          </div>
-         <div class="content-order-list_item__value  col-xl-4 size29px font-weight-bold d-flex justify-content-center align-items-center"><?php echo $product['price'];?>₽</div>
+         
       </div><div class="hr-basket"><hr class="col-xl-10 offset-xl-1"></div></div>
 
 
@@ -63,8 +63,8 @@ include ROOT . '/views/layouts/header2.php';
 <div class="size29px  fontTahoma letter-space brownLight title_padding">К оплате</div>
 <div class="size29px fontTahoma letter-space brownDark font-weight-bold title_padding"><?php echo $totalPrice;?>₽</div></div>
 
-<div class="content-form__data d-flex align-items-center justify-content-end">
-   <div class="col-xl-7 col-lg-4 col-md-4 col-sm-4 col-6 d-flex justify-content-end">
+<div class="content-form__data d-flex align-items-center justify-content-end content-form__data_padding">
+   <div class="col-xl-7 col-lg-7 col-md-7 col-sm-10 col-10 d-flex justify-content-end">
 <button class="content-order-end__click__btn btn btn-success size29px col-xl-10" type="button"><a href="/cart/checkout">Оформить заказ</a></button></div></div>
  <?php else: ?>
       <div class="content-empty">

@@ -44,7 +44,7 @@ include ROOT.'/views/layouts/header_category.php';?>
                 <div class="view-product-right-info__item brownDark fontSegoePrint size20px"><span> - <?php echo $product['ing2'];?></span></div>
                 <div class="view-product-right-info__item brownDark bottom_padding fontSegoePrint size20px"><span> - <?php echo $product['ing3'];?></span></div>
             </div>
-                <div class="view-product-right-info__slogan view-product-right-info_padding brownLight size35px fontSegoePrint padding-15"><?php echo $product['slogan'];?></div>
+                <div class="view-product-right-info__slogan brownLight size35px fontSegoePrint padding-15"><?php echo $product['slogan'];?></div>
 
  
      <div class="view-product-right-info__ing">
