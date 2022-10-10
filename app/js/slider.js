@@ -1,18 +1,17 @@
-
-		
-	function htmSlider(){
+jQuery(document).ready(function(){
+	function htmSlider_cart(){
 		/* Зададим следующие переменные */
 
 		/* обертка слайдера */
-		var slideWrap1 = $('.slide-wrap');
+		var slideWrap1 = $('.slide-wrap_cart');
 		/* ссылки на предудыщий иследующий слайд */
-		var nextLink1 = $('.next-slide');
-		var prevLink1 = $('.prev-slide');
+		var nextLink1 = $('.next-slide_cart');
+		var prevLink1 = $('.prev-slide_cart');
         var playLink1 = $('.auto');
 		var is_animate = false;
 		
 		/* ширина слайда с отступами */
-		var slideWidth1 = $('.slide-item').outerWidth();
+		var slideWidth1 = $('.slide-item_cart').outerWidth();
 		
 		/* смещение слайдера */
 		var newLeftPos = slideWrap1.position().left - slideWidth1;
@@ -23,7 +22,7 @@
 	
 				slideWrap1.animate({left: newLeftPos}, 600, function(){
 					slideWrap1
-						.find('.slide-item:first')
+						.find('.slide-item_cart:first')
 						.appendTo(slideWrap1)
 						.parent()
 						.css({'left': 0});
@@ -38,7 +37,7 @@
 			
 				slideWrap1
 					.css({'left': newLeftPos})
-					.find('.slide-item:last')
+					.find('.slide-item_cart:last')
 					.prependTo(slideWrap1)
 					.parent()
 					.animate({left: 0}, 600);
@@ -53,7 +52,7 @@
 				is_animate = true;
 				slideWrap1.animate({left: newLeftPos}, 500, function(){
 					slideWrap1
-						.find('.slide-item:first')
+						.find('.slide-item_cart:first')
 						.appendTo(slideWrap1)
 						.parent()
 						.css({'left': 0});
@@ -66,16 +65,19 @@
 		playLink1.click(function(){
 			if(playLink1.hasClass('play')){
 				playLink1.removeClass('play').addClass('pause');
-				jQuery('.arrow').addClass('disable');
+				jQuery('.arrow_cart').addClass('disable');
 				timer = setInterval(autoplay, 1000);
 			} else {
 				playLink1.removeClass('pause').addClass('play');
-				jQuery('.arrow').removeClass('disable');
+				jQuery('.arrow_cart').removeClass('disable');
 				clearInterval(timer);
 			}
 		});
 
 	}
+	htmSlider_cart();
+	});
+
 
 
 

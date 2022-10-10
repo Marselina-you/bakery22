@@ -85,21 +85,21 @@ include ROOT . '/views/layouts/header2.php';
          
      
     </div>       
-      <div class="main">
+      <div class="main_cart">
    <div class="content-empty-slider__title brownDark size29px fontTahoma letter-space d-flex justify-content-center">Рекомендуем</div>
-   <div class="arrow-navy d-flex justify-content-between">
-  <div class="arrow prev-slide navy-phone"><img src="/template/images/arrow1.png"></div>
-  <div class="arrow next-slide navy-phone"><img src="/template/images/arrow.png"></div></div>
-   <div class="slider d-flex col-xl-10 offset-xl-1 col-md-10 offset-md-1  col-sm-10 offset-sm-1  col-xs-10 offset-xs-1 ">
+   <div class="navigation_cart d-flex justify-content-between">
+  <div class="arrow_cart prev-slide_cart navy-phone"><img src="/template/images/arrow1.png"></div>
+  <div class="arrow_cart next-slide_cart navy-phone"><img src="/template/images/arrow.png"></div></div>
+   <div class="slider-cart">
      
-      <div class="slide-list col-xl-12 col-md-12 col-sm-12">
-         <div class="slide-wrap">
+      <div class="slide-list">
+         <div class="slide-wrap_cart">
             <?php foreach ($productsBest as $product): ?>
-             <div class="slide-item d-flex flex-column align-items-center">
+             <div class="slide-item_cart d-flex flex-column align-items-center">
                <div class="slide-img wrap_img"><a href="/product/view/<?php echo $product['id'];?>"><img src="/upload/images/products/<?php echo $product['new_picture'];?>" alt="" /></a></div>
               <div class="slide-item__value size45px burgundyLight"><?php echo $product['price'];?><span class="rubl">₽</span></div>
                <div class="slide-item__slogan size24px fontTahoma letter-space <?php echo $product['style'];?>"><?php echo $product['value'];?></div>
-               <span class="slide-title brownDark size29px text-center"><a href="/product/view/<?php echo $product['id'];?>"><?php echo $product['name'];?></a></span>
+               <span class="brownDark size29px text-center"><a href="/product/view/<?php echo $product['id'];?>"><?php echo $product['name'];?></a></span>
                <div class="slide-item__button text-center"><a class="white fontTahoma size29px letter-space" href="/cart/add/<?php echo $product['id']; ?>" data-id="<?php echo $product['id'];?>">В корзину</a></div>
             </div><?php endforeach;?> 
            

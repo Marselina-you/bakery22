@@ -1,0 +1,89 @@
+//basket
+
+.undertitle
+	padding-top: 50px 
+	padding-bottom: 40px
+	@media screen and (max-width: 768px)
+		padding: 15px 0 15px 0
+.undertitle a 
+	color: $brownLight
+.undertitle a:hover
+	color: $brownDark
+
+.main-titles_phone
+	background-color: $greyElephant
+/* Slider */
+
+.slider-cart
+	padding: 0 0 40px 0
+	@media screen and (max-width: 768px)
+		padding: 0
+	/* Позиционирование */
+	position: relative
+	/* Скроем то что выходит за границы */
+	overflow: hidden
+/* Двойной клик по ссылкам вперед/назад вызывает выделение */
+.slider-cart::-moz-selection
+	background: transparent
+	color: #fff
+	text-shadow: none
+.slider-cart::selection
+	background: transparent
+	color: #fff
+	text-shadow: none
+
+.slide-list
+	position: relative
+	margin: 0
+	padding: 0
+.slide-wrap_cart
+	position: relative
+	left: 0px
+	top: 0
+	/* максимально возможная ширина обертки слайдера */
+	width: 10000000px
+.slide-item_cart
+	/* Ширина слайда */
+	width: 400px
+	padding: 30px
+	@media screen and (max-width: 768px)
+		width: 190px
+		padding: 20px
+	/* Обтекание */
+	float: left
+/* навигация вперед/назад */
+.navy 
+	/* абсолютное позиционирование */
+	position: relative
+	z-index: 1
+	height: 40px
+	/* ширина ссылок */
+	width: 40px
+	cursor: pointer
+	
+.navy-phone img
+	background-color: $white2
+	padding: 10px
+	border-radius: 70px
+
+.navigation_cart
+	position: relative
+	top: 230px
+	@media screen and (max-width: 768px)
+		top: 100px
+	
+.slide-item__value
+	padding: 34px 0 40px 0
+.slide-title
+	padding: 25px 0 42px 0
+	background-color: $orange
+	border: 7px solid $orange
+	border-radius: 10px
+	a
+		padding: 15px
+	@media screen and (max-width: 768px)
+	a 
+		padding: 0
+.slide-img img
+	width: 90%
+	

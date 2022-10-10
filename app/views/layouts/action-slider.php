@@ -45,7 +45,7 @@
       </div>
 
 </div></div>  <div class="action-arrow-navy d-flex justify-content-between">
-   <div class="navy prev-slide d-flex"><img src="/template/images/left-arrow.png"></div>
-   <div class="navy next-slide  d-flex"><img src="/template/images/right-arrow.png"></div></div>
+   <div class="navy prev-slide d-flex"><img src="/template/images/icons/left-arrow.png"></div>
+   <div class="navy next-slide  d-flex"><img src="/template/images/icons/right-arrow.png"></div></div>
  
  </div>
