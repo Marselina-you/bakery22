@@ -10,7 +10,7 @@ include ROOT . '/views/layouts/header2.php';
         <div class="content-empty-text col-xl-11 offset-xl-1">
             <div class="col-xl-10">
                 <div class="col-xl-4 title size35px brownDark fontTahoma letter-space">Корзина </div></div>
-            <div class="col-xl-12 col-lg-12 undertitle_check_padding d-flex align-items-center">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column align-items-center undertitle_check_padding">
                 <div class="d-flex col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6 size29px fontTahoma letter-space"><a href="/catalog" class="undertitle_check brownLight">Перейти в каталог</a></div>
             <div class="d-flex col-xl-8 col-lg-8 col-md-6 col-sm-6 col-6 flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column">
                     <?php foreach ($categories as $categoryItem): ?>
@@ -71,9 +71,9 @@ include ROOT . '/views/layouts/header2.php';
         <div class="content-empty-text col-xl-11 offset-xl-1">
             <div class="col-xl-10">
                 <div class="col-xl-4 title size35px brownDark fontTahoma letter-space">Корзина пуста</div></div>
-            <div class="col-xl-11  undertitle_check_padding d-flex align-items-center">
-                <div class="size29px fontTahoma letter-space"><a href="/catalog" class="undertitle_check brownLight">Перейти в каталог</a></div>
-            <div class="d-flex col-xl-8">
+            <div class="col-xl-11 undertitle_check_padding d-flex align-items-center">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-5 size29px fontTahoma letter-space"><a href="/catalog" class="undertitle_check brownLight">Перейти в каталог</a></div>
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-7 col-7 d-flex flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
                     <?php foreach ($categories as $categoryItem): ?>
                 <div class="check_padding "><a href="/category/<?php echo $categoryItem['id'];?>" class="darkBlue fontSans size29px"><?php echo $categoryItem['name_category'];?></a>
                 </div>
@@ -97,11 +97,11 @@ include ROOT . '/views/layouts/header2.php';
          <div class="slide-wrap_cart">
             <?php foreach ($productsBest as $product): ?>
              <div class="slide-item_cart d-flex flex-column align-items-center">
-               <div class="slide-img wrap_img"><a href="/product/view/<?php echo $product['id'];?>"><img src="/upload/images/products/<?php echo $product['new_picture'];?>" alt="" /></a></div>
+               <div class="slide-img"><a href="/product/view/<?php echo $product['id'];?>"><img src="/upload/images/products/<?php echo $product['new_picture'];?>" alt="" /></a></div>
               <div class="slide-item__value size45px burgundyLight"><?php echo $product['price'];?><span class="rubl">₽</span></div>
-               <div class="slide-item__slogan size24px fontTahoma letter-space <?php echo $product['style'];?>"><?php echo $product['value'];?></div>
-               <span class="brownDark size29px text-center"><a href="/product/view/<?php echo $product['id'];?>"><?php echo $product['name'];?></a></span>
-               <div class="slide-item__button text-center"><a class="white fontTahoma size29px letter-space" href="/cart/add/<?php echo $product['id']; ?>" data-id="<?php echo $product['id'];?>">В корзину</a></div>
+               <div class="slide-item__slogan size24px_sm fontTahoma letter-space <?php echo $product['style'];?>"><?php echo $product['value'];?></div>
+               <div class="slide-item__name_sm brownDark size29px_sm text-center cart-order__name_padding"><a href="/product/view/<?php echo $product['id'];?>" class="brownDark brownDark_a"><?php echo $product['name'];?></a></div>
+               <div class="cart-order__name_padding"><div class="slide-item__button text-center"><a class="white fontTahoma size29px_sm letter-space" href="/cart/add/<?php echo $product['id']; ?>" data-id="<?php echo $product['id'];?>">В корзину</a></div></div>
             </div><?php endforeach;?> 
            
            

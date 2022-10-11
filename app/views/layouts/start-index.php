@@ -4,7 +4,7 @@
       <div class="header-logo-menu__menu icon-menu"><img src="/template/images/menu.png" alt=""></div>
      
 </div>
-<div class="main-start-title col-xl-6 offset-xl-1 col-lg-6 offset-lg-1  col-md-6 offset-md-1 col-sm-6 offset-sm-6 col-6 offset-6">
+<div class="main-start-title col-xl-6 offset-xl-1 col-lg-6 offset-lg-1 col-md-6 offset-md-1 col-sm-6 offset-sm-6 col-6 offset-6">
    <div class="main-start-name wrap-main-orderEnd-content-amount">
    <div class="main-start-name__item1 bottom_padding10 fontTahoma size45px brownDark">ЗА БАТОНОМ </div>
 <div class="main-start-name__item2 bottom_padding10 fontTahoma size45px brownDark">С ПЫЛУ С ЖАРУ</div>

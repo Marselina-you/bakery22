@@ -2,5 +2,13 @@
       <div class="header-logo-menu__logo"><img src="/template/images/logo.png" alt=""></div>
 
       <div class="header-logo-menu__menu icon-menu"><img src="/template/images/menu.png" alt=""></div>
+
+      <div class="main-start-title_sm">
+   <div class="main-start-name wrap-main-orderEnd-content-amount">
+   <div class="main-start-name__item1 bottom_padding10 fontTahoma size45px brownDark">ЗА БАТОНОМ </div>
+<div class="main-start-name__item4 fontTahoma size26px brownDark">мини-пекарня</div>
+</div>
+
+</div>
      
  </div>

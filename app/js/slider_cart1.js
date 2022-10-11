@@ -20,7 +20,7 @@ jQuery(document).ready(function(){
 		nextLink.click(function(){
 			if(!slideWrap.is(':animated')) {
 	
-				slideWrap.animate({left: newLeftPos}, 600, function(){
+				slideWrap.animate({left: newLeftPos}, 400, function(){
 					slideWrap
 						.find('.slide-item_cart:first')
 						.appendTo(slideWrap)
@@ -40,7 +40,7 @@ jQuery(document).ready(function(){
 					.find('.slide-item_cart:last')
 					.prependTo(slideWrap)
 					.parent()
-					.animate({left: 0}, 600);
+					.animate({left: 0}, 400);
 
 			}
 		});

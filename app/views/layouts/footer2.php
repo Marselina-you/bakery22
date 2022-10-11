@@ -17,7 +17,9 @@
                 </div>
                  <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
                    
-                   <a href="/cart/"> <img src="/template/images/icons/basket.png" alt=""><span id="cart-count"><?php if(Cart::countItems() > 0): echo'('; echo Cart::countItems();  echo ')';?><?php endif; ?></span></a>
+                   <a href="/cart/"> <img src="/template/images/icons/basket.png" alt="">
+                    <span id="cart-count"><?php if(Cart::countItems() > 0): echo'('; echo Cart::countItems();  echo ')';?>
+                    <?php endif; ?></span></a>
                 </div>
                <div class="icons__item icons__item_padding d-flex  flex-column align-items-center">
                                          <a href="/user/order/"><img src="/template/images/icons/order.png" alt=""></a>

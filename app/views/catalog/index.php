@@ -3,7 +3,8 @@ include ROOT . '/views/layouts/header2.php';
 include ROOT.'/views/layouts/header3.php';
 include ROOT.'/views/layouts/header_category.php';?>
 
-
+<div class="wrap-content">
+    <div class="main row main_category">
 
 
   
@@ -59,5 +60,6 @@ include ROOT.'/views/layouts/header_category.php';?>
         </div>
 <?php endforeach;?> 
 </div>
+</div></div>
 	  
 <?php include ROOT.'/views/layouts/footer2.php';?>
