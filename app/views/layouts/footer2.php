@@ -94,7 +94,7 @@
       <script src="/js/app.min.js"></script>
      
       <script src="/js/menu.js"></script>
-       <script src="/js/slider.js"></script>
+       <script src="/js/slider_cart1.js"></script>
       <script src="/js/slider_sm.js"></script>
       <script src="/js/action_slider.js"></script>
       <script type="text/javascript">

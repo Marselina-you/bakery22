@@ -1,6 +1,7 @@
 $(document).ready(function() {
 menuAn();
 actionSlider();
-htmSlider();
+htmSlider_sm();
+htmSlider_cart();
 
 })

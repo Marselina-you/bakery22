@@ -25,7 +25,7 @@
                <div class="slide-img_sm wrap_img_sm"><a href="/product/view/<?php echo $product['id'];?>"><img src="/upload/images/products/<?php echo $product['new_picture'];?>" alt="" /></a></div>
               <div class="slide-item__value size45px burgundyLight"><?php echo $product['price'];?><span class="rubl">₽</span></div>
                <div class="slide-item__slogan size20px fontTahoma letter-space <?php echo $product['style'];?>"><?php echo $product['value'];?></div>
-               <span class="slide-title size22px text-center"><a href="/product/view/<?php echo $product['id'];?>" class="brownDark brownDark_a"><?php echo $product['name'];?></a></span>
+               <span class="slide-item__name size22px text-center"><a href="/product/view/<?php echo $product['id'];?>" class="brownDark brownDark_a"><?php echo $product['name'];?></a></span>
                <div class="slide-item__button text-center"><a class="white fontTahoma size20px letter-space" href="/cart/add/<?php echo $product['id']; ?>" data-id="<?php echo $product['id'];?>">В корзину</a></div>
             </div><?php endforeach;?> 
            </div>

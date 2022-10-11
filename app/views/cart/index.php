@@ -87,9 +87,10 @@ include ROOT . '/views/layouts/header2.php';
     </div>       
       <div class="main_cart">
    <div class="content-empty-slider__title brownDark size29px fontTahoma letter-space d-flex justify-content-center">Рекомендуем</div>
+   <div class="wrap-navigation_cart d-flex justify-content-center">
    <div class="navigation_cart d-flex justify-content-between">
   <div class="arrow_cart prev-slide_cart navy-phone"><img src="/template/images/arrow1.png"></div>
-  <div class="arrow_cart next-slide_cart navy-phone"><img src="/template/images/arrow.png"></div></div>
+  <div class="arrow_cart next-slide_cart navy-phone"><img src="/template/images/arrow.png"></div></div></div>
    <div class="slider-cart">
      
       <div class="slide-list">
