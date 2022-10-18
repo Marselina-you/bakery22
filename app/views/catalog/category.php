@@ -5,10 +5,10 @@ include ROOT.'/views/layouts/header3.php';
 include ROOT.'/views/layouts/header_category.php';
 ?>
 <div class="wrap-content">
-    <div class="main row main_category">
+    <div class="main main_category row">
 <?php foreach ($categoryProducts as $product): ?>
 <div class="wrap-view-product d-flex flex-column col-xl-12 col-lg-9 offset-lg-1 col-md-6 col-sm-6 col-6">
-            <div class="d-flex view-product flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column justify-content-center justify-content-sm-start">
+            <div class="view-product d-flex flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column justify-content-center justify-content-sm-start">
                 <div class="view-product-left col-xl-6 col-lg-6 flex-column">
                 <div class="d-flex view-product-left__img justify-content-center"><a href="/product/view/<?php echo $product['id'];?>">
                     <img src="/upload/images/products/<?php echo $product['new_picture'];?>"  alt="" /></a></div>

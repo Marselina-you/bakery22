@@ -1,5 +1,4 @@
-
-    <div class="header-main">  
+<div class="header-main">  
 <div class="header d-flex justify-content-end">
      <div class ="header-up header-up_padding">
         <div class ="header-row1 col-xl-4 col-lg-5 col-md-6 col-sm-12 d-flex flex-column">
@@ -34,7 +33,7 @@
                     >Войти</a></div>
                       <?php else: ?>
                <a href="/user/login/"
-                    ><img src="/template/images/account.png" alt=""></a>
+                    ><img src="/template/images/icons/account.png" alt=""></a>
                      <div class="text__item brownDark fontSans size16px"><a href="/cabinet/">
              <?php echo $user['name'];?></a></div>
              

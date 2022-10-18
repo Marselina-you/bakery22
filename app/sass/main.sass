@@ -8,6 +8,8 @@
 @import "slider_cart.sass"
 html, body
 	height: 100%
+	width: 100%
+	padding: 0
 .wrap-content
 	display: flex
 	flex-direction: column
@@ -129,11 +131,8 @@ body
 		width: 100%
 
 //index-basket
-
-
 .content-order-list_item__info-structure
 	line-height: 30px
-
 .content-order-end__click__btn
 	border-radius: 10px
 .content-order-list_item__info-delete a 
@@ -141,9 +140,7 @@ body
 .content-order-list_item__info-delete a:hover
 	color: $burgundyLight
 //cart-full
-
 //cart-form
-
 input[class="content-form__data-input"]
 	font-family: inherit
 	font-size: inherit
@@ -158,7 +155,6 @@ label.required:after
 	background-color: #e1dcb5
 .main-admin-support
 	margin-top: 70px
-
 textarea
 	height: 50px
 input[class="content-form__data-input"]
@@ -179,10 +175,9 @@ select[class="edit-cart__item-input"]
 	width: 100%
 	@media screen and (max-width: 992px)
 		font-size: 16px
-		
+
 textarea[class="edit-cart__item-input-desc"]
 	padding-left: 15px
-
 	font-size: 22px
 	height: auto
 	width: 100%
@@ -199,8 +194,8 @@ textarea[class="edit-cart__item-input-desc"]
 	font-size: 22px
 	height: 40px
 	width: 100%
-	
-
+.wrap-view-product
+	height: 700px	
 .view-product-right-info__ing1
 	position: relative
 	z-index: 1
@@ -251,7 +246,6 @@ textarea[class="edit-cart__item-input-desc"]
 	@media screen and (max-width: 768px)
 		display: none
 
-
 //main-about-content
 .main-about
 	display: flex
@@ -260,7 +254,7 @@ textarea[class="edit-cart__item-input-desc"]
 	@media screen and (max-width: 768px)
 		display: none
 .main-about-content
-	background: url(../template/images/protiv.gif) no-repeat
+	background: url(../template/images/protiv.png) no-repeat
 	background-position: center
 	@media screen and (max-width: 992px)
 		background-size: 80%

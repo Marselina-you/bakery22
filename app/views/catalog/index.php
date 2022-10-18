@@ -3,15 +3,10 @@ include ROOT . '/views/layouts/header2.php';
 include ROOT.'/views/layouts/header3.php';
 include ROOT.'/views/layouts/header_category.php';?>
 
-<div class="wrap-content">
-    <div class="main row main_category">
-
-
-  
-			
-
-<div class="d-flex flex-xl-column flex-lg-column flex-md-row flex-sm-row flex-row"><?php foreach ($latestProducts as $product): ?>
-<div class="wrap-view-product d-flex flex-column col-xl-11 col-lg-11 col-md-6 col-sm-6 col-6">
+<div class="wrap-content container-fluid">
+    <div class="main main_category">
+        <div class="col-12 d-flex flex-xl-column flex-lg-column flex-md-row flex-sm-row flex-row row"><?php foreach ($latestProducts as $product): ?>
+<div class="wrap-view-product col-xl-11 col-lg-10 col-md-6 col-sm-6 col-6 d-flex flex-column">
             <div class="d-flex view-product flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column justify-content-center justify-content-sm-start">
                 <div class="view-product-left col-xl-6 col-lg-6 flex-column">
                 <div class="d-flex view-product-left__img justify-content-center">
@@ -56,7 +51,7 @@ include ROOT.'/views/layouts/header_category.php';?>
                 <div class="view-product-right-info__ing3 view-product-right-info__ing_padding d-flex justify-content-center align-items-center white size24px fontTahoma"><?php echo $product['top3'];?></div></div>
             </div></div>
         </div>
-        <div class="separator col-xl-12 col-lg-12 justify-content-center"><img src="/template/images/razdel1.png"></div>
+        <div class="separator justify-content-center"><img src="/template/images/razdel1.png"></div>
         </div>
 <?php endforeach;?> 
 </div>
