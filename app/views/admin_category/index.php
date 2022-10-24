@@ -1,15 +1,15 @@
 <?php include ROOT . '/views/layouts/header.php';
 include ROOT . '/views/layouts/admin_header.php';
  ?>
-<div class="wrap-content">
+<div class="wrap-content pt-5">
     <div class="main">
-  <div class="container-fluid col-xl-12 edit">
+  <div class="container col-xl-12">
     <?php include ROOT . '/views/layouts/admin_menu.php';?>
-<div class="edit__title title_padding fontSans"><a href="/admin/category/create" class="size29px orange">Добавить категорию</a></div>
+<div class="edit__title py-4 fontSans fs-3"><a href="/admin/category/create" class="p-4 fontSans fs-3 orange">Добавить категорию</a></div>
 
 
            
-                  <div class="edit-cart__content d-flex row justify-content-between bottom_padding">
+                  <div class="d-flex row justify-content-between px-4">
                     
                    
                     
@@ -18,15 +18,15 @@ include ROOT . '/views/layouts/admin_header.php';
                     <table  class="table_category col-lg-4">
                         <tr>
                     
-                   <td class="brownDark size22px">ID категории
-                      <td class="edit__title title_padding darkBlue fontSans size29px"><?php echo $category['id']; ?>
+                   <td class="brownDark fs-4">ID категории
+                      <td class="py-4 darkBlue fontSans fs-4"><?php echo $category['id']; ?>
                         <tr>
                        
-                       <td class="brownDark size22px">Название категории
-                        <td class="edit__title title_padding darkBlue fontSans size29px"><?php echo $category['name_category']; ?>
+                       <td class="brownDark fs-4">Название категории
+                        <td class="py-4 darkBlue fontSans fs-4"><?php echo $category['name_category']; ?>
                         <tr>
-                       <td><a href="/admin/category/update/<?php echo $category['id']; ?>" title="Редактировать" class="greenVivid size22px edit__title">редактировать</a>
-                        <td><a href="/admin/category/delete/<?php echo $category['id']; ?>" title="Удалить" class="burgundyLight size22px edit__title">удалить</a><tr>
+                       <td class="py-4"><a href="/admin/category/update/<?php echo $category['id']; ?>" title="Редактировать" class="greenVivid  fs-4">редактировать</a>
+                        <td class="py-4"><a href="/admin/category/delete/<?php echo $category['id']; ?>" title="Удалить" class="burgundyLight fs-4 ">удалить</a><tr>
                         </table>
                    
                 <?php endforeach; ?>

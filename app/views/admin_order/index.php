@@ -1,20 +1,20 @@
 <?php include ROOT . '/views/layouts/admin_header.php';
 include ROOT . '/views/layouts/header.php'; ?>
 
-<div class="wrap-content">
+<div class="wrap-content pt-5">
     <div class="main">
-        <div class="container-fluid col-xl-12 edit">
+        <div class="container col-xl-12 edit">
     <?php include ROOT . '/views/layouts/admin_menu.php';?>
 
            
                         
            
 
-            <div class="edit__title title_padding fontSans size29px orange">Список заказов</div>
+            <div class="p-4 fontSans fs-3 orange orange">Список заказов</div>
 
             
 
-            
+            <div class="p-4">
             <table class="table-bordered table-striped table">
                 <tr>
                     <th>ID заказа</th>
@@ -42,7 +42,7 @@ include ROOT . '/views/layouts/header.php'; ?>
                         <td><a href="/admin/order/delete/<?php echo $order['id']; ?>" title="Удалить">Удалить</a></td>
                     </tr>
                 <?php endforeach; ?>
-            </table>
+            </table></div>
 
         </div>
     </div>

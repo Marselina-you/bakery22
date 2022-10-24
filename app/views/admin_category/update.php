@@ -2,39 +2,36 @@
 include ROOT . '/views/layouts/header.php'; ?>
 <div class="wrap-content">
     <div class="main">
-  <div class="container-fluid col-xl-12 edit">
-
+  <div class="container col-xl-12 edit">
+<?php include ROOT . '/views/layouts/admin_menu.php';?>
 
           
           
 
-            <div class="edit__title title_padding fontSans size29px orange">Редактировать категорию "<?php echo $category['name_category']; ?>"</div>
+            <div class="p-4 fontSans fs-3 orange">Редактировать категорию "<?php echo $category['name_category']; ?>"</div>
 
-            
-
-            
-            <div class="d-flex flex-column col-xl-8 col-lg-8 form-create form_padding">
-                    <form action="#" method="post">
-                        <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
-            <div class="burgundy fontSegoePrint font-weight-bold size35px padding-15">Название категории</div>
-                        <input type="text" class="size24px admin_input" name="name" placeholder="" value="<?php echo $category['name_category']; ?>"></div>
-                          <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
-                <div class="burgundy fontSegoePrint font-weight-bold size35px padding-15">Sort_order</div>
-                        <input type="text" name="sort_order" placeholder=""  class="size24px admin_input" name="name" value="<?php echo $category['sort_order']; ?>"></div>
+        <div class="p-4 d-flex col-xl-12 flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
+                    <form action="#" method="post" class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+                        <div class="d-flex flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column align-items-center py-1 justify-content-between">
+            <div class="burgundy fontSegoePrint font-weight-bold fs-4 pb-2">Наименование</div>
+                        <input type="text" class="fs-4 p-1 admin_input" name="name" placeholder="" value="<?php echo $category['name_category']; ?>"></div>
+                          <div class="d-flex flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column  align-items-center py-1 justify-content-between">
+                <div class="burgundy fontSegoePrint justify-content-center font-weight-bold fs-4 pb-2">Sort_order</div>
+                        <input type="text" name="sort_order" placeholder=""  class="fs-4 p-1 admin_input" name="name" value="<?php echo $category['sort_order']; ?>"></div>
 
                         
                        
-                       <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
-                        <div class="burgundy fontSegoePrint font-weight-bold size35px padding-15">Status</div>
-                        <input type="text" class="size24px admin_input" name="status" placeholder="" value="<?php echo $category['status']; ?>"></div>
+                       <div class="d-flex flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column  align-items-center py-1 justify-content-between">
+                        <div class="burgundy fontSegoePrint font-weight-bold fs-4 pb-2">Status</div>
+                        <input type="text" class="fs-4 p-1 admin_input" name="status" placeholder="" value="<?php echo $category['status']; ?>"></div>
 
-                          <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
-                <div class="burgundy fontSegoePrint font-weight-bold size35px padding-15">Style</div>
-                        <input type="text" name="style" placeholder=""  class="size24px admin_input" name="name" value="<?php echo $category['style']; ?>"></div>  
+                          <div class="d-flex flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column  align-items-center py-1 justify-content-between">
+                <div class="burgundy fontSegoePrint font-weight-bold fs-4 pb-2">Style</div>
+                        <input type="text" name="style" placeholder=""  class="fs-4 p-1 admin_input" name="name" value="<?php echo $category['style']; ?>"></div>  
                        
-                         <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
-                <div class="burgundy fontSegoePrint font-weight-bold size35px padding-15">Style2</div>
-                        <input type="text" name="style2" placeholder=""  class="size24px admin_input" name="name" value="<?php echo $category['style2']; ?>"></div>     
+                         <div class="d-flex flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column  align-items-center py-1 justify-content-between">
+                <div class="burgundy fontSegoePrint font-weight-bold fs-4 pb-2">Style2</div>
+                        <input type="text" name="style2" placeholder=""  class="fs-4 p-1 admin_input" name="name" value="<?php echo $category['style2']; ?>"></div>     
 
 
 
@@ -42,8 +39,8 @@ include ROOT . '/views/layouts/header.php'; ?>
                         
                         
                        
-                        <div class="d-flex justify-content-end">
-    <input type="submit" name="submit" value="Сохранить" class="btn btn-success size24px"></div>
+                        <div class="py-4 d-flex justify-content-xl-end justify-content-lg-end justify-content-md-end justify-content-sm-center justify-content-center">
+    <input type="submit" name="submit" value="Сохранить" class="btn btn-success fs-4"></div>
                     </form>
                 </div>
             </div></div></div>

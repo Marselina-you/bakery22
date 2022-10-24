@@ -1,17 +1,17 @@
 <?php include ROOT . '/views/layouts/header.php';
 include ROOT . '/views/layouts/admin_header.php';
  ?>
-<div class="wrap-content">
+<div class="wrap-content pt-1">
     <div class="main">
-  <div class="container-fluid col-xl-12 edit">
+  <div class="container col-xl-12">
     <?php include ROOT . '/views/layouts/admin_menu.php';?>
-<div class="edit__title title_padding fontSans size29px orange">Удаление товара <?php echo $id; ?></div>
+<div class="edit__title p-4 fontSans fs-3 orange">Удаление товара <?php echo $id; ?></div>
 
-  <div class="d-flex flex-column col-xl-8 col-lg-8 form-create form_padding">          
+  <div class="d-flex flex-column col-xl-8 col-lg-8">          
 
 <form method="post">
 	  <div class="d-flex justify-content-center">
-    <input type="submit" name="submit" value="Удалить" class="btn btn-success size24px"></div>
+    <input type="submit" name="submit" value="Удалить" class="btn btn-success fs-4"></div>
 </form>
 </div></div></div></div>
 <?php include ROOT . '/views/layouts/admin_footer.php'; ?>

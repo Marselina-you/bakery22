@@ -1,31 +1,30 @@
-<?php include ROOT . '/views/layouts/header_admin.php'; ?>
+<?php include ROOT . '/views/layouts/admin_header.php';
+include ROOT . '/views/layouts/header.php'; ?>
+<div class="wrap-content pt-5">
+    <div class="main">
 
-<section>
-    <div class="container">
-        <div class="row">
+    <div class="container col-xl-12">
+     <?php include ROOT . '/views/layouts/admin_menu.php';?>  
 
-            <br/>
+           
 
-            <div class="breadcrumbs">
-                <ol class="breadcrumb">
-                    <li><a href="/admin">Админпанель</a></li>
-                    <li><a href="/admin/category">Управление категориями</a></li>
-                    <li class="active">Удалить категорию</li>
-                </ol>
-            </div>
+            
 
+            <div class="edit__title p-4 fontSans fs-3 orange">Удалить категорию #<?php echo $id; ?>?</div>
 
-            <h4>Удалить категорию #<?php echo $id; ?></h4>
+<div class="d-flex flex-column col-xl-8 col-lg-8">          
 
+<form method="post">
+      <div class="d-flex justify-content-center">
+    <input type="submit" name="submit" value="Удалить" class="btn btn-success fs-4"></div>
+</form></div>
+            
 
-            <p>Вы действительно хотите удалить эту категорию?</p>
-
-            <form method="post">
-                <input type="submit" name="submit" value="Удалить" />
-            </form>
+            
 
         </div>
     </div>
-</section>
+</div>
 
-<?php include ROOT . '/views/layouts/footer_admin.php'; ?>
+
+<?php include ROOT . '/views/layouts/admin_footer.php'; ?>

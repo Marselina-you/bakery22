@@ -1,12 +1,12 @@
 <?php include ROOT . '/views/layouts/header.php';
 include ROOT . '/views/layouts/admin_header.php';
  ?>
-<div class="wrap-content">
+<div class="wrap-content pt-5">
     <div class="main">
-  <div class="container-fluid col-xl-12 edit">
+  <div class="container col-xl-12 edit">
     <?php include ROOT . '/views/layouts/admin_menu.php';?>
 
-        <div class="edit__title title_padding fontSans size29px orange">Добавление новой категории</div> 
+        <div class="p-4 fontSans fs-3 orange">Добавление новой категории</div> 
 
            
 
@@ -21,27 +21,40 @@ include ROOT . '/views/layouts/admin_header.php';
                     <?php endforeach; ?>
                 </ul>
             <?php endif; ?>
+<div class="p-4 d-flex col-xl-12 flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
+                    <form action="#" method="post" class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+                        <div class="d-flex flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column align-items-center py-1 justify-content-between">
+            <div class="burgundy fontSegoePrint font-weight-bold fs-4 pb-2">Наименование</div>
+                        <input type="text" class="fs-4 p-1 admin_input" name="name" placeholder="" value=""></div>
+                          <div class="d-flex flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column  align-items-center py-1 justify-content-between">
+                <div class="burgundy fontSegoePrint justify-content-center font-weight-bold fs-4 pb-2">Sort_order</div>
+                        <input type="text" name="sort_order" placeholder=""  class="fs-4 p-1 admin_input" name="name" value=""></div>
 
-            <div class="col-lg-6">
-                <div class="login-form">
-                    <form action="#" method="post">
-
-                      
                         
-
-
-                <div class="d-flex align-items-center view-product-right-info__item justify-content-between">
-        <div class="burgundyLight size22px">Название</div>
-        <input type="text" name="name" placeholder="" value="" class="size24px admin_input">
-            </div>        
-
                        
+                       <div class="d-flex flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column  align-items-center py-1 justify-content-between">
+                        <div class="burgundy fontSegoePrint font-weight-bold fs-4 pb-2">Status</div>
+                        <input type="text" class="fs-4 p-1 admin_input" name="status" placeholder="" value=""></div>
 
-                       <div class="d-flex justify-content-end">
-    <input type="submit" name="submit" value="Сохранить" class="btn btn-success size24px"></div>
+                          <div class="d-flex flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column  align-items-center py-1 justify-content-between">
+                <div class="burgundy fontSegoePrint font-weight-bold fs-4 pb-2">Style</div>
+                        <input type="text" name="style" placeholder=""  class="fs-4 p-1 admin_input" name="name" value=""></div>  
+                       
+                         <div class="d-flex flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column  align-items-center py-1 justify-content-between">
+                <div class="burgundy fontSegoePrint font-weight-bold fs-4 pb-2">Style2</div>
+                        <input type="text" name="style2" placeholder=""  class="fs-4 p-1 admin_input" name="name" value=""></div>     
+
+
+
+                        
+                        
+                        
+                       
+                        <div class="py-4 d-flex justify-content-xl-end justify-content-lg-end justify-content-md-end justify-content-sm-center justify-content-center">
+    <input type="submit" name="submit" value="Сохранить" class="btn btn-success fs-4"></div>
                     </form>
                 </div>
-            </div>
+            
 
 
         </div>
