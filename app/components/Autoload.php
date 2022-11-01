@@ -1,6 +1,6 @@
 <?php
 
-function __autoload($class_name)
+function my_autoloader($class_name)
 {
     # List all the class directories in the array.
     $array_paths = array(
@@ -15,3 +15,8 @@ function __autoload($class_name)
         }
     }
 }
+
+spl_autoload_register('my_autoloader');
+spl_autoload_register(function ($class_name) {
+    include $path;
+});
