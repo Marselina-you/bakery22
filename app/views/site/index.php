@@ -7,7 +7,7 @@ include ROOT.'/views/layouts/header2.php';?>
          <?php include ROOT.'/views/layouts/start-index.php';?>
 </div>				
 					 
-<div class="main-grandmenu">
+<div class="main-grandmenu py-4 col-12 justify-content-between">
 <?php include ROOT.'/views/layouts/grandmenu.php';?>
 </div>
  <div class="main-action-slider">

@@ -92,9 +92,9 @@
             </ul>
         </div>
         
-      <script src="/js/jquery-3.0.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script src="/js/app.min.js"></script>
-     
+     <script src="js/owl.carousel.min.js"></script>
       <script src="/js/menu.js"></script>
        <script src="/js/slider_cart1.js"></script>
       <script src="/js/slider_sm.js"></script>
@@ -102,6 +102,31 @@
       <script type="text/javascript">
   
     $(document).ready(function(){
+const slider = $(".slide").owlCarousel({
+        loop:true,
+        margin:0,
+        dots:true,
+        nav:true,
+        navText:  [""],
+        
+        autoplay:false,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:1
+            },
+            1000:{
+                items:1
+            }
+        }
+    });
+
+
+
+
+
         $(".add-to-cart").click(function () {
             var id = $(this).attr("data-id");
             $.post("/cart/addAjax/"+id, {}, function (data) {

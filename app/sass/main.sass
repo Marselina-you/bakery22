@@ -6,6 +6,8 @@
 @import "background.sass"
 @import "slider_sm.sass"
 @import "slider_cart.sass"
+//@import "owl.carousel.min.css"
+//@import "owl.theme.default.min.css"
 html, body
 	height: 100%
 	width: 100%
@@ -21,6 +23,13 @@ html, body
 .main-start-name__item2, .main-start-name__item3
 	@media screen and (max-width: 768px)
 		display: none
+
+.img_logo, .display_none
+	display: flex
+	@media screen and (max-width: 768px)
+		display: none
+		
+
 .icons
 	position: relative
 	z-index: 1
@@ -42,9 +51,9 @@ html, body
 	@media screen and (max-width: 992px)
 		background: url(/template/images/mdfon.png) no-repeat
 	@media screen and (max-width: 768px)
-		//background: $whiteElephant
+		background: url(/template/images/mobilfon.png) no-repeat
 		height: 800px
-		margin-top: -56px
+		margin-top: -90px
 .main
 	flex: 1 0 auto
 .wrap-footer-block
@@ -255,7 +264,6 @@ textarea[class="edit-cart__item-input-desc"]
 	border-radius: 10px
 .main-grandmenu
 	display: flex
-	padding: 30px 0
 	@media screen and (max-width: 768px)
 		display: none
 
@@ -264,8 +272,8 @@ textarea[class="edit-cart__item-input-desc"]
 	display: flex
 	justify-content: center
 	align-items: center
-	@media screen and (max-width: 768px)
-		display: none
+	//@media screen and (max-width: 768px)
+		//display: none
 .main-about-content
 	background: url(../template/images/protiv.png) no-repeat
 	background-position: center
@@ -274,6 +282,12 @@ textarea[class="edit-cart__item-input-desc"]
 .main-about-row__img img 
 	@media screen and (max-width: 1200px)
 		width: 90%
+.main-about-row
+	display: flex
+	flex-direction: column
+	align-items: center
+	@media screen and (max-width: 768px)
+		display: none
 
 .main-btn_hover 
 	&:hover
