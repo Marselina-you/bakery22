@@ -10,14 +10,14 @@ include ROOT.'/views/layouts/header2.php';?>
 <div class="main-grandmenu py-4 col-12 justify-content-between">
 <?php include ROOT.'/views/layouts/grandmenu.php';?>
 </div>
- <div class="main-action-slider">
+ <!--<div class="main-action-slider">
         <?php include ROOT.'/views/layouts/action-slider.php';?>
- </div>
+ </div>-->
  <div class="main-about wrap-main-orderEnd-content-amount">
     <?php include ROOT.'/views/layouts/about.php';?>
 
 </div>
 </div></div>
 				
-<?php include ROOT.'/views/layouts/footer2.php';?>
+<?php include ROOT.'/views/layouts/footer.php';?>
  

@@ -51,7 +51,7 @@ html, body
 	@media screen and (max-width: 992px)
 		background: url(/template/images/mdfon.png) no-repeat
 	@media screen and (max-width: 768px)
-		background: url(/template/images/mobilfon.png) no-repeat
+		background: url(/template/images/mdfon.png) no-repeat
 		height: 800px
 		margin-top: -90px
 .main
@@ -114,6 +114,8 @@ body
 	@media screen and (max-width: 768px)
 		display: flex
 		justify-content: center
+.margin-t
+	margin-top: -66px
 //footer
 .wrap-footer-block
 	flex: 0 0 auto
@@ -242,8 +244,14 @@ textarea[class="edit-cart__item-input-desc"]
 .wrap-product-right-info__ing3
 	margin-top: -70px
 	margin-left: 190px
-.view-product-right-info__slogan, .view-product-right-info__ing
+.view-product-right-info__content
 	@media screen and (max-width: 992px)
+		display: none
+.view-product-right-info__ing
+	@media screen and (max-width: 1200px)
+		display: none
+.view-product-right-info__slogan
+	@media screen and (max-width: 1200px)
 		display: none
 .view-product-left__img img
 	@media screen and (max-width: 768px)
@@ -277,8 +285,12 @@ textarea[class="edit-cart__item-input-desc"]
 .main-about-content
 	background: url(../template/images/protiv.png) no-repeat
 	background-position: center
-	@media screen and (max-width: 992px)
-		background-size: 80%
+	//@media screen and (max-width: 992px)
+		//background-size: 80%
+	@media screen and (max-width: 768px)
+		background-size: 70%
+	@media screen and (max-width: 565px)
+		background-size: 90%
 .main-about-row__img img 
 	@media screen and (max-width: 1200px)
 		width: 90%
