@@ -1650,6 +1650,40 @@ a {
   padding: 60px 0;
 }
 
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.noActivePagination {
+  padding: 5px;
+}
+.noActivePagination a {
+  font-size: 20px;
+  color: var(--jaffa-color);
+}
+.noActivePagination a:active {
+  color: var(--jaffa-color);
+}
+.noActivePagination a:hover {
+  color: var(--jaffa-color-hover);
+}
+.noActivePagination a:focus {
+  color: var(--jaffa-color-hover);
+}
+
+.activePagination {
+  padding: 5px;
+}
+.activePagination a {
+  font-size: 20px;
+  color: var(---wood-bark-color);
+}
+
 .admin-header {
   background-color: var(--blue-color);
   padding: 20px 0;

@@ -1,9 +1,12 @@
-<?php include ROOT . '/views/layouts/admin_header.php';
-include ROOT . '/views/layouts/header.php'; ?>
- <div class="wrap-content pt-5">
-    <div class="main">
+<?php include ROOT . '/views/layouts/head.php';?>
+<div class="site-container">
+<?php include ROOT . '/views/layouts/header-admin.php';?>
+
+<main class="main">
+    <?php include ROOT . '/views/layouts/menu-admin.php';?>
+ 
   <div class="container col-xl-12 edit">
-  	<?php include ROOT . '/views/layouts/admin_menu.php';?>
+  	
 <div class="p-4 fontSans fs-3 orange">Добavlение товарoв</div>
  <?php if (isset($errors) && is_array($errors)): ?>
                 <ul>
@@ -91,5 +94,6 @@ include ROOT . '/views/layouts/header.php'; ?>
 <div class="py-4 d-flex justify-content-xl-end justify-content-lg-end justify-content-md-end justify-content-sm-center justify-content-center">
 	<input type="submit" name="submit" value="Сохранить" class="btn btn-success fs-4"></div>
 </form></div>
-</div></div></div>
-<?php include ROOT . '/views/layouts/admin_footer.php'; ?>
+</div></main>
+					</div>
+<?php include ROOT . '/views/layouts/footer-admin.php'; ?>

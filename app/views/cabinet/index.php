@@ -1,99 +1,78 @@
-<?php include ROOT . '/views/layouts/header.php';
-include ROOT . '/views/layouts/header2.php'; 
-include ROOT . '/views/layouts/header3.php';?>
-<div class="wrap-content">
-    <div class="main">
-      <div class="user-index d-flex flex-column">
-         <div class="content-empty-text content-empty-text_padding col-xl-11 offset-xl-1">
-            <div class="bottom_padding size35px  brownDark fontTahoma letter-space"></a>Личный кабинет</div>
-            <div class="edit-cart__content_padding size35px brownDark fontTahoma letter-space"><?php echo $user['name'];?>!</div>
-            
-        
-         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column">
-    <div class="edit__title  user-index_padding darkBlue fontSans size32px"><a href="" class="">Доставки</a></div>
-     <div class="edit__title user-index_padding darkBlue fontSans size32px"><a href="#forOrder" class="">Покупки</a></div>
-      <div class="edit__title user-index_padding darkBlue fontSans size32px"><a href="/cart" class="">Корзина<span id="cart-count"><?php echo '('; echo Cart::countItems();  echo ')';?></span></a></div>
-      <div class="edit__title user-index_padding darkBlue fontSans size32px"><a href="#forDown" class="">Мои данные</a></div>
-
-</div> </div>
-         <div class="user-index-actual content-empty-text d-flex flex-column content-empty-text_padding col-xl-10 offset-xl-1">
-            <div class="undertitle size29px fontTahoma text-center letter-space"><a href="">Доставки</a></div>
-<div class="col-xl-12 d-flex">          
- <?php foreach ($ordersList as $order): ?>  
- <div class="user-index-actual-info d-flex flex-column align-items-center  col-xl-4">          
-              <div class="position-relative user-index-actual__data d-flex size24px fontArial text-center brownDark">Заказ <?php echo $order['id']; ?></div>
-               
-          
-           
-            <div class="cart-order__name_padding d-flex width-8 justify-content-center">
-                <div class="user-index-actual-info__condition d-flex white size24px text-center cart-order__name_padding width-8 justify-content-center"><?php echo $order['status']; ?></div></div>
-                <div class="cart-order__name_padding fontSans size20px orange">Ожидается 29 апреля 17.00</div>
-                 <?php foreach ($products as $order): ?>
-                    <div class="user-index-actual-cart__name size22px fontSans brownDark"><?php echo $order['name']; ?></div>
-        <div class="user-index-actual-cart__img cart-order__name_padding d-flex justify-content-center"><img src="/upload/images/products/<?php echo $order['photo']; ?>"  alt="" width="90" /></div>
-
-            <?php endforeach; ?>
-            </div>
-             <?php endforeach; ?>
-         </div>
-
-
-
-          <div class="user-index-actual content-empty-text d-flex flex-column content-empty-text_padding col-xl-11 offset-xl-1">
-            <div class="undertitle size29px fontTahoma text-center letter-space" id="forOrder"><a href="">Покупки</a></div>
-     <div class="d-flex">       
-        <?php foreach ($ordersListOld as $order): ?>  
-              <div class="user-index-actual-info d-flex flex-column align-items-center  col-xl-4">
-              <div class="position-relative user-index-actual__data d-flex size24px fontArial text-center brownDark">Заказ <?php echo $order['id']; ?></div>
-               
-         
-          
-                   <div class="size20px fontTahoma letter-space opacityImg brownLight"><?php echo $order['status']; ?></div>
-                <div class="user-index-actual-cart d-flex flex-column align-items-center">
-                    <?php foreach ($productsOld as $order): ?>
-                    <div class="user-index-actual-cart__img cart-order__name_padding d-flex justify-content-center"><img src="/upload/images/products/<?php echo $order['photo']; ?>" width="90" class="opacityImg"></div>
-                    <div class="user-index-actual-cart__name size22px fontSans brownDark">
-                        <?php echo $order['name']; ?>
-                    </div>
-                     <?php endforeach; ?>
+<?php include ROOT . '/views/layouts/head.php'; ?>
+<div class="site-container">
+  <?php include ROOT . '/views/layouts/header.php'; ?>
+  <main class="main">
+    <?php include ROOT . '/views/layouts/logo.html';?>
+    <section class="user-cabinet">
+      <div class="container">
+        <h2 class="user-cabinet__title">Личный кабинет <?php echo $user['name'];?></h2>
+        <nav class="menu-cabinet-nav" title="menu-cabinet">
+          <ul class="nav__list list-reset">
+            <li class="nav__item"><a href="#" class="nav__link">Доставки</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Покупки</a></li>
+            <li class="nav__item"><a href="/cart" class="nav__link">Корзина <span
+                  id="cart-count"><?php echo '('; echo Cart::countItems();  echo ')';?></span></a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Мои данные</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <section class="delivery">
+      <div class="container">
+        <h2 class="delivery__title centered">Доставки</h2>
+        <div class="delivery-block">
+          <ul class="delivery-block__list list-reset grid">
+            <?php foreach ($ordersList as $order): ?>
+            <li class="delivery-block__item">
+              <h3 class="delivery-block__order">Заказ №<?php echo $order['id']; ?></h3>
+              <span class="delivery-block__status"><?php echo $order['status']; ?></span>
+              <div class="delivery-block__date">Ожидается 23 апреля</div>
+              <article class="delivery-block__article">
+                <?php foreach ($products as $order): ?>
+                <div class="article__item">
+                  <h4 class="delivery-block__title"><?php echo $order['name']; ?></h4>
+                  <div class="delivery-block__image">
+                    <img src="/upload/images/products/<?php echo $order['photo']; ?>" alt="">
+                  </div>
                 </div>
-            </div>
-        <?php endforeach; ?></div>
-         </div>
-
-         <div class="user-index-actual content-empty-text d-flex flex-column content-empty-text_padding col-xl-11 offset-xl-1">
-            <div class="undertitle size29px fontTahoma text-center letter-space" id="forDown"><a href="">Мои данные</a></div>
-          <form class="main-enter-content__form form_padding col-xl-8 offset-xl-1 d-flex flex-column"  method="post">
-      <div class="content-form__data d-flex align-items-center justify-content-between flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
-          <label for="email" class="content-form__data-title size35px col-xl-4">E-mail:</label>
-          <div class="wrap-content-form__data-input col-xl-8">
-            <input type="text" name="email" class="content-form__data-input col-xl-12" value="<?php echo $user['email'];?>"></div>
+                <?php endforeach; ?>
+              </article>
+            </li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
       </div>
-      <div class="content-form__data d-flex align-items-center justify-content-between flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
-          <label for="name" class="content-form__data-title size35px col-xl-4">Имя:</label>
-          <div class="wrap-content-form__data-input col-xl-8">
-            <input type="text" name="name" class="content-form__data-input col-xl-12" value="<?php echo $user['name'];?>"/></div>
+    </section>
+    <section class="buy">
+      <div class="container">
+        <h2 class="buy__title centered">Покупки</h2>
+        <div class="buy-block">
+          <ul class="buy-block__list list-reset grid">
+            <?php foreach ($ordersListOld as $order): ?>
+            <li class="buy-block__item">
+              <h3 class="buy-block__order">Заказ №<?php echo $order['id']; ?></h3>
+              <div class="buy-block__status"><?php echo $order['status']; ?></div>
+              <article class="buy-block__article">
+                <?php foreach ($productsOld as $order): ?>
+                <div class="article__item">
+                  <h4 class="buy-block__title"> <?php echo $order['name']; ?></h4>
+                  <div class="buy-block__image">
+                    <img src="/upload/images/products/<?php echo $order['photo']; ?>" alt="">
+                  </div>
+                </div>
+                <?php endforeach; ?>
+              </article>
+            </li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
       </div>
-      
-      <div class="content-form__data d-flex align-items-center justify-content-between flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
-          <label for="parol2" class="content-form__data-title size35px col-xl-4">Телефон:</label>
-          <div class="wrap-content-form__data-input col-xl-8">
-            <input type="text" name="parol2" class="content-form__data-input col-xl-12"  value="<?php echo $user['phone'];?>"/></div>
-      </div>
-<div class="content-form__data d-flex align-items-center justify-content-end">
-   <div class="col-xl-7 col-lg-4 col-md-4 col-sm-4 col-6  d-flex justify-content-end">
-<button  class="content-order-end__click__btn btn btn-success size29px col-xl-8" type="button"><a href="/cabinet/edit" class="white">Редактировать</a></button></div></div>
-   </form>
-   
-            
-              
-         </div>
-         
-         
-
-         
-      </div></div></div>
-      
+    </section>
+  </main>
+</div>
 
 
-<?php include ROOT . '/views/layouts/footer2.php'; ?>
+
+
+
+<?php include ROOT . '/views/layouts/footer.html'; ?>
