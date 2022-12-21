@@ -1,7 +1,7 @@
-<?php include ROOT . '/views/layouts/header.php';
-include ROOT . '/views/layouts/header2.php'; 
-include ROOT.'/views/layouts/header3.php';
-include ROOT.'/views/layouts/header_category.php';?>
+<?php include ROOT . '/views/layouts/head.php';
+include ROOT . '/views/layouts/header.php'; 
+include ROOT.'/views/layouts/logo.html';
+include ROOT.'/views/layouts/catalog-menu.html';?>
 
 <div class="wrap-content container-fluid">
     <div class="main main_category">

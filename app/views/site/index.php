@@ -1,23 +1,26 @@
-<?php include ROOT.'/views/layouts/header.php';
-include ROOT.'/views/layouts/header2.php';?>
-<div class="wrap-content">
-    <div class="main">
-	
-<div class="main-start">
-         <?php include ROOT.'/views/layouts/start-index.php';?>
-</div>				
-					 
-<div class="main-grandmenu py-4 col-12 justify-content-between">
-<?php include ROOT.'/views/layouts/grandmenu.php';?>
-</div>
- <!--<div class="main-action-slider">
-        <?php include ROOT.'/views/layouts/action-slider.php';?>
- </div>-->
- <div class="main-about wrap-main-orderEnd-content-amount">
-    <?php include ROOT.'/views/layouts/about.php';?>
+<!DOCTYPE html>
+<html lang="ru" class="page">
+    <?php include ROOT.'/views/layouts/head.php'; ?>
+<body>
+  
+  <div class="site-container">
 
+<?php include ROOT.'/views/layouts/header.php'; ?>
+<main class="main">
+<?php include ROOT.'/views/layouts/hero.html';?>
+<?php include ROOT.'/views/layouts/products.html';?>
+<?php include ROOT.'/views/layouts/about.html';?>
+
+    
+       
+           
+      
+       
+    
+       
+   
+</main>
+<?php include ROOT.'/views/layouts/footer.html';?>
 </div>
-</div></div>
-				
-<?php include ROOT.'/views/layouts/footer.php';?>
- 
+</body>
+</html>
