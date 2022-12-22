@@ -5,8 +5,7 @@
         <?php include ROOT . '/views/layouts/menu-admin.php';?>
         <section class="admin-product">
             <div class="container-fluid grid">
-                <h2 class="admin-submenu__title  orange">Редактировать товар
-                        #<?php echo $id; ?></h2>
+                <h2 class="admin__subtitle">Редактировать товар #<?php echo $id; ?></h2>
                 <form action="#" method="post" class="admin-product-form" enctype="multipart/form-data">
                     <label class="admin-product-form__label">
                         <span class="admin-product-form__caption">Категория</span>

@@ -3,29 +3,23 @@
 <?php include ROOT . '/views/layouts/header-admin.php';?>
 <main class="main">
 <?php include ROOT . '/views/layouts/menu-admin.php';?>
-
-<h2 class="admin-submenu__title orange">Удалить категорию #<?php echo $id; ?>?</h2>
-    
-
-           
-
-            
-
-           
-
-<div class="d-flex flex-column col-xl-8 col-lg-8">          
-
-<form method="post">
-      <div class="d-flex justify-content-center">
-    <input type="submit" name="submit" value="Удалить" class="btn btn--danger btn-reset"></div>
-</form></div>
-            
-
-            
-
-        </div>
+<section class="admin-delete">
+  <div class="container-fluid">
+    <h2 class="admin__subtitle">Удаление категорию #<?php echo $id; ?></h2>
+    <h3 class="admin-delete__quest">Вы действительно хотите удалить категорию #<?php echo $id; ?>?</h3>
+    <div class="admin-delete__block">
+      <div class="admin-delete__item">
+        <form method="post">
+          <input type="submit" name="submit" value="Удалить" class="btn btn-reset btn--danger admin-delete__btn" />
+        </form>
+      </div>
+      <div class="admin-delete__item">
+      <a href="/admin/category" class="btn btn-reset btn--success">нет</a></div>
     </div>
+  </div>
+  </div>
+  </div>
+</section>
+</main>
 </div>
-
-
 <?php include ROOT . '/views/layouts/footer-admin.php'; ?>

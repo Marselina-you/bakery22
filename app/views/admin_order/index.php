@@ -8,44 +8,46 @@
                         
            
 
-            <div class="p-4 fontSans fs-3 orange orange">Список заказов</div>
-
             
 
-            <div class="p-4">
-            <table class="table-bordered table-striped table">
-                <tr>
-                    <th>ID заказа</th>
-                    <th>Имя покупателя</th>
-                    <th>Телефон покупателя</th>
-                    <th>Дата оформления</th>
-                    <th>Статус</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                <?php foreach ($ordersList as $order): ?>
-                    <tr>
-                        <td>
-                            <a href="/admin/order/view/<?php echo $order['id']; ?>">
+            <section class="admin-order">
+  <div class="container-fluid admin-order__container">
+  <h2 class="admin__subtitle">Список заказов</h2>
+    <div class="admin-order__block grid">
+    <?php foreach ($ordersList as $order): ?>
+      <article class="admin-order__article">
+        <ul class="admin-order__list list-reset">
+          <li class="admin-order__item">
+            <div class="admin-order__caption">Id заказа:</div>
+            <div class="admin-order__value"><a href="/admin/order/view/<?php echo $order['id']; ?>">
                                 <?php echo $order['id']; ?>
-                            </a>
-                        </td>
-                        <td><?php echo $order['user_name']; ?></td>
-                        <td><?php echo $order['user_phone']; ?></td>
-                        <td><?php echo $order['date']; ?></td>
-                        <td><?php echo Order::getStatusText($order['status']); ?></td>    
-                        <td><a href="/admin/order/view/<?php echo $order['id']; ?>" title="Смотреть">Смотреть</a></td>
-                        <td><a href="/admin/order/update/<?php echo $order['id']; ?>" title="Редактировать">Редактировать</a></td>
-                        <td><a href="/admin/order/delete/<?php echo $order['id']; ?>" title="Удалить">Удалить</a></td>
-                    </tr>
-                <?php endforeach; ?>
-            </table></div>
-
-        </div>
-    </div>
-</div>
-                </main>
+                            </a></div>
+          </li>
+          <li class="admin-order__item">
+            <div class="admin-order__caption">Имя покупателя:</div>
+            <div class="admin-order__value"><?php echo $order['user_name']; ?></div>
+          </li>
+          <li class="admin-order__item">
+            <div class="admin-order__caption">Телефон:</div>
+            <div class="admin-order__value"><?php echo $order['user_phone']; ?></div>
+          </li>
+          <li class="admin-order__item">
+            <div class="admin-order__caption">Дата оформления:</div>
+            <div class="admin-order__value"><?php echo $order['date']; ?></div>
+          </li>
+          <li class="admin-order__item">
+            <div class="admin-order__caption">Статус:</div>
+            <div class="admin-order__value"><?php echo Order::getStatusText($order['status']); ?></div>
+          </li>
+          <li class="admin-order__item">
+            <a href="/admin/order/delete/" class="admin-order__btn admin-order__btn btn--success btn btn-reset">выполнить</a>
+            <a href="/admin/order/update/<?php echo $order['id']; ?>" class="admin-order__btn admin-order__btn btn btn-reset btn--primary">изменить</a>
+            <a href="/admin/order/delete/<?php echo $order['id']; ?>" class="admin-order__btn admin-order__btn btn btn-reset btn--danger">отменить</a>
+          </li>
+        </ul>
+      </article>         
+      <?php endforeach; ?>
+            </main>
                 </div>
 
 <?php include ROOT . '/views/layouts/footer-admin.php'; ?>

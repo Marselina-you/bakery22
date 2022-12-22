@@ -3,64 +3,62 @@
 <?php include ROOT . '/views/layouts/header-admin.php';?>
 <main class="main">
 <?php include ROOT . '/views/layouts/menu-admin.php';?>
-<div class="edit__title title_padding fontSans size29px orange">Просмотр заказа #<?php echo $id; ?></div>
-                 <h5>Информация о заказе</h5>
-            <table class="table-admin-small table-bordered table-striped table">
-                <tr>
-                    <td>Номер заказа</td>
-                    <td><?php echo $order['id']; ?></td>
-                </tr>
-                <tr>
-                    <td>Имя клиента</td>
-                    <td><?php echo $order['user_name']; ?></td>
-                </tr>
-                <tr>
-                    <td>Телефон клиента</td>
-                    <td><?php echo $order['user_phone']; ?></td>
-                </tr>
-                <tr>
-                    <td>Комментарий клиента</td>
-                    <td><?php echo $order['user_comment']; ?></td>
-                </tr>
-                <?php if ($order['user_id'] != 0): ?>
-                    <tr>
-                        <td>ID клиента</td>
-                        <td><?php echo $order['user_id']; ?></td>
-                    </tr>
-                <?php endif; ?>
-                <tr>
-                    <td><b>Статус заказа</b></td>
-                    <td><?php echo Order::getStatusText($order['status']); ?></td>
-                </tr>
-                <tr>
-                    <td><b>Дата заказа</b></td>
-                    <td><?php echo $order['date']; ?></td>
-                </tr>
-            </table>
+<section class="order-view">
+  <div class="container-fluid">
+    <h2 class="admin__subtitle">Просмотр заказа #<?php echo $id; ?></h2>
 
-            <h5>Товары в заказе</h5>
-
-            <table class="table-admin-medium table-bordered table-striped table ">
-                <tr>
-                    <th>ID товара</th>
-                   
-                    <th>Название</th>
-                    <th>Цена</th>
-                    <th>Количество</th>
-                </tr>
-                <?php foreach ($products as $product): ?>
-                    <tr>
-                        <td><?php echo $product['id']; ?></td>
-                       
-                        <td><?php echo $product['name']; ?></td>
-                        <td>$<?php echo $product['price']; ?></td>
-                        <td><?php echo $productsQuantity[$product['id']]; ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </table>
-
-            <a href="/admin/order/" class="btn btn-default back"><i class="fa fa-arrow-left"></i> Назад</a>
-        </div>
+    <div class="order-view__block grid">
+      <h3 class="order-view__subtitle">Информация о заказе</h3>
+      <div class="order-view-names">
+        <ul class="order-view-names__list list-reset">
+          <li class="order-view__item"><div class="admin-order__caption">Id заказа:</div></li>
+            <li class="order-view__item"><div class="admin-order__caption">Имя покупателя:</div></li>
+            <li class="order-view__item"><div class="admin-order__caption">Телефон:</div></li>
+            <li class="order-view__item"><div class="admin-order__caption">Дата оформления:</div></li>
+            <li class="order-view__item"> <div class="admin-order__caption">Статус:</div></li>
+            <li class="order-view__item">  <div class="admin-order__caption">Комментарий:</div></li>
+          </ul>
+      </div>
+      <div class="order-view-values">
+        <ul class="order-view-values__list list-reset">
+          <li class="order-view__item"><div class="admin-order__value"><?php echo $order['id']; ?></div></li>
+            <li class="order-view__item"><div class="admin-order__value"><?php echo $order['user_name']; ?></div></li>
+            <li class="order-view__item"><div class="admin-order__value"><?php echo $order['user_phone']; ?></div></li>
+            <li class="order-view__item"><div class="admin-order__value"><?php echo $order['date']; ?></div></li>
+            <li class="order-view__item"> <div class="admin-order__value"><?php echo Order::getStatusText($order['status']); ?></div></li>
+            <li class="order-view__item">  <div class="admin-order__value"><?php echo $order['user_comment']; ?></div></li>
+          </ul>
+      </div>
+      <h3 class="order-view__subtitle">Товары в заказе</h3>
+      <div class="order-view-names">
+        <ul class="order-view-names__list list-reset">
+          <li class="order-view__item"><div class="admin-order__caption">Артикул:</div></li>
+            <li class="order-view__item"><div class="admin-order__caption">Название:</div></li>
+            <li class="order-view__item"><div class="admin-order__caption">Сумма:</div></li>
+            <li class="order-view__item"><div class="admin-order__caption">Количество:</div></li>
+            </ul>
+      </div>
+      <div class="order-view-values">
+        <ul class="order-view-values__list list-reset">
+        <?php foreach ($products as $product): ?>
+          <li class="order-view__item"><div class="admin-order__value"><?php echo $product['id']; ?></div></li>
+          <li class="order-view__item"><div class="admin-order__value capitalize"><?php echo $product['name']; ?></div></li>
+          <li class="order-view__item"><div class="admin-order__value"><?php echo $product['price']; ?></div></li>
+          <li class="order-view__item"><div class="admin-order__value"><?php echo $productsQuantity[$product['id']]; ?></div></li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+      <ul class="order-view__links list-reset">
+        <li class="order-view__link"><a href="/admin/order/update/<?php echo $order['id']; ?>" class="admin-order__btn admin-order__btn btn--success btn btn-reset">выполнить</a></li>
+        <li class="order-view__link"><a href="/admin/order/update/<?php echo $order['id']; ?>" class="admin-order__btn admin-order__btn btn btn-reset btn--primary">изменить</a></li>
+        <li class="order-view__link"><a href="/admin/order/delete/<?php echo $order['id']; ?>" class="admin-order__btn admin-order__btn btn btn-reset btn--danger">отменить</a></li>
+      </ul>
+      <div class="order-view__back">
+        <a href="/admin/order/" class="admin-menu-nav__link">Назад</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 
                 </main>

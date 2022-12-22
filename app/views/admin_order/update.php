@@ -3,14 +3,8 @@
 <?php include ROOT . '/views/layouts/header-admin.php';?>
 <main class="main">
 <?php include ROOT . '/views/layouts/menu-admin.php';?>
-<div class="edit__title title_padding fontSans size29px orange">Редактировать заказ #<?php echo $id; ?></div>
-        
-
-          
-
-
-           
-            <div class="col-lg-4">
+<div class="">Редактировать заказ #<?php echo $id; ?></div>
+        <div class="col-lg-4">
                 <div class="login-form">
                     <form action="#" method="post">
 

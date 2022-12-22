@@ -4,9 +4,7 @@ class AdminController extends AdminBase
 	public function actionIndex()
 	{
 
-        $items = array();
-        $items = Menu::getItemsList();
-
+      
 		self::checkAdmin();
         $userId = User::checkLoggedSite();
         $user = User::getUserById($userId);
@@ -16,6 +14,8 @@ class AdminController extends AdminBase
 		require_once(ROOT . '/views/admin/index.php');
 		return true;
 	}
+
+  
    // public function actionCatalog()
    // {
         //self::checkAdmin();

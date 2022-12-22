@@ -16,7 +16,7 @@
      
         <tr class="admin-table__tr">
           <td class="admin-table__td"><?php echo $category['id']; ?></td>
-          <td class="admin-table__td"><?php echo $category['name_category']; ?></td>
+          <td class="admin-table__td capitalize"><?php echo $category['name_category']; ?></td>
           <td class="admin-table__td"><a href="/admin/category/delete/<?php echo $category['id']; ?>" class="admin-table__link admin-table__link--danger">удалить</a>
             / <a href="/admin/category/update/<?php echo $category['id']; ?>" class="admin-table__link--active"> редактировать</a></td>
         <tr class="admin-table__tr">

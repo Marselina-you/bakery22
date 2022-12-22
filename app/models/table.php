@@ -144,3 +144,8 @@ $result2 = $db->query("SELECT status.value, status.style FROM status JOIN assort
     SELECT assortiment.*, category.name, status.value 
 FROM assortiment JOIN category ON assortiment.category_id = category.id
 JOIN status ON assortiment.best = status.id
+<?php foreach ($items as $menuItem): ?>
+    <li class="admin-menu-nav__item">
+      <a href="/admin/menu/<?php echo $menuItem['id'];?>" class="admin-menu-nav__link <?php if ($menuId == $menuItem['id']) echo 'link--active'; ?>"><?php echo $menuItem['item'];?></a>
+    </li>
+    <?php endforeach; ?>

@@ -16,6 +16,7 @@ class AdminCategoryController extends AdminBase
         self::checkAdmin();
         $userId = User::checkLoggedSite();
         $user = User::getUserById($userId);
+       
 
         // Получаем список категорий
         $categoriesList = Category::getCategoriesListAdmin();

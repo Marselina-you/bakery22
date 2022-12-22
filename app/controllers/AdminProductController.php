@@ -7,10 +7,6 @@ class AdminProductController extends AdminBase
 		$productsList = Product::getProductsList();
         $userId = User::checkLoggedSite();
         $user = User::getUserById($userId);
-
-        $items = array();
-        $items = Menu::getItemsList(); 
-
         $categories = array();
         $categories = Category::getCategoriesList();
 

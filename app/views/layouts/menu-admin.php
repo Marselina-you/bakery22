@@ -3,11 +3,10 @@
     <h2 class="admin-menu__title">Вы вошли в АдминПанель как <?php echo $user['name'];?></h2>
     <nav class="admin-menu-nav" title="menu-admin">
       <ul class="admin-menu-nav__list list-reset">
-      <?php foreach ($items as $menuItem): ?>
-        <li class="admin-menu-nav__item">
-          <a href="/admin/<?php echo $menuItem['item'];?>" class="admin-menu-nav__link"><?php echo $menuItem['item'];?></a>
-        </li>
-        <?php endforeach; ?>
+      
+        <li class="admin-menu-nav__item"><a href="/admin/product" class="admin-menu-nav__link">Управление товарами</a></li>
+        <li class="admin-menu-nav__item"><a href="/admin/category" class="admin-menu-nav__link">Управление категориями</a></li>
+        <li class="admin-menu-nav__item"><a href="/admin/order" class="admin-menu-nav__link">Управление заказами</a></li>
     </ul>
     </nav>
   </div>
