@@ -1,8 +1,8 @@
-<?php include ROOT . '/views/layouts/header.php'; 
-//include ROOT . '/views/layouts/header2.php';
-//include ROOT . '/views/layouts/header3.php';?>
-<div class="wrap-content">
-    <div class="main">
+<?php include ROOT . '/views/layouts/head.php'; ?>
+<div class="site-container">
+  <?php include ROOT . '/views/layouts/header.php'; ?>
+  <main class="main">
+    <?php include ROOT . '/views/layouts/logo.html';?>
         <div class="wrap-main-enter wrap-main_padding">
             <div class="main-enter">
                 <div class="wrap-main-enter-content col-xl-6 offset-xl-1">
@@ -78,7 +78,7 @@
                     <br />
                 </div>
             </div>
-        </div>
-    </div>
+                            </main>
+                            </div>
 
-    <?php //include ROOT . '/views/layouts/footer2.php'; ?>
+    <?php include ROOT . '/views/layouts/footer.html'; ?>

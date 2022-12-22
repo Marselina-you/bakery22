@@ -1,22 +1,23 @@
-<?php include ROOT . '/views/layouts/admin_header.php';
-include ROOT . '/views/layouts/header.php'; ?>
-<div class="wrap-content pt-5">
-    <div class="main">
+<?php include ROOT . '/views/layouts/head.php';?>
+<div class="site-container">
+<?php include ROOT . '/views/layouts/header-admin.php';?>
+<main class="main">
+<?php include ROOT . '/views/layouts/menu-admin.php';?>
 
-    <div class="container col-xl-12">
-     <?php include ROOT . '/views/layouts/admin_menu.php';?>  
+<h2 class="admin-submenu__title orange">Удалить категорию #<?php echo $id; ?>?</h2>
+    
 
            
 
             
 
-            <div class="edit__title p-4 fontSans fs-3 orange">Удалить категорию #<?php echo $id; ?>?</div>
+           
 
 <div class="d-flex flex-column col-xl-8 col-lg-8">          
 
 <form method="post">
       <div class="d-flex justify-content-center">
-    <input type="submit" name="submit" value="Удалить" class="btn btn-success fs-4"></div>
+    <input type="submit" name="submit" value="Удалить" class="btn btn--danger btn-reset"></div>
 </form></div>
             
 
@@ -27,4 +28,4 @@ include ROOT . '/views/layouts/header.php'; ?>
 </div>
 
 
-<?php include ROOT . '/views/layouts/admin_footer.php'; ?>
+<?php include ROOT . '/views/layouts/footer-admin.php'; ?>

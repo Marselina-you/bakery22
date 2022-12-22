@@ -1,10 +1,8 @@
-<?php include ROOT . '/views/layouts/admin_header.php';
-include ROOT . '/views/layouts/header.php'; ?>
-
-<div class="wrap-content">
-    <div class="main">
-  <div class="container-fluid col-xl-12 edit">
-    <?php include ROOT . '/views/layouts/admin_menu.php';?>
+<?php include ROOT . '/views/layouts/head.php';?>
+<div class="site-container">
+<?php include ROOT . '/views/layouts/header-admin.php';?>
+<main class="main">
+<?php include ROOT . '/views/layouts/menu-admin.php';?>
 <div class="edit__title title_padding fontSans size29px orange">Редактировать заказ #<?php echo $id; ?></div>
         
 
@@ -46,4 +44,4 @@ include ROOT . '/views/layouts/header.php'; ?>
     </div>
 </div>
 
-<?php include ROOT . '/views/layouts/admin_footer.php'; ?>
+<?php include ROOT . '/views/layouts/footer-admin.php'; ?>

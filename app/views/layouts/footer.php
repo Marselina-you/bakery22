@@ -76,7 +76,7 @@
            <?php else: ?>
            <li class="fs-2 text-light fontSans text-center"> <a href="/cabinet/">
                    Аккаунт<?php  echo '(';  echo $user['name'];  echo ')'; ?></a></li>
-           <li class="fs-2 text-light fontSans text-center"> <a href="/user/logout/">
+           <li class="fs-2 text-light fontSans text-center"><a href="/user/logout/">
                    Выход</a></li>
            <?php endif; ?>
            </li>

@@ -1,39 +1,31 @@
-<?php include ROOT . '/views/layouts/header.php';
-include ROOT . '/views/layouts/admin_header.php';
- ?>
-<div class="wrap-content pt-5">
-    <div class="main">
-  <div class="container col-xl-12">
-    <?php include ROOT . '/views/layouts/admin_menu.php';?>
-<div class="edit__title py-4 fontSans fs-3"><a href="/admin/category/create" class="p-4 fontSans fs-3 orange">Добавить категорию</a></div>
-
-
-           
-                  <div class="d-flex row justify-content-between px-4">
-                    
-                   
-                    
-               
-                <?php foreach ($categoriesList as $category): ?>
-                    <table  class="table_category col-lg-4">
-                        <tr>
-                    
-                   <td class="brownDark fs-4">ID категории
-                      <td class="py-4 darkBlue fontSans fs-4"><?php echo $category['id']; ?>
-                        <tr>
-                       
-                       <td class="brownDark fs-4">Название категории
-                        <td class="py-4 darkBlue fontSans fs-4"><?php echo $category['name_category']; ?>
-                        <tr>
-                       <td class="py-4"><a href="/admin/category/update/<?php echo $category['id']; ?>" title="Редактировать" class="greenVivid  fs-4">редактировать</a>
-                        <td class="py-4"><a href="/admin/category/delete/<?php echo $category['id']; ?>" title="Удалить" class="burgundyLight fs-4 ">удалить</a><tr>
-                        </table>
-                   
-                <?php endforeach; ?>
-            </div>
-           </div>
-            
-        </div>
+<?php include ROOT . '/views/layouts/head.php';?>
+<div class="site-container">
+<?php include ROOT . '/views/layouts/header-admin.php';?>
+<main class="main">
+<?php include ROOT . '/views/layouts/menu-admin.php';?>
+<section class="admin-category">
+  <div class="container-fluid admin-category__container">
+  <h2 class="admin-submenu__title"><a href="/admin/category/create">Добавить категорию</a></h2>
+    <div class="admin-category__block">
+    <table class="admin-table">
+        <tr class="admin-table__tr">
+          <th class="admin-table__th">Id</th>
+          <th class="admin-table__th">Название категории</th>
+          <th class="admin-table__th">Действие</th>
+    <?php foreach ($categoriesList as $category): ?>
+     
+        <tr class="admin-table__tr">
+          <td class="admin-table__td"><?php echo $category['id']; ?></td>
+          <td class="admin-table__td"><?php echo $category['name_category']; ?></td>
+          <td class="admin-table__td"><a href="/admin/category/delete/<?php echo $category['id']; ?>" class="admin-table__link admin-table__link--danger">удалить</a>
+            / <a href="/admin/category/update/<?php echo $category['id']; ?>" class="admin-table__link--active"> редактировать</a></td>
+        <tr class="admin-table__tr">
+<?php endforeach; ?>
+      </table>
     </div>
+  </div>
+</section>
+</main>
+</div>
 
-<?php include ROOT . '/views/layouts/admin_footer.php'; ?>
+<?php include ROOT . '/views/layouts/footer-admin.php'; ?>

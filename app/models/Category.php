@@ -22,6 +22,22 @@ class Category
 
         return $categoryList;
 	}
+    public static function getItemsList()
+	{$db = Db::getConnection();
+
+        $itemsList = array();
+
+        $result = $db->query('SELECT id, name_category FROM category');
+
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $itemsList[$i]['id'] = $row['id'];
+            $itemsList[$i]['name_category'] = $row['name_category'];
+            $i++;
+        }
+
+        return $itemsList;
+	}
     public static function getCategoriesListAdmin()
     {
         $db = Db::getConnection();

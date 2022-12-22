@@ -1,51 +1,55 @@
-<?php include ROOT . '/views/layouts/admin_header.php';
-include ROOT . '/views/layouts/header.php'; ?>
-<div class="wrap-content">
-    <div class="main">
-  <div class="container col-xl-12 edit">
-<?php include ROOT . '/views/layouts/admin_menu.php';?>
+<?php include ROOT . '/views/layouts/head.php';?>
+<div class="site-container">
+        <?php include ROOT . '/views/layouts/header-admin.php';?>
+        <main class="main">
+                <?php include ROOT . '/views/layouts/menu-admin.php';?>
+                <section class="admin-product">
+                        <div class="container-fluid">
+                                <h2 class="admin-submenu__title orange">Редактировать категорию
+                                        "
+                                        <?php echo $category['name_category']; ?>"
+                                </h2>
+                                <div class="grid">
+                                        <form action="#" method="post" enctype="multipart/form-data"
+                                                class="admin-product-form">
+                                                <label class="admin-product-form__label">
+                                                        <span class="admin-product-form__caption">Наименование</span>
+                                                        <input type="text" name="name" placeholder=""
+                                                                value="<?php echo $category['name_category']; ?>"
+                                                                class="admin-product-form__input">
+                                                </label>
+                                                <label class="admin-product-form__label">
+                                                        <span class="admin-product-form__caption">Sort_order</span>
+                                                        <input type="text" name="sort_order" placeholder=""
+                                                                value="<?php echo $category['sort_order']; ?>"
+                                                                class="admin-product-form__input">
+                                                </label>
 
-          
-          
-
-            <div class="p-4 fontSans fs-3 orange">Редактировать категорию "<?php echo $category['name_category']; ?>"</div>
-
-        <div class="p-4 d-flex col-xl-12 flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
-                    <form action="#" method="post" class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
-                        <div class="d-flex flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column align-items-center py-1 justify-content-between">
-            <div class="burgundy fontSegoePrint font-weight-bold fs-4 pb-2">Наименование</div>
-                        <input type="text" class="fs-4 p-1 admin_input" name="name" placeholder="" value="<?php echo $category['name_category']; ?>"></div>
-                          <div class="d-flex flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column  align-items-center py-1 justify-content-between">
-                <div class="burgundy fontSegoePrint justify-content-center font-weight-bold fs-4 pb-2">Sort_order</div>
-                        <input type="text" name="sort_order" placeholder=""  class="fs-4 p-1 admin_input" name="name" value="<?php echo $category['sort_order']; ?>"></div>
-
-                        
-                       
-                       <div class="d-flex flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column  align-items-center py-1 justify-content-between">
-                        <div class="burgundy fontSegoePrint font-weight-bold fs-4 pb-2">Status</div>
-                        <input type="text" class="fs-4 p-1 admin_input" name="status" placeholder="" value="<?php echo $category['status']; ?>"></div>
-
-                          <div class="d-flex flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column  align-items-center py-1 justify-content-between">
-                <div class="burgundy fontSegoePrint font-weight-bold fs-4 pb-2">Style</div>
-                        <input type="text" name="style" placeholder=""  class="fs-4 p-1 admin_input" name="name" value="<?php echo $category['style']; ?>"></div>  
-                       
-                         <div class="d-flex flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column  align-items-center py-1 justify-content-between">
-                <div class="burgundy fontSegoePrint font-weight-bold fs-4 pb-2">Style2</div>
-                        <input type="text" name="style2" placeholder=""  class="fs-4 p-1 admin_input" name="name" value="<?php echo $category['style2']; ?>"></div>     
-
-
-
-                        
-                        
-                        
-                       
-                        <div class="py-4 d-flex justify-content-xl-end justify-content-lg-end justify-content-md-end justify-content-sm-center justify-content-center">
-    <input type="submit" name="submit" value="Сохранить" class="btn btn-success fs-4"></div>
-                    </form>
-                </div>
-            </div></div></div>
-        
-    
-
-
-<?php include ROOT . '/views/layouts/admin_footer.php'; ?>
+                                                <label class="admin-product-form__label">
+                                                        <span class="admin-product-form__caption">Status</span>
+                                                        <input type="text" name="status"
+                                                                class="admin-product-form__input">
+                                                </label>
+                                                <label class="admin-product-form__label">
+                                                        <span class="admin-product-form__caption">Style</span>
+                                                        <input type="text" name="style"
+                                                                value="<?php echo $category['style']; ?>"
+                                                                class="admin-product-form__input">
+                                                </label>
+                                                <label class="admin-product-form__label">
+                                                        <span class="admin-product-form__caption">Style2</span>
+                                                        <input type="text" name="style2"
+                                                                value="<?php echo $category['style2']; ?>"
+                                                                class="admin-product-form__input">
+                                                </label>
+                                                <div class="">
+                                                        <input type="submit" name="submit" value="Сохранить"
+                                                                class="btn btn--primary btn-reset">
+                                                </div>
+                                        </form>
+                                </div>
+                        </div>
+                </section>
+        </main>
+</div>
+<?php include ROOT . '/views/layouts/footer-admin.php'; ?>

@@ -1,8 +1,8 @@
-<?php include ROOT . '/views/layouts/header.php';
-include ROOT . '/views/layouts/header2.php'; 
-//include ROOT . '/views/layouts/header3.php';?>
-<div class="wrap-content container-fluid">
-    <div class="main container-fluid">
+<?php include ROOT . '/views/layouts/head.php'; ?>
+<div class="site-container">
+  <?php include ROOT . '/views/layouts/header.php'; ?>
+  <main class="main">
+    <?php include ROOT . '/views/layouts/logo.html';?>
 
 
     <div class="content-empty">
@@ -77,4 +77,4 @@ include ROOT . '/views/layouts/header2.php';
     
 
 
-<?php include ROOT . '/views/layouts/footer2.php'; ?>
+<?php include ROOT . '/views/layouts/footer.html'; ?>

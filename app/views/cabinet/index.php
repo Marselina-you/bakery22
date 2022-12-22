@@ -10,8 +10,10 @@
           <ul class="nav__list list-reset">
             <li class="nav__item"><a href="#" class="nav__link">Доставки</a></li>
             <li class="nav__item"><a href="#" class="nav__link">Покупки</a></li>
-            <li class="nav__item"><a href="/cart" class="nav__link">Корзина <span
-                  id="cart-count"><?php echo '('; echo Cart::countItems();  echo ')';?></span></a></li>
+            <li class="nav__item"><a href="/cart" class="nav__link">
+            <span class="nav__span"
+              id="cart-count"><?php if(Cart::countItems() > 0): echo'('; echo Cart::countItems();  echo ')';?><?php endif; ?>Корзина</span>
+            </a></li>
             <li class="nav__item"><a href="#" class="nav__link">Мои данные</a></li>
           </ul>
         </nav>

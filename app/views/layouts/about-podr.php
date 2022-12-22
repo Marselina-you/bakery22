@@ -1,29 +1,49 @@
-<?php include ROOT.'/views/layouts/header.php';
-include ROOT.'/views/layouts/header2.php';
-include ROOT.'/views/layouts/header3.php';?><div class="content-about col-xl-12">
-    <div class="fs-4 brownDark fontTahoma text-center menu-category_padding">ЖДЕМ ВАС ПО АДРЕСУ: УЛИЦА КИРОВА, СТРОЕНИЕ 5</div>
-    <div class="d-flex align-items-center col-xl-10 offset-xl-1 col-lg-12 
-    col-md-12 col-sm-12 col-12  flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
-    <div class="content-about__img1 content-about__img col-xl-6 col-lg-6 col-md-6 col-sm-10 col-12"><img src="/template/images/polky.png">
-   </div>
-    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 content-about__text fontSegoePrint fs-4">Наш хлеб выпекается по старинным</br>
-проверенным технологиям</div>
-    </div>
-
-<div class="d-flex align-items-center col-xl-10 offset-xl-1 col-lg-12 flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
-     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 content-about__img2 content-about__img"><img src="/template/images/povar.png"></div>
- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 fontSegoePrint brownDark fs-4"><div class="">У нас работают только</br>
-лучшие специалисты</div></div></div>
-
-    <div class="d-flex align-items-center col-xl-10 offset-xl-1 col-lg-12 flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">  
-      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 content-about__img3 content-about__img"><img src="/template/images/pechka.png"></div>
-      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 fontSegoePrint brownDark fs-4">Мы используем новейшее оборудование,</br>
-имитирующее русcкую печь</div></div>
-
- <div class="d-flex align-items-center col-xl-10 offset-xl-1 col-lg-12 flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">     
-<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 content-about__img4 content-about__img"><img src="/template/images/cafe.png"></div>
- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 fontSegoePrint brownDark fs-4">Мы открываемся в 5 утра,</br>
-вы всегда успеете позавтракать</div></div>
-        
+<?php include ROOT.'/views/layouts/head.php';?>
+<div class="site-container">
+<?php include ROOT.'/views/layouts/header.php';?>
+<main class="main">
+<?php include ROOT.'/views/layouts/logo.html';?>
+<section class="about-page">
+  <div class="container">
+    <h2 class="about-page__title centered">Ждем вас по адресу: г.Киров,
+       ул. Кирова, д.16</h2>
+       <ul class="about-page__list list-reset">
+        <li class="about-page-item">
+<div class="about-page-item__image about-page-item__image--rotate-1">
+  <img src="/template/img/about-page-1.png" alt="bread">
 </div>
-<?php include ROOT . '/views/layouts/footer2.php'; ?>
+  <p class="about-page-item__text">
+    Наш хлеб выпекается по старинным проверенным технологиям
+  </p>
+</li>
+<li class="about-page-item">
+          <div class="about-page-item__image about-page-item__image--rotate-2">
+            <img src="/template/img/about-page-2.png" alt="bread">
+          </div>
+            <p class="about-page-item__text">
+              У нас работают только лучшие специалисты
+            </p>
+          </li>
+          <li class="about-page-item">
+            <div class="about-page-item__image about-page-item__image--rotate-1">
+              <img src="/template/img/about-page-3.png" alt="bread">
+            </div>
+              <p class="about-page-item__text">
+                Мы используем новейшее оборудование, имитирующее русcкую печь
+              </p>
+            </li>
+            <li class="about-page-item">
+              <div class="about-page-item__image about-page-item__image--rotate-2">
+                <img src="/template/img/about-page-4.png" alt="bread">
+              </div>
+                <p class="about-page-item__text">
+                  Мы открываемся в 5 утра, вы всегда успеете позавтракать
+                </p>
+              </li>
+            </ul>
+        </div>
+</section>
+
+</main>
+</div>
+<?php include ROOT . '/views/layouts/footer.html'; ?>

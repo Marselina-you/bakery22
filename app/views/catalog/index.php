@@ -1,7 +1,7 @@
 <?php include ROOT . '/views/layouts/head.php';
 include ROOT . '/views/layouts/header.php'; 
 include ROOT.'/views/layouts/logo.html';
-include ROOT.'/views/layouts/catalog-menu.html';?>
+include ROOT.'/views/layouts/catalog-menu.php';?>
 <section class="catalog">
   <div class="container catalog__container">
   <?php foreach ($latestProducts as $product): ?>
@@ -18,7 +18,7 @@ include ROOT.'/views/layouts/catalog-menu.html';?>
         <a href="/cart/add/<?php echo $product['id']; ?>" class="add-to-cart btn btn-reset btn--primary" data-id="<?php echo $product['id'];?>">В корзину</a>
        </div>
       <div class="catalog-right">
-        <a href="/product/<?php echo $product['id'];?>" class="catalog-right__name"><?php echo $product['name'];?></a>
+        <a href="/product/view/<?php echo $product['id'];?>" class="catalog-right__name"><?php echo $product['name'];?></a>
         <div class="catalog-right__weight"><?php echo $product['weight'];?> gramm</div>
         <div class="catalog-accordion" data-simplebar="init">
           <ul class="catalog-accordion__list list-reset">

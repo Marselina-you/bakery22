@@ -31,7 +31,8 @@ return array(
     'admin/product/categorya/([0-9]+)' => 'adminProduct/categorya/$1',
     'admin/product' => 'adminProduct/index',
     //'admin/catalog/([0-9]+)' => 'adminProduct/catalog/$1',
-   
+   //Управлению меню админки
+   //'admin/item/([0-9]+)' => 'adminItem/$1',
 	
 	//управление категориями
 	'admin/category/create' => 'adminCategory/create',
