@@ -7,7 +7,7 @@
     <?php include ROOT.'/views/layouts/header.php'; ?>
     <main class="main">
       <?php include ROOT.'/views/layouts/hero.html';?>
-      <?php include ROOT.'/views/layouts/products.html';?>
+      <?php include ROOT.'/views/layouts/products-d.html';?>
       <?php include ROOT.'/views/layouts/about.html';?>
     </main>
     <?php include ROOT.'/views/layouts/footer.html';?>

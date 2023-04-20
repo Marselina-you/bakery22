@@ -24,7 +24,7 @@ include ROOT.'/views/layouts/catalog-menu.php';?>
           <ul class="catalog-accordion__list list-reset">
             <li class="catalog-accordion__item">
               <button class="btn-reset catalog-accordion__control" aria-expanded="false">
-                <h3 class="catalog-accordion__subtitle">Описание</h3>
+                <h3 class="catalog-accordion__subtitle subtitle">Описание</h3>
                 <span class="catalog-accordion__icon"></span></button>
                 <div class="catalog-accordion__content" aria-hidden="true">
                   <p class="catalog-accordion__descr">
