@@ -3,9 +3,11 @@
 <?php include ROOT . '/views/layouts/header-admin.php';?>
 <main class="main">
 <?php include ROOT . '/views/layouts/menu-admin.php';?>
-<div class="">Редактировать заказ #<?php echo $id; ?></div>
-        <div class="col-lg-4">
-                <div class="login-form">
+<section class="admin-category-delete admin-category">
+  <div class="container-fluid">
+<h2 class="admin__title admin__title--active subtitle">Редактировать заказ #<?php echo $id; ?></h2>
+   
+                
                     <form action="#" method="post">
 
                         <p>Имя клиента</p>
@@ -27,14 +29,17 @@
                             <option value="3" <?php if ($order['status'] == 3) echo ' selected="selected"'; ?>>Доставляется</option>
                             <option value="4" <?php if ($order['status'] == 4) echo ' selected="selected"'; ?>>Закрыт</option>
                         </select>
-                        <br>
-                        <br>
-                        <input type="submit" name="submit" class="btn btn-default" value="Сохранить">
+                       
+                       <p>
+                        <input type="submit" name="submit" class="btn btn-reset btn--success" value="Сохранить">
+</p>
                     </form>
-                </div>
-            </div>
+                
+            
 
         </div>
+    </div>
+    </div>
     </div>
 </div>
 

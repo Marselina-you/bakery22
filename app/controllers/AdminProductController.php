@@ -48,7 +48,7 @@ $productsList = Product::getProductsList();
         $user = User::getUserById($userId);
 		if (isset($_POST['submit'])) {
 			Product::deleteProductById($id);
-			header("Location: /admin/product");
+			header("Location: /admin");
 		}
 		require_once(ROOT . '/views/admin_product/delete.php');
 		return true;
@@ -104,7 +104,7 @@ $productsList = Product::getProductsList();
 				
 				
 				// Перенаправляем пользователя на страницу управлениями товарами
-                header("Location: /admin/product");
+                header("Location: /admin");
 				
 			}
 			
@@ -175,7 +175,7 @@ $productsList = Product::getProductsList();
            // }
 
             // Перенаправляем пользователя на страницу управлениями товарами
-            header("Location: /admin/product");
+            header("Location: /admin");
         }
 
         // Подключаем вид

@@ -12,7 +12,7 @@
 		<?php endif; ?>
 		<section class="admin-product">
 			<div class="container-fluid">
-				<h2 class="admin-submenu__title  orange">Добaвление товарa</h2>
+				<h2 class="admin__title admin__title--active subtitle">Добaвление товарa</h2>
 				<div class="grid">
 					<form action="#" method="post" enctype="multipart/form-data" class="admin-product-form">
 						<label class="admin-product-form__label">

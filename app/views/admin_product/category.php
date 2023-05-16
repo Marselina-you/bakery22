@@ -6,7 +6,7 @@
   <?php include ROOT . '/views/layouts/submenu-admin.php';?>
   <section class="admin-products">
   <div class="container-fluid">
-  <h2 class="admin-submenu__title"><a href="/admin/product/create">Добавить новый товар</a></h2>
+  <h2 class="admin__title subtitle"><a href="/admin/product/create">Добавить новый товар</a></h2>
     <ul class="admin-products__list list-reset grid">
     <?php foreach ($categoryProducts as $product): ?>
       <li class="admin-products__item">

@@ -1,9 +1,9 @@
 <section class="admin-header">
   <div class="container-fluid">
-    <nav class="admin-nav admin-header__nav" title="">
+    <nav class="admin-nav admin-header__nav" title="navigation">
       <ul class="admin-nav__list admin-header__list list-reset">
         <li class="admin-nav__item">
-          <a href="#" class="admin-nav__link">
+          <a href="/admin" class="admin-nav__link">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.5 23.5"><defs><style></style></defs><path class="cls-1" d="M0,0V23.5H23.5V0ZM21.33,21.33H2.17V2.17H21.33Z"/></svg>
           <span>АдминПанель</span>
         </a></li>

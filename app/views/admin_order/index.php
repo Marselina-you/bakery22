@@ -10,9 +10,9 @@
 
             
 
-            <section class="admin-order">
+            <section class="admin-order admin-category">
   <div class="container-fluid admin-order__container">
-  <h2 class="admin__subtitle">Список заказов</h2>
+  <h2 class="admin__title admin__title--active subtitle">Список заказов</h2>
     <div class="admin-order__block grid">
     <?php foreach ($ordersList as $order): ?>
       <article class="admin-order__article">

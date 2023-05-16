@@ -3,9 +3,9 @@
 <?php include ROOT . '/views/layouts/header-admin.php';?>
 <main class="main">
 <?php include ROOT . '/views/layouts/menu-admin.php';?>
-<section class="admin-delete">
+<section class="admin-category-delete admin-category">
   <div class="container-fluid">
-    <h2 class="admin__subtitle">Удаление категорию #<?php echo $id; ?></h2>
+    <h2 class="admin__title admin__title--active subtitle">Удаление категорию #<?php echo $id; ?></h2>
     <h3 class="admin-delete__quest">Вы действительно хотите удалить категорию #<?php echo $id; ?>?</h3>
     <div class="admin-delete__block">
       <div class="admin-delete__item">
@@ -14,7 +14,7 @@
         </form>
       </div>
       <div class="admin-delete__item">
-      <a href="/admin/category" class="btn btn-reset btn--success">нет</a></div>
+      <a href="/admin/category" class="btn admin-delete__btn btn-reset btn--success">нет</a></div>
     </div>
   </div>
   </div>
