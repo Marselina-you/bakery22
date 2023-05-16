@@ -4,24 +4,25 @@
   <main class="main">
     <?php include ROOT . '/views/layouts/logo.html';?>
     <?php include ROOT . '/views/layouts/cart-navigation.php';?>
-    <section class="checkout-page">
+    <section class="cart-checkout">
   <div class="container">
-    <div class="checkout-page__title">
-      <h2 class="cart__subtitle__subtitle">Выбрано товаров <span class="checkout-page__span"> <?php echo $totalQuantity; ?>,</span> на сумму  <span  class="checkout-page__span"><?php echo $totalPrice; ?> ₽</span></h2>
+    <div class="cart-checkout__title">
+      <h2 class="cart-checkout__subtitle subtitle">Выбрано товаров <span class="cart-checkout__span"> <?php echo $totalQuantity; ?>,</span> на сумму  <span  class="cart-checkout__span"><?php echo $totalPrice; ?> ₽</span></h2>
     </div>
 
-   <div class="checkout-page__images grid">
-   <?php foreach ($products as $product): ?>
-<ul class="checkout-page__list list-reset">
-  <li class="checkout-page__item">
-    <img src="/upload/images/products/<?php echo $product['photo']; ?>" alt="order">
-  </li>
-  <li class="checkout-page__item">
-   <a href="" class="checkout-page__link"><?php echo $product['name']; ?></a>
-  </li>
-</ul>
-<?php endforeach; ?>
-</div>
+    <div class="cart-products__blok">
+      
+      <ul class="cart-products__list list-reset grid">
+      <?php foreach ($products as $product): ?>
+        <li class="cart-products__item">
+          <div class="cart-products__image"><img src="/upload/images/products/<?php echo $product['photo']; ?>" alt=""></div>
+          <div class="cart-products__name mini-title"><?php echo $product['name']; ?></div>
+        </li>
+        <?php endforeach; ?>
+       
+      </ul>
+     
+    </div>
    <?php if (isset($errors) && is_array($errors)): ?>
     <ul><?php foreach ($errors as $error): ?><li> - <?php echo $error; ?></li>
     <?php endforeach; ?></ul><?php endif; ?>

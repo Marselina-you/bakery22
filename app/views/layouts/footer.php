@@ -92,6 +92,8 @@
    <script src="/js/slider_cart1.js"></script>
    <script src="/js/slider_sm.js"></script>
    <script src="/js/action_slider.js"></script>
+ 
+     <script defer src="js/swiper-bundle.min.js"></script>
    <script type="text/javascript">
        $(document).ready(function () {
            const slider = $(".slide").owlCarousel({

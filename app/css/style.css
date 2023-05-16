@@ -53,6 +53,9 @@
       background-image: url(/template/img/cross.svg);
      
   }
- 
   
+  .cart-slider {
+    max-height: 550px;
+  }
+ 
   
