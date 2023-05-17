@@ -22,7 +22,7 @@
 
             <span class="nav__span" id="cart-count"><?php if(Cart::countItems() > 0): echo'('; echo Cart::countItems();  echo ')';?><?php endif; ?>Корзина</span></a>
         </li>
-        <li class="nav__item"><a href="/user/order/" class="nav__link">
+        <li class="nav__item"><a href="/cabinet" class="nav__link">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.5 21.25">
               <defs></defs>
               <rect class="" y="6" width="20.5" height="15.25" rx="1.16" />
