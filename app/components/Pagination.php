@@ -85,7 +85,7 @@ class Pagination
         for ($page = $limits[0]; $page <= $limits[1]; $page++) {
             # Если текущая это текущая страница, ссылки нет и добавляется класс active
             if ($page == $this->current_page) {
-                $links .= '<li class="link--active"><a href="#">' . $page . '</a></li>';
+                $links .= '<li class="active"><a href="#">' . $page . '</a></li>';
             } else {
                 # Иначе генерируем ссылку
                 $links .= $this->generateHtml($page);
@@ -97,12 +97,12 @@ class Pagination
             # Если текущая страница не первая
             if ($this->current_page > 1)
             # Создаём ссылку "На первую"
-                $links = $this->generateHtml(1, 'back') . $links;
+                $links = $this->generateHtml(1, '&lt;') . $links;
 
             # Если текущая страница не первая
             if ($this->current_page < $this->amount)
             # Создаём ссылку "На последнюю"
-                $links .= $this->generateHtml($this->amount, 'ahead');
+                $links .= $this->generateHtml($this->amount, '&gt;');
         }
 
         $html .= $links . '</ul>';
@@ -128,7 +128,7 @@ class Pagination
         $currentURI = preg_replace('~/page-[0-9]+~', '', $currentURI);
         # Формируем HTML код ссылки и возвращаем
         return
-                '<li class="link--unactive"><a href="' . $currentURI . $this->index . $page . '">' . $text . '</a></li>';
+                '<li class=""><a href="' . $currentURI . $this->index . $page . '">' . $text . '</a></li>';
     }
 
     /**

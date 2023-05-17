@@ -2,7 +2,7 @@
 <div class="site-container">
   <?php include ROOT . '/views/layouts/header.php'; ?>
   <main class="main">
-  
+  <?php include ROOT.'/views/layouts/logo.html';?>
     
   <?php include ROOT . '/views/layouts/cart-navigation.php';?>
 
@@ -77,4 +77,4 @@
   <?php endif; ?></div>
 </div>
 </div></div></div>
-<?php include ROOT . '/views/layouts/footer.html'; ?>
+<?php include ROOT . '/views/layouts/footer.php'; ?>

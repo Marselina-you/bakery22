@@ -55,4 +55,4 @@ include ROOT.'/views/layouts/catalog-menu.php';?>
     <?php endforeach;?> 
   </div>
 </section>
-<?php include ROOT.'/views/layouts/footer.html';?>
+<?php include ROOT.'/views/layouts/footer.php';?>

@@ -1,7 +1,7 @@
 <?php include ROOT . '/views/layouts/head.php';?>
 <div class="site-container">
 	<?php include ROOT . '/views/layouts/header-admin.php';?>
-	<main class="main">
+	<main class="main-admin">
 		<?php include ROOT . '/views/layouts/menu-admin.php';?>
 		<?php if (isset($errors) && is_array($errors)): ?>
 		<ul>

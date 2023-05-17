@@ -38,4 +38,4 @@
         </div>
                        
                       
-<?php include ROOT . '/views/layouts/footer.html'; ?>
+<?php include ROOT . '/views/layouts/footer.php'; ?>

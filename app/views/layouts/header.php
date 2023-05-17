@@ -20,8 +20,7 @@
         <path class="1" d="M12.7,1.57A.75.75,0,0,0,12.41.51L11.7.11A.8.8,0,0,0,11.28,0a.84.84,0,0,0-.7.38L6.84,6.44a.84.84,0,0,0-.11.3H9.51Z"/>
         <path class="" d="M18.33,6.74H21.1a.67.67,0,0,0-.1-.3L17.26.38a.84.84,0,0,0-.7-.38.86.86,0,0,0-.43.11l-.7.4a.75.75,0,0,0-.29,1.06Z"/></svg>
 
-            <span class="nav__span"
-              id="cart-count"><?php if(Cart::countItems() > 0): echo'('; echo Cart::countItems();  echo ')';?><?php endif; ?>Корзина</span></a>
+            <span class="nav__span" id="cart-count"><?php if(Cart::countItems() > 0): echo'('; echo Cart::countItems();  echo ')';?><?php endif; ?>Корзина</span></a>
         </li>
         <li class="nav__item"><a href="/user/order/" class="nav__link">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.5 21.25">
@@ -55,8 +54,7 @@
                 d="M25.23,28.63a9.16,9.16,0,1,0-3.27,0c-3.51.5-7,2.77-11.27,6.76A2.38,2.38,0,0,0,12,39.43a95.58,95.58,0,0,0,23.48,0,2.3,2.3,0,0,0,2-2.31,2.33,2.33,0,0,0-.77-1.74C32.32,31.42,28.69,29.2,25.23,28.63Z" />
             </svg>
             <span class="nav__span"><?php echo $user['name'];?></span></a>
-            <a href="/user/logout/">
-                   Выход</a>
+           
   </div>
   <?php endif; ?></li>
   </ul>

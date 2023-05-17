@@ -57,5 +57,45 @@
   .cart-slider {
     max-height: 550px;
   }
+  .icon-close {
+   margin-top: 50px;
+   cursor: pointer;
+   transition: color 0.3s ease-in-out;
+   
+}
+.pagination li a{
+  background-color: #f0f0e9;
+  border: 0;
+  float: left;
+  line-height: 1.42857;
+  margin-left: -1px;
+  padding: 6px 12px;
+  position: relative;
+  text-decoration: none;
+  margin-right: 5px;
+  color: #000;
+}
+.pagination .active a {
+  background-color: var(--jaffa-color);
+  border-color: var(--jaffa-color);
+  color: #FFFFFF;
+  cursor: default;
+  z-index: 2;
+}
+.pagination a:hover {
+  background-color: var(--jaffa-color);
+  border-color: var(--jaffa-color);
+  color: #FFFFFF;
+  transition: all .3s ease-in-out;
+  
+ 
+}
+.main-admin {
+  min-height: calc(98vh - 121px);
+}
+  
+  
+
+
  
   

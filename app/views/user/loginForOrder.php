@@ -2,6 +2,7 @@
 <div class="site-container">
     <?php include ROOT . '/views/layouts/header.php'; ?>
     <main class="main">
+    <?php include ROOT.'/views/layouts/logo.html';?>
         <?php include ROOT . '/views/layouts/cart-navigation.php';?>
         <?php if (isset($errors) && is_array($errors)): ?>
         <ul>
@@ -30,4 +31,4 @@
             </div>
         </section>
 </div>
-<?php include ROOT . '/views/layouts/footer.html'; ?>
+<?php include ROOT . '/views/layouts/footer.php'; ?>
