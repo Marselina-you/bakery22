@@ -3,15 +3,24 @@
   <?php include ROOT . '/views/layouts/header.php'; ?>
   <main class="main">
     <?php include ROOT . '/views/layouts/logo.html';?>
-   <div class="wrap-main-enter wrap-main_padding">
-   <div class="main-enter">
-
-            <div class="wrap-main-enter-content col-xl-6 offset-xl-1">
-                
-                <?php if ($result): ?>
-                   <div class="title_padding col-xl-12  size29px fontTahoma letter-space undertitle__edit">Данные отредактированы!</div>
-                    <div class="title_padding col-xl-12  size29px fontTahoma letter-space undertitle__edit"><a href="index">В кабинет</a></div>
-                    <div class="title_padding col-xl-12  size29px fontTahoma letter-space undertitle__edit"><a href="/">На главную</a></div>
+    <section class="registration">
+  <div class="container">
+<?php if ($result): ?>
+    <h2 class="registration__title subtitle">Данные отредактированы!</h2>
+    <div class="suggestion result__suggestion">
+      <a href="/cabinet">
+        <span class="">В кабинет</span>
+        <svg
+   viewBox="0 0 214.89859 281.45682" xmlns:svg="http://www.w3.org/2000/svg">
+<g data-name="1"
+    transform="matrix(1,0,0,0.7043276,-187.1032,-35.490591)">
+    <path d="M 202.1,450 A 15,15 0 0 1 191.5,424.39 L 365.79,250.1 191.5,75.81 A 15,15 0 0 1 212.71,54.6 l 184.9,184.9 a 15,15 0 0 1 0,21.21 l -184.9,184.9 A 15,15 0 0 1 202.1,450 Z"
+       id="path4" />
+  </g>
+</svg>
+      </a>
+    </div>
+                  
                 <?php else: ?>
                     <?php if (isset($errors) && is_array($errors)): ?>
                         <ul>
@@ -22,42 +31,47 @@
                     <?php endif; ?>
 
                     <div class="signup-form"><!--sign up form-->
-                       <div class="main-enter-content__title title_padding col-xl-12  size29px fontTahoma letter-space undertitle__edit">Редактирование данных
-            </div>
-                        <form action="#" method="post" class="main-enter-content__form form_padding  d-flex flex-column" >
-                            <div class="content-form__data d-flex align-items-center justify-content-between flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
-                            <label for="email" class="required content-form__data-title size35px col-xl-4" >Имя:</label>
-                             <div class="wrap-content-form__data-input col-xl-8">
-                            <input class="content-form__data-input col-xl-12" type="text" name="name" placeholder="Имя" value="<?php echo $name; ?>"/></div></div>
+                    <h2 class="registration__title subtitle">Редактирование данных</h2>
+                      
+            
+                        <form action="#" method="post" class="registration__form" >
+                            <label class="main-form__label main-form__label--title">
+                            <span class="main-form__caption">Имя*</span>
+                            <input class="main-form__input" type="text" name="name" placeholder="Имя" value="<?php echo $name; ?>"/>
+                        </label>
+                            <label class="main-form__label main-form__label--title" >
+                           <span class="main-form__caption">Email:</span>
+                           <input class="main-form__input" type="text" name="email" placeholder="Email" value="<?php echo $email; ?>"/>
+                            </label>
+                            
+                           
 
-                            <div class="content-form__data d-flex align-items-center justify-content-between flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
-                           <label for="email" class="required content-form__data-title size35px col-xl-4" >Email:</label>
-                            <div class="wrap-content-form__data-input col-xl-8">
-                            <input class="content-form__data-input col-xl-12" type="text" name="email" placeholder="Email" value="<?php echo $email; ?>"/></div></div>
-
-                            <div class="content-form__data d-flex align-items-center justify-content-between flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
-                             <label for="phone" class="required content-form__data-title size35px col-xl-4" >Телефон:</label>
-                              <div class="wrap-content-form__data-input col-xl-8">
-                            <input class="content-form__data-input col-xl-12" type="text" name="phone" placeholder="Телефон" value="<?php echo $phone; ?>"/></div></div>
-
-                            <div class="content-form__data d-flex align-items-center justify-content-between flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
-                             <label for="password" class="required content-form__data-title size35px col-xl-4" >Пароль:</label>
-                              <div class="wrap-content-form__data-input col-xl-8">
-                            <input class="content-form__data-input col-xl-12" type="password" name="password" placeholder="Пароль" value="<?php echo $password; ?>"/></div></div>
+                        
+                             <label class="main-form__label main-form__label--title" >
+                                <span class="main-form__caption">Телефон:</span>
+                                <input class="main-form__input" type="text" name="phone" placeholder="Телефон" value="<?php echo $phone; ?>"/>
+                             </label>
+                           
+                          
 
                            
-                           <div class="content-form__data d-flex align-items-center justify-content-end">
-   <div class="col-xl-7 col-lg-4 col-md-4 col-sm-4 col-6  d-flex justify-content-end">
+                             <label class="main-form__label main-form__label--title" >
+                             <span class="main-form__caption">Пароль:</span>
+                             <input class="main-form__input" type="password" name="password" placeholder="Пароль" value="<?php echo $password; ?>"/>
+                             </label>
+                             <div class="main-form__send">
+        <input type="submit" name="submit" value="Сохранить" class="btn btn--success btn-reset">
+      </div>         
 
- <input type="submit" name="submit" class="content-order-end__click__btn btn btn-success size29px col-xl-6" value="Сохранить" /></div></div>
+
                         </form>
                     </div><!--/sign up form-->
                 
                 <?php endif; ?>
                 
-            </div>
-        </div>
-    </div>
+                            </div>
+                            </div>
+      
                             </main>
                             </div>
 

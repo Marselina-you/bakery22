@@ -12,7 +12,7 @@
         <?php endif; ?>
         <section class="login result">
   <div class="container">
-        <h2 class="login__title subtitle">Войти или <a href="" class="login__link"> зарегистрироваться</a></h2>                  
+        <h2 class="login__title subtitle">Войти или <a href="/user/register" class="login__link"> зарегистрироваться</a></h2>                  
 <form action="#" method="post" class="main-form">
 
 <label for="email" class="main-form__label main-form__label--title">

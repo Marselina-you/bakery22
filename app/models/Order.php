@@ -254,7 +254,7 @@ class Order
         $db = Db::getConnection();
 
         // Текст запроса к БД
-        $result = $db->query('SELECT product_order.*, order_status.value FROM product_order JOIN order_status ON order_status.id = product_order.status WHERE status = 2 AND user_id = '.$userId);
+        $result = $db->query('SELECT product_order.*, order_status.value FROM product_order JOIN order_status ON order_status.id = product_order.status WHERE status = 1 AND user_id = '.$userId);
 
         $ordersList = array();
         $i = 0;
@@ -278,7 +278,7 @@ class Order
         $db = Db::getConnection();
 
         // Текст запроса к БД
-        $result = $db->query('SELECT product_order.*, order_status.value FROM product_order JOIN order_status ON order_status.id = product_order.status WHERE status = 1 AND user_id = '.$userId);
+        $result = $db->query('SELECT product_order.*, order_status.value FROM product_order JOIN order_status ON order_status.id = product_order.status WHERE status = 2 AND user_id = '.$userId);
 
         $ordersList = array();
         $i = 0;

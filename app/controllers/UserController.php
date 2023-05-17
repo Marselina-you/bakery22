@@ -90,6 +90,8 @@ class UserController
     }
     public function actionLoginForOrder()
     {
+        $categories = array();
+        $categories = Category::getCategoriesList();
         $name = '';
         $email = '';
         $password = '';
