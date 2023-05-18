@@ -71,8 +71,6 @@
 							<span class="admin-product-form__caption">Топпинг 3</span>
 							<input type="text" name="top3" class="admin-product-form__input">
 						</label>
-
-
 						<label class="admin-product-form__label admin-product-form__label--title">
 							<span class="admin-product-form__caption">Статус</span>
 							<select name="best" class="admin-product-form__select">
@@ -81,7 +79,6 @@
 								<option value="3">Выгодно</option>
 								<option value="4">Уже в продаже</option>
 							</select>
-
 						</label>
 						<label class="admin-product-form__label">
 							<span class="admin-product-form__caption">Наличие</span>
@@ -105,15 +102,9 @@
 							<input type="submit" name="submit" value="Сохранить" class="btn btn--primary btn-reset">
 						</div>
 					</form>
-
-			</div>
+				</div>
 			</div>
 		</section>
 	</main>
 </div>
-
-
-
-
-
 <?php include ROOT . '/views/layouts/footer-admin.php'; ?>

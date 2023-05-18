@@ -6,7 +6,6 @@
     <li class="catalog-menu__item centered <?php echo $categoryItem['style'];?>">
       <a href="/category/<?php echo $categoryItem['id'];?>" class="capitalize catalog-menu__link <?php if ($categoryId == $categoryItem['id']) echo 'link--active'; ?>"><?php echo $categoryItem['name_category'];?></a>
     </li>
-    
     <?php endforeach; ?>
    </ul>
    </div>

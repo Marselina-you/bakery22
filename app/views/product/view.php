@@ -5,11 +5,10 @@
     <?php include ROOT . '/views/layouts/logo.html';?>
     <section class="catalog">
   <div class="container catalog__container">
-  
-    <article class="catalog__article grid">
+  <article class="catalog__article grid">
       <div class="catalog-left">
         <div class="catalog-left__image">
-          <img src="/upload/images/products/<?php echo $product['photo'];?>" alt="">
+          <img src="/upload/images/products/<?php echo $product['photo'];?>" alt="product">
         </div>
         <div class="catalog-left__top">
           <span class="catalog-left__available"><?php if ($product['nal'] == 1) echo 'в наличии'; else echo 'нет в наличии';?></span>
@@ -53,7 +52,6 @@
         </div>
     </div>
     </article>
-   
   </div>
 </section>
   </main>

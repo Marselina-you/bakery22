@@ -1,15 +1,14 @@
 <?php include ROOT.'/views/layouts/head.php';
 include ROOT.'/views/layouts/header.php';
 include ROOT.'/views/layouts/logo.html';
-include ROOT.'/views/layouts/catalog-menu.php';
-?>
+include ROOT.'/views/layouts/catalog-menu.php';?>
 <section class="catalog">
   <div class="container catalog__container">
   <?php foreach ($categoryProducts as $product): ?>
     <article class="catalog__article grid">
       <div class="catalog-left">
         <div class="catalog-left__image">
-          <img src="/upload/images/products/<?php echo $product['new_picture'];?>" alt="">
+          <img src="/upload/images/products/<?php echo $product['new_picture'];?>" alt="product">
         </div>
         <div class="catalog-left__top">
           <span class="catalog-left__available"><?php if ($product['nal'] == 1) echo 'в наличии'; else echo 'нет в наличии';?></span>
@@ -59,5 +58,4 @@ include ROOT.'/views/layouts/catalog-menu.php';
         </div> 
   </div>
 </section>
-   
-<?php include ROOT.'/views/layouts/footer.php';?>
+   <?php include ROOT.'/views/layouts/footer.php';?>

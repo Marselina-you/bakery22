@@ -109,7 +109,7 @@
                         <div class="admin-product-form__caption">Изображение товара</div>
                         <input type="hidden" name="old_picture" value="<?php  echo $product['photo'];?>" />
 
-                        <img src="/upload/images/products/<?php echo $product['photo']; ?>" width="200" alt="" />
+                        <img src="/upload/images/products/<?php echo $product['photo']; ?>" width="200" alt="product"/>
                         <input type="file" name="new_picture" placeholder="" value="">
                     </label>
                     <div class="">

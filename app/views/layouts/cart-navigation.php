@@ -8,8 +8,7 @@
           <li class="nav__item"><a href="/category/<?php echo $categoryItem['id'];?>" class="nav__link capitalize"><?php echo $categoryItem['name_category'];?>
           </a></li>
           <?php endforeach; ?>
-         
-        </ul>
+         </ul>
       </nav>
     </div>
   </div>

@@ -8,7 +8,7 @@ include ROOT.'/views/layouts/catalog-menu.php';?>
     <article class="catalog__article grid">
       <div class="catalog-left">
         <div class="catalog-left__image">
-          <img src="../upload/images/products/<?php echo $product['new_picture'];?>" alt="">
+          <img src="../upload/images/products/<?php echo $product['new_picture'];?>" alt="product">
         </div>
         <div class="catalog-left__top">
           <span class="catalog-left__available"><?php if ($product['nal'] == 1) echo 'в наличии'; else echo 'нет в наличии';?></span>

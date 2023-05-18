@@ -93,6 +93,9 @@
 .main-admin {
   min-height: calc(98vh - 121px);
 }
+.admin-category--height {
+  min-height: calc(103vh - 320px);
+}
   
   
 
