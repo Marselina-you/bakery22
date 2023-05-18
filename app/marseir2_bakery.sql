@@ -1,31 +1,13 @@
 
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- База данных: `zabatonom`
---
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `admin_menu`
---
 
 CREATE TABLE `admin_menu` (
   `id` int NOT NULL,
   `name` varchar(30) NOT NULL,
   `style1` varchar(30) NOT NULL,
   `style2` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Дамп данных таблицы `admin_menu`
@@ -45,7 +27,7 @@ INSERT INTO `admin_menu` (`id`, `name`, `style1`, `style2`) VALUES
 CREATE TABLE `assortiment` (
   `id` int NOT NULL,
   `category_id` int NOT NULL,
-  `name` varchar(30) CHARACTER SET utf16 COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(30) CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL,
   `price` int NOT NULL,
   `weight` int NOT NULL,
   `description` text NOT NULL,
@@ -53,14 +35,14 @@ CREATE TABLE `assortiment` (
   `ing2` varchar(20) NOT NULL,
   `ing3` varchar(20) NOT NULL,
   `slogan` varchar(20) NOT NULL,
-  `top1` varchar(40) CHARACTER SET utf8mb4 NOT NULL,
+  `top1` varchar(40) CHARACTER SET NOT NULL,
   `top2` varchar(20) NOT NULL,
   `top3` varchar(20) NOT NULL,
   `best` int NOT NULL,
   `nal` varchar(20) NOT NULL,
-  `photo` varchar(100) CHARACTER SET utf8mb4 NOT NULL,
+  `photo` varchar(100) CHARACTER SET NOT NULL,
   `recommendation` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT;
 
 --
 -- Дамп данных таблицы `assortiment`
@@ -93,12 +75,12 @@ INSERT INTO `assortiment` (`id`, `category_id`, `name`, `price`, `weight`, `desc
 
 CREATE TABLE `category` (
   `id` int NOT NULL,
-  `name_category` varchar(30) CHARACTER SET utf8mb4 NOT NULL,
+  `name_category` varchar(30) CHARACTER SET NOT NULL,
   `sort_order` int NOT NULL,
   `status` int NOT NULL,
-  `style` varchar(100) CHARACTER SET utf8mb4 NOT NULL,
+  `style` varchar(100) CHARACTER SET NOT NULL,
   `style2` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT;
 
 --
 -- Дамп данных таблицы `category`
@@ -118,7 +100,7 @@ INSERT INTO `category` (`id`, `name_category`, `sort_order`, `status`, `style`, 
 CREATE TABLE `menuadmin` (
   `id` int NOT NULL,
   `item` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT;
 
 --
 -- Дамп данных таблицы `menuadmin`
@@ -138,7 +120,7 @@ INSERT INTO `menuadmin` (`id`, `item`) VALUES
 CREATE TABLE `order_status` (
   `id` int NOT NULL,
   `value` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT;
 
 --
 -- Дамп данных таблицы `order_status`
@@ -164,7 +146,7 @@ CREATE TABLE `product_order` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `products` text NOT NULL,
   `status` int NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT;
 
 --
 -- Дамп данных таблицы `product_order`
@@ -207,7 +189,7 @@ CREATE TABLE `status` (
   `id` int NOT NULL,
   `value` varchar(30) NOT NULL,
   `style` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT;
 
 --
 -- Дамп данных таблицы `status`
@@ -232,7 +214,7 @@ CREATE TABLE `user` (
   `password` varchar(255) NOT NULL,
   `role` varchar(10) NOT NULL,
   `phone` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT;
 
 --
 -- Дамп данных таблицы `user`
