@@ -10,9 +10,9 @@
    </ul>
    </div>
    <div class="catalog-menu-images">
-    <a href="/category/1" class="catalog-menu-images__item centered"><img src="/template/img/cake.png" alt="bread"></a>
-    <a  href="/category/2" class="catalog-menu-images__item centered"><img src="/template/img/loaf.png" alt="cake"></a>
-    <a  href="/category/3" class="catalog-menu-images__item centered"><img src="/template/img/bread.png" alt="loaf"></a>
+    <a href="/category/1" class="catalog-menu-images__item centered"><img src="/img/cake.png" alt="bread"></a>
+    <a  href="/category/2" class="catalog-menu-images__item centered"><img src="/img/loaf.png" alt="cake"></a>
+    <a  href="/category/3" class="catalog-menu-images__item centered"><img src="/img/bread.png" alt="loaf"></a>
    </div>
     </div>
 </section>

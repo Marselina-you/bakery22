@@ -25,6 +25,7 @@ return array(
 	
 	//Управление товарами
 	//'create' => 'adminProduct/create',
+	
 	'admin/product/create' => 'adminProduct/create',
     'admin/product/update/([0-9]+)' => 'adminProduct/update/$1',
     'admin/product/delete/([0-9]+)' => 'adminProduct/delete/$1',
@@ -50,10 +51,10 @@ return array(
 	'about' => 'about/index',// actionIndex в aboutController
 	'admin/categorys/([0-9]+)' => 'admin/categorys/$1', //actionCategorys in adminController
 	'categorys/([0-9]+)' => 'admin/categorys/$1',
-	'admin' => 'admin/index',
+	
 	 //'admin/catalog' => 'adminProduct/index',
 	 
 	'' => 'site/index',// actionIndex в SiteController 
-
+	'admin' => 'admin/index',// actionIndex в adminController
 
 	);

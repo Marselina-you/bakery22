@@ -60,6 +60,8 @@
             <?php else: ?> 
                 <li class="menu-list__item"><a href="/user/logout/">Выйти</a></li>
             <?php endif; ?>
+
+            <li class="menu-list__item"><a href="/admin">admin</a></li>
       </ul>
     </div>
   </div>
