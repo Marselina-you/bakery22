@@ -28,8 +28,7 @@
               <path class=""
                 d="M18.33,6.74H21.1a.67.67,0,0,0-.1-.3L17.26.38a.84.84,0,0,0-.7-.38.86.86,0,0,0-.43.11l-.7.4a.75.75,0,0,0-.29,1.06Z" />
             </svg>
-            <span class="nav__count"
-              id="cart-count"><?php if(Cart::countItems() > 0): echo Cart::countItems();?><?php endif; ?></span>
+            <span class="nav__count <?php if(Cart::countItems() > 0): echo 'visible';?><?php endif; ?>" id="cart-count"><?php if(Cart::countItems() > 0): echo Cart::countItems();?><?php endif; ?></span>
             <span class="nav__span">Корзина</span></a>
         </li>
         <li class="nav__item"><a href="/cabinet" class="nav__link">
