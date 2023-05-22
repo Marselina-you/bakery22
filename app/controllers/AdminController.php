@@ -9,9 +9,10 @@ class AdminController extends AdminBase
         $userId = User::checkLoggedSite();
         $user = User::getUserById($userId);
         $categories = array();
-        $productsList = Product::getProductsList();
         $categories = Category::getCategoriesList();
-       
+        $productsList = Product::getProductsList();
+      
+        
        
 
 		require_once(ROOT . '/views/admin/index.php');

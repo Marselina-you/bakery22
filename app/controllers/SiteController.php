@@ -12,6 +12,7 @@ class SiteController {
 		$latestProducts = array();
         $latestProducts = Product::getLatestProducts(2);
 $productsBest = Product::getProductsBest();
+
        
         
         $userId = User::checkLoggedSite();
